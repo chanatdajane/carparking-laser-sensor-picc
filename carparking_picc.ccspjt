@@ -19,5 +19,20 @@ buildcount=1
 [ProjectLog]
 Days=1
 D1=07-05-2017
-D1_L=1
+D1_L=5
 D1_L1=[15698]Project Closed.
+D1_L2=[16209]Project Opened.
+D1_L3=[16666]Started Editing.
+D1_L4=[16973]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D1_E=1
+D1_D=0
+D1_L5=[17012]Project Closed.
+
+[Opened Files]
+1=carparking_picc.c
+t1=93
+2=D:\Study\Hardware\project\project_hw_merge.c
+t2=85
+Count=2
