@@ -1,0 +1,7405 @@
+CCS PCM C Compiler, Version 5.063, 32906               07-May-17 04:19
+
+               Filename:   C:\Users\Lenovo\Desktop\New folder (2)\carparking_picc.lst
+
+               ROM used:   5582 words (68%)
+                           Largest free fragment is 2048
+               RAM used:   40 (11%) at main() level
+                           164 (45%) worst case
+               Stack used: 7 locations (6 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  15
+0001:  MOVWF  0A
+0002:  GOTO   5E1
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   0A,W
+0009:  MOVWF  20
+000A:  CLRF   0A
+000B:  MOVF   04,W
+000C:  MOVWF  22
+000D:  MOVF   77,W
+000E:  MOVWF  23
+000F:  MOVF   78,W
+0010:  MOVWF  24
+0011:  MOVF   79,W
+0012:  MOVWF  25
+0013:  MOVF   7A,W
+0014:  MOVWF  26
+0015:  BSF    03.6
+0016:  MOVF   0D,W
+0017:  BCF    03.6
+0018:  MOVWF  27
+0019:  BSF    03.6
+001A:  MOVF   0F,W
+001B:  BCF    03.6
+001C:  MOVWF  28
+001D:  BSF    03.6
+001E:  MOVF   0C,W
+001F:  BCF    03.6
+0020:  MOVWF  29
+0021:  BSF    03.6
+0022:  MOVF   0E,W
+0023:  BCF    03.6
+0024:  MOVWF  2A
+0025:  BCF    03.7
+0026:  BCF    03.5
+0027:  MOVLW  8C
+0028:  MOVWF  04
+0029:  BTFSS  00.0
+002A:  GOTO   02D
+002B:  BTFSC  0C.0
+002C:  GOTO   04E
+002D:  MOVF   22,W
+002E:  MOVWF  04
+002F:  MOVF   23,W
+0030:  MOVWF  77
+0031:  MOVF   24,W
+0032:  MOVWF  78
+0033:  MOVF   25,W
+0034:  MOVWF  79
+0035:  MOVF   26,W
+0036:  MOVWF  7A
+0037:  MOVF   27,W
+0038:  BSF    03.6
+0039:  MOVWF  0D
+003A:  BCF    03.6
+003B:  MOVF   28,W
+003C:  BSF    03.6
+003D:  MOVWF  0F
+003E:  BCF    03.6
+003F:  MOVF   29,W
+0040:  BSF    03.6
+0041:  MOVWF  0C
+0042:  BCF    03.6
+0043:  MOVF   2A,W
+0044:  BSF    03.6
+0045:  MOVWF  0E
+0046:  BCF    03.6
+0047:  MOVF   20,W
+0048:  MOVWF  0A
+0049:  SWAPF  21,W
+004A:  MOVWF  03
+004B:  SWAPF  7F,F
+004C:  SWAPF  7F,W
+004D:  RETFIE
+004E:  BCF    0A.3
+004F:  BCF    0A.4
+0050:  GOTO   051
+.................... #include <16F886.h> 
+.................... //////////// Standard Header file for the PIC16F886 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F886 
+*
+00A3:  DATA 53,3A
+00A4:  DATA 61,39
+00A5:  DATA F4,34
+00A6:  DATA EE,33
+00A7:  DATA 0D,05
+00A8:  DATA 00,00
+00A9:  DATA AD,16
+00AA:  DATA AD,16
+00AB:  DATA AD,16
+00AC:  DATA AD,16
+00AD:  DATA AD,16
+00AE:  DATA 2D,05
+00AF:  DATA 00,00
+00B0:  MOVF   0B,W
+00B1:  MOVWF  42
+00B2:  BCF    0B.7
+00B3:  BSF    03.5
+00B4:  BSF    03.6
+00B5:  BSF    0C.7
+00B6:  BSF    0C.0
+00B7:  NOP
+00B8:  NOP
+00B9:  BCF    03.5
+00BA:  BCF    03.6
+00BB:  BTFSC  42.7
+00BC:  BSF    0B.7
+00BD:  BSF    03.6
+00BE:  MOVF   0C,W
+00BF:  ANDLW  7F
+00C0:  BTFSC  03.2
+00C1:  GOTO   106
+00C2:  BCF    03.6
+00C3:  MOVWF  42
+00C4:  BSF    03.6
+00C5:  MOVF   0D,W
+00C6:  BCF    03.6
+00C7:  MOVWF  43
+00C8:  BSF    03.6
+00C9:  MOVF   0F,W
+00CA:  BCF    03.6
+00CB:  MOVWF  44
+00CC:  MOVF   42,W
+00CD:  BTFSS  0C.4
+00CE:  GOTO   0CD
+00CF:  MOVWF  19
+00D0:  MOVF   43,W
+00D1:  BSF    03.6
+00D2:  MOVWF  0D
+00D3:  BCF    03.6
+00D4:  MOVF   44,W
+00D5:  BSF    03.6
+00D6:  MOVWF  0F
+00D7:  BCF    03.6
+00D8:  MOVF   0B,W
+00D9:  MOVWF  45
+00DA:  BCF    0B.7
+00DB:  BSF    03.5
+00DC:  BSF    03.6
+00DD:  BSF    0C.7
+00DE:  BSF    0C.0
+00DF:  NOP
+00E0:  NOP
+00E1:  BCF    03.5
+00E2:  BCF    03.6
+00E3:  BTFSC  45.7
+00E4:  BSF    0B.7
+00E5:  BSF    03.6
+00E6:  RLF    0C,W
+00E7:  RLF    0E,W
+00E8:  ANDLW  7F
+00E9:  BTFSC  03.2
+00EA:  GOTO   106
+00EB:  BCF    03.6
+00EC:  MOVWF  42
+00ED:  BSF    03.6
+00EE:  MOVF   0D,W
+00EF:  BCF    03.6
+00F0:  MOVWF  43
+00F1:  BSF    03.6
+00F2:  MOVF   0F,W
+00F3:  BCF    03.6
+00F4:  MOVWF  44
+00F5:  MOVF   42,W
+00F6:  BTFSS  0C.4
+00F7:  GOTO   0F6
+00F8:  MOVWF  19
+00F9:  MOVF   43,W
+00FA:  BSF    03.6
+00FB:  MOVWF  0D
+00FC:  BCF    03.6
+00FD:  MOVF   44,W
+00FE:  BSF    03.6
+00FF:  MOVWF  0F
+0100:  INCF   0D,F
+0101:  BTFSC  03.2
+0102:  INCF   0F,F
+0103:  BCF    03.6
+0104:  GOTO   0B0
+0105:  BSF    03.6
+0106:  BCF    03.6
+0107:  RETURN
+*
+016C:  MOVF   53,W
+016D:  MOVWF  5A
+016E:  MOVF   57,W
+016F:  XORWF  5A,F
+0170:  BTFSS  5A.7
+0171:  GOTO   177
+0172:  BCF    03.2
+0173:  BCF    03.0
+0174:  BTFSC  53.7
+0175:  BSF    03.0
+0176:  GOTO   1AA
+0177:  MOVF   53,W
+0178:  MOVWF  5A
+0179:  MOVF   56,W
+017A:  MOVWF  5B
+017B:  MOVF   52,W
+017C:  SUBWF  5B,F
+017D:  BTFSC  03.2
+017E:  GOTO   185
+017F:  BTFSS  5A.7
+0180:  GOTO   1AA
+0181:  MOVF   03,W
+0182:  XORLW  01
+0183:  MOVWF  03
+0184:  GOTO   1AA
+0185:  MOVF   57,W
+0186:  MOVWF  5B
+0187:  MOVF   53,W
+0188:  SUBWF  5B,F
+0189:  BTFSC  03.2
+018A:  GOTO   191
+018B:  BTFSS  5A.7
+018C:  GOTO   1AA
+018D:  MOVF   03,W
+018E:  XORLW  01
+018F:  MOVWF  03
+0190:  GOTO   1AA
+0191:  MOVF   58,W
+0192:  MOVWF  5B
+0193:  MOVF   54,W
+0194:  SUBWF  5B,F
+0195:  BTFSC  03.2
+0196:  GOTO   19D
+0197:  BTFSS  5A.7
+0198:  GOTO   1AA
+0199:  MOVF   03,W
+019A:  XORLW  01
+019B:  MOVWF  03
+019C:  GOTO   1AA
+019D:  MOVF   59,W
+019E:  MOVWF  5B
+019F:  MOVF   55,W
+01A0:  SUBWF  5B,F
+01A1:  BTFSC  03.2
+01A2:  GOTO   1A9
+01A3:  BTFSS  5A.7
+01A4:  GOTO   1AA
+01A5:  MOVF   03,W
+01A6:  XORLW  01
+01A7:  MOVWF  03
+01A8:  GOTO   1AA
+01A9:  BCF    03.0
+01AA:  RETURN
+01AB:  MOVLW  8E
+01AC:  MOVWF  77
+01AD:  MOVF   52,W
+01AE:  SUBWF  77,F
+01AF:  MOVF   53,W
+01B0:  MOVWF  79
+01B1:  MOVF   54,W
+01B2:  MOVWF  78
+01B3:  BSF    79.7
+01B4:  MOVF   77,F
+01B5:  BTFSC  03.2
+01B6:  GOTO   1C2
+01B7:  BCF    03.0
+01B8:  MOVF   79,F
+01B9:  BTFSS  03.2
+01BA:  GOTO   1BE
+01BB:  MOVF   78,F
+01BC:  BTFSC  03.2
+01BD:  GOTO   1C2
+01BE:  RRF    79,F
+01BF:  RRF    78,F
+01C0:  DECFSZ 77,F
+01C1:  GOTO   1B7
+01C2:  BTFSS  53.7
+01C3:  GOTO   1C9
+01C4:  COMF   78,F
+01C5:  COMF   79,F
+01C6:  INCF   78,F
+01C7:  BTFSC  03.2
+01C8:  INCF   79,F
+01C9:  RETURN
+*
+0224:  MOVF   52,W
+0225:  BTFSC  03.2
+0226:  GOTO   294
+0227:  MOVWF  5A
+0228:  MOVF   56,W
+0229:  BTFSC  03.2
+022A:  GOTO   294
+022B:  ADDWF  5A,F
+022C:  BTFSC  03.0
+022D:  GOTO   235
+022E:  MOVLW  7F
+022F:  SUBWF  5A,F
+0230:  BTFSS  03.0
+0231:  GOTO   294
+0232:  BTFSC  03.2
+0233:  GOTO   294
+0234:  GOTO   239
+0235:  MOVLW  81
+0236:  ADDWF  5A,F
+0237:  BTFSC  03.0
+0238:  GOTO   294
+0239:  MOVF   5A,W
+023A:  MOVWF  77
+023B:  CLRF   78
+023C:  CLRF   79
+023D:  CLRF   7A
+023E:  MOVF   53,W
+023F:  MOVWF  5E
+0240:  BSF    5E.7
+0241:  MOVF   54,W
+0242:  MOVWF  5D
+0243:  MOVF   55,W
+0244:  MOVWF  5C
+0245:  MOVLW  18
+0246:  MOVWF  5A
+0247:  CLRF   5B
+0248:  BTFSS  5C.0
+0249:  GOTO   262
+024A:  MOVF   59,W
+024B:  ADDWF  7A,F
+024C:  BTFSS  03.0
+024D:  GOTO   254
+024E:  INCF   79,F
+024F:  BTFSS  03.2
+0250:  GOTO   254
+0251:  INCF   78,F
+0252:  BTFSC  03.2
+0253:  BSF    5B.7
+0254:  MOVF   58,W
+0255:  ADDWF  79,F
+0256:  BTFSS  03.0
+0257:  GOTO   25B
+0258:  INCF   78,F
+0259:  BTFSC  03.2
+025A:  BSF    5B.7
+025B:  MOVF   57,W
+025C:  MOVWF  54
+025D:  BSF    54.7
+025E:  MOVF   54,W
+025F:  ADDWF  78,F
+0260:  BTFSC  03.0
+0261:  BSF    5B.7
+0262:  RLF    5B,F
+0263:  RRF    78,F
+0264:  RRF    79,F
+0265:  RRF    7A,F
+0266:  RRF    5E,F
+0267:  RRF    5D,F
+0268:  RRF    5C,F
+0269:  BCF    03.0
+026A:  DECFSZ 5A,F
+026B:  GOTO   247
+026C:  MOVLW  01
+026D:  ADDWF  77,F
+026E:  BTFSC  03.0
+026F:  GOTO   294
+0270:  BTFSC  78.7
+0271:  GOTO   279
+0272:  RLF    5E,F
+0273:  RLF    7A,F
+0274:  RLF    79,F
+0275:  RLF    78,F
+0276:  DECF   77,F
+0277:  BTFSC  03.2
+0278:  GOTO   294
+0279:  BTFSS  5E.7
+027A:  GOTO   28A
+027B:  INCF   7A,F
+027C:  BTFSS  03.2
+027D:  GOTO   28A
+027E:  INCF   79,F
+027F:  BTFSS  03.2
+0280:  GOTO   28A
+0281:  INCF   78,F
+0282:  BTFSS  03.2
+0283:  GOTO   28A
+0284:  RRF    78,F
+0285:  RRF    79,F
+0286:  RRF    7A,F
+0287:  INCF   77,F
+0288:  BTFSC  03.2
+0289:  GOTO   294
+028A:  MOVF   53,W
+028B:  MOVWF  5B
+028C:  MOVF   57,W
+028D:  XORWF  5B,F
+028E:  BTFSS  5B.7
+028F:  GOTO   292
+0290:  BSF    78.7
+0291:  GOTO   298
+0292:  BCF    78.7
+0293:  GOTO   298
+0294:  CLRF   77
+0295:  CLRF   78
+0296:  CLRF   79
+0297:  CLRF   7A
+*
+0379:  MOVLW  20
+037A:  BSF    03.5
+037B:  MOVWF  61
+037C:  CLRF   5D
+037D:  CLRF   5E
+037E:  CLRF   5F
+037F:  CLRF   60
+0380:  MOVF   58,W
+0381:  MOVWF  7A
+0382:  MOVF   57,W
+0383:  MOVWF  79
+0384:  MOVF   56,W
+0385:  MOVWF  78
+0386:  MOVF   55,W
+0387:  MOVWF  77
+0388:  BCF    03.0
+0389:  BTFSS  77.0
+038A:  GOTO   399
+038B:  MOVF   59,W
+038C:  ADDWF  5D,F
+038D:  MOVF   5A,W
+038E:  BTFSC  03.0
+038F:  INCFSZ 5A,W
+0390:  ADDWF  5E,F
+0391:  MOVF   5B,W
+0392:  BTFSC  03.0
+0393:  INCFSZ 5B,W
+0394:  ADDWF  5F,F
+0395:  MOVF   5C,W
+0396:  BTFSC  03.0
+0397:  INCFSZ 5C,W
+0398:  ADDWF  60,F
+0399:  RRF    60,F
+039A:  RRF    5F,F
+039B:  RRF    5E,F
+039C:  RRF    5D,F
+039D:  RRF    7A,F
+039E:  RRF    79,F
+039F:  RRF    78,F
+03A0:  RRF    77,F
+03A1:  DECFSZ 61,F
+03A2:  GOTO   388
+03A3:  BCF    03.5
+03A4:  RETURN
+03A5:  BTFSC  03.1
+03A6:  GOTO   3AA
+03A7:  MOVLW  DD
+03A8:  MOVWF  04
+03A9:  BCF    03.7
+03AA:  CLRF   77
+03AB:  CLRF   78
+03AC:  CLRF   79
+03AD:  CLRF   7A
+03AE:  BSF    03.5
+03AF:  CLRF   5D
+03B0:  CLRF   5E
+03B1:  CLRF   5F
+03B2:  CLRF   60
+03B3:  MOVF   5C,W
+03B4:  IORWF  5B,W
+03B5:  IORWF  5A,W
+03B6:  IORWF  59,W
+03B7:  BTFSC  03.2
+03B8:  GOTO   3E9
+03B9:  MOVLW  20
+03BA:  MOVWF  61
+03BB:  BCF    03.0
+03BC:  RLF    55,F
+03BD:  RLF    56,F
+03BE:  RLF    57,F
+03BF:  RLF    58,F
+03C0:  RLF    5D,F
+03C1:  RLF    5E,F
+03C2:  RLF    5F,F
+03C3:  RLF    60,F
+03C4:  MOVF   5C,W
+03C5:  SUBWF  60,W
+03C6:  BTFSS  03.2
+03C7:  GOTO   3D2
+03C8:  MOVF   5B,W
+03C9:  SUBWF  5F,W
+03CA:  BTFSS  03.2
+03CB:  GOTO   3D2
+03CC:  MOVF   5A,W
+03CD:  SUBWF  5E,W
+03CE:  BTFSS  03.2
+03CF:  GOTO   3D2
+03D0:  MOVF   59,W
+03D1:  SUBWF  5D,W
+03D2:  BTFSS  03.0
+03D3:  GOTO   3E3
+03D4:  MOVF   59,W
+03D5:  SUBWF  5D,F
+03D6:  MOVF   5A,W
+03D7:  BTFSS  03.0
+03D8:  INCFSZ 5A,W
+03D9:  SUBWF  5E,F
+03DA:  MOVF   5B,W
+03DB:  BTFSS  03.0
+03DC:  INCFSZ 5B,W
+03DD:  SUBWF  5F,F
+03DE:  MOVF   5C,W
+03DF:  BTFSS  03.0
+03E0:  INCFSZ 5C,W
+03E1:  SUBWF  60,F
+03E2:  BSF    03.0
+03E3:  RLF    77,F
+03E4:  RLF    78,F
+03E5:  RLF    79,F
+03E6:  RLF    7A,F
+03E7:  DECFSZ 61,F
+03E8:  GOTO   3BB
+03E9:  MOVF   5D,W
+03EA:  MOVWF  00
+03EB:  INCF   04,F
+03EC:  MOVF   5E,W
+03ED:  MOVWF  00
+03EE:  INCF   04,F
+03EF:  MOVF   5F,W
+03F0:  MOVWF  00
+03F1:  INCF   04,F
+03F2:  MOVF   60,W
+03F3:  MOVWF  00
+03F4:  BCF    03.5
+03F5:  RETURN
+*
+078D:  MOVF   4D,W
+078E:  CLRF   78
+078F:  SUBWF  4C,W
+0790:  BTFSC  03.0
+0791:  GOTO   795
+0792:  MOVF   4C,W
+0793:  MOVWF  77
+0794:  GOTO   7A1
+0795:  CLRF   77
+0796:  MOVLW  08
+0797:  MOVWF  4E
+0798:  RLF    4C,F
+0799:  RLF    77,F
+079A:  MOVF   4D,W
+079B:  SUBWF  77,W
+079C:  BTFSC  03.0
+079D:  MOVWF  77
+079E:  RLF    78,F
+079F:  DECFSZ 4E,F
+07A0:  GOTO   798
+07A1:  RETURN
+07A2:  MOVLW  8E
+07A3:  MOVWF  77
+07A4:  MOVF   43,W
+07A5:  MOVWF  78
+07A6:  MOVF   42,W
+07A7:  MOVWF  79
+07A8:  CLRF   7A
+07A9:  MOVF   78,F
+07AA:  BTFSS  03.2
+07AB:  GOTO   7B6
+07AC:  MOVF   79,W
+07AD:  MOVWF  78
+07AE:  CLRF   79
+07AF:  MOVLW  08
+07B0:  SUBWF  77,F
+07B1:  MOVF   78,F
+07B2:  BTFSS  03.2
+07B3:  GOTO   7B6
+07B4:  CLRF   77
+07B5:  GOTO   7BE
+07B6:  BCF    03.0
+07B7:  BTFSC  78.7
+07B8:  GOTO   7BD
+07B9:  RLF    79,F
+07BA:  RLF    78,F
+07BB:  DECF   77,F
+07BC:  GOTO   7B6
+07BD:  BCF    78.7
+07BE:  BCF    0A.3
+07BF:  BSF    0A.4
+07C0:  GOTO   666 (RETURN)
+*
+0D5B:  MOVLW  20
+0D5C:  BTFSS  47.4
+0D5D:  MOVLW  30
+0D5E:  MOVWF  48
+0D5F:  MOVF   46,W
+0D60:  MOVWF  77
+0D61:  BTFSS  46.7
+0D62:  GOTO   56B
+0D63:  COMF   77,F
+0D64:  INCF   77,F
+0D65:  MOVF   77,W
+0D66:  MOVWF  46
+0D67:  MOVLW  2D
+0D68:  MOVWF  48
+0D69:  BSF    47.7
+0D6A:  BSF    47.0
+0D6B:  MOVF   46,W
+0D6C:  MOVWF  4C
+0D6D:  MOVLW  64
+0D6E:  MOVWF  4D
+0D6F:  BCF    0A.3
+0D70:  CALL   78D
+0D71:  BSF    0A.3
+0D72:  MOVF   77,W
+0D73:  MOVWF  46
+0D74:  MOVLW  30
+0D75:  ADDWF  78,W
+0D76:  MOVWF  49
+0D77:  MOVF   46,W
+0D78:  MOVWF  4C
+0D79:  MOVLW  0A
+0D7A:  MOVWF  4D
+0D7B:  BCF    0A.3
+0D7C:  CALL   78D
+0D7D:  BSF    0A.3
+0D7E:  MOVLW  30
+0D7F:  ADDWF  77,W
+0D80:  MOVWF  4B
+0D81:  MOVLW  30
+0D82:  ADDWF  78,W
+0D83:  MOVWF  4A
+0D84:  MOVF   48,W
+0D85:  MOVWF  77
+0D86:  MOVLW  30
+0D87:  SUBWF  49,W
+0D88:  BTFSC  03.2
+0D89:  GOTO   58E
+0D8A:  BSF    47.1
+0D8B:  BTFSC  47.7
+0D8C:  BSF    47.2
+0D8D:  GOTO   5A2
+0D8E:  MOVF   48,W
+0D8F:  MOVWF  49
+0D90:  MOVLW  20
+0D91:  MOVWF  48
+0D92:  MOVLW  30
+0D93:  SUBWF  4A,W
+0D94:  BTFSC  03.2
+0D95:  GOTO   59A
+0D96:  BSF    47.0
+0D97:  BTFSC  47.7
+0D98:  BSF    47.1
+0D99:  GOTO   5A2
+0D9A:  BTFSS  03.2
+0D9B:  BSF    47.0
+0D9C:  BTFSS  03.2
+0D9D:  GOTO   5A2
+0D9E:  MOVF   49,W
+0D9F:  MOVWF  4A
+0DA0:  MOVLW  20
+0DA1:  MOVWF  49
+0DA2:  BTFSC  47.2
+0DA3:  GOTO   5A9
+0DA4:  BTFSC  47.1
+0DA5:  GOTO   5AD
+0DA6:  BTFSC  47.0
+0DA7:  GOTO   5B1
+0DA8:  GOTO   5B5
+0DA9:  MOVF   48,W
+0DAA:  BTFSS  0C.4
+0DAB:  GOTO   5AA
+0DAC:  MOVWF  19
+0DAD:  MOVF   49,W
+0DAE:  BTFSS  0C.4
+0DAF:  GOTO   5AE
+0DB0:  MOVWF  19
+0DB1:  MOVF   4A,W
+0DB2:  BTFSS  0C.4
+0DB3:  GOTO   5B2
+0DB4:  MOVWF  19
+0DB5:  MOVF   4B,W
+0DB6:  BTFSS  0C.4
+0DB7:  GOTO   5B6
+0DB8:  MOVWF  19
+*
+0DCC:  CLRF   50
+0DCD:  MOVF   04,W
+0DCE:  MOVWF  4F
+0DCF:  BCF    50.0
+0DD0:  BTFSC  03.7
+0DD1:  BSF    50.0
+0DD2:  SWAPF  49,W
+0DD3:  IORLW  F0
+0DD4:  MOVWF  4B
+0DD5:  ADDWF  4B,F
+0DD6:  ADDLW  E2
+0DD7:  MOVWF  4C
+0DD8:  ADDLW  32
+0DD9:  MOVWF  4E
+0DDA:  MOVF   49,W
+0DDB:  ANDLW  0F
+0DDC:  ADDWF  4C,F
+0DDD:  ADDWF  4C,F
+0DDE:  ADDWF  4E,F
+0DDF:  ADDLW  E9
+0DE0:  MOVWF  4D
+0DE1:  ADDWF  4D,F
+0DE2:  ADDWF  4D,F
+0DE3:  SWAPF  48,W
+0DE4:  ANDLW  0F
+0DE5:  ADDWF  4D,F
+0DE6:  ADDWF  4E,F
+0DE7:  RLF    4D,F
+0DE8:  RLF    4E,F
+0DE9:  COMF   4E,F
+0DEA:  RLF    4E,F
+0DEB:  MOVF   48,W
+0DEC:  ANDLW  0F
+0DED:  ADDWF  4E,F
+0DEE:  RLF    4B,F
+0DEF:  MOVLW  07
+0DF0:  MOVWF  4A
+0DF1:  MOVLW  0A
+0DF2:  ADDWF  4E,F
+0DF3:  DECF   4D,F
+0DF4:  BTFSS  03.0
+0DF5:  GOTO   5F2
+0DF6:  ADDWF  4D,F
+0DF7:  DECF   4C,F
+0DF8:  BTFSS  03.0
+0DF9:  GOTO   5F6
+0DFA:  ADDWF  4C,F
+0DFB:  DECF   4B,F
+0DFC:  BTFSS  03.0
+0DFD:  GOTO   5FA
+0DFE:  ADDWF  4B,F
+0DFF:  DECF   4A,F
+0E00:  BTFSS  03.0
+0E01:  GOTO   5FE
+0E02:  MOVLW  4A
+0E03:  MOVWF  04
+0E04:  BCF    03.7
+0E05:  MOVLW  07
+0E06:  ANDWF  4F,W
+0E07:  BCF    4F.6
+0E08:  ADDWF  04,F
+0E09:  MOVLW  4E
+0E0A:  SUBWF  04,W
+0E0B:  BTFSC  03.2
+0E0C:  BSF    4F.6
+0E0D:  MOVF   00,W
+0E0E:  MOVWF  77
+0E0F:  BTFSS  03.2
+0E10:  GOTO   619
+0E11:  BTFSC  4F.6
+0E12:  GOTO   619
+0E13:  BTFSC  4F.4
+0E14:  GOTO   621
+0E15:  BTFSC  4F.3
+0E16:  GOTO   619
+0E17:  MOVLW  20
+0E18:  GOTO   61C
+0E19:  BSF    4F.3
+0E1A:  BCF    4F.4
+0E1B:  MOVLW  30
+0E1C:  ADDWF  77,F
+0E1D:  MOVF   77,W
+0E1E:  BTFSS  0C.4
+0E1F:  GOTO   61E
+0E20:  MOVWF  19
+0E21:  INCF   04,F
+0E22:  BTFSS  4F.6
+0E23:  GOTO   609
+*
+149E:  MOVLW  80
+149F:  BTFSC  03.1
+14A0:  XORWF  47,F
+14A1:  CLRF   4C
+14A2:  CLRF   4D
+14A3:  MOVF   43,W
+14A4:  MOVWF  4B
+14A5:  MOVF   47,W
+14A6:  XORWF  4B,F
+14A7:  MOVF   42,W
+14A8:  BTFSC  03.2
+14A9:  GOTO   58E
+14AA:  MOVWF  4A
+14AB:  MOVWF  77
+14AC:  MOVF   46,W
+14AD:  BTFSC  03.2
+14AE:  GOTO   597
+14AF:  SUBWF  4A,F
+14B0:  BTFSC  03.2
+14B1:  GOTO   533
+14B2:  BTFSS  03.0
+14B3:  GOTO   4F1
+14B4:  MOVF   47,W
+14B5:  MOVWF  50
+14B6:  BSF    50.7
+14B7:  MOVF   48,W
+14B8:  MOVWF  4F
+14B9:  MOVF   49,W
+14BA:  MOVWF  4E
+14BB:  CLRF   4D
+14BC:  BCF    03.0
+14BD:  RRF    50,F
+14BE:  RRF    4F,F
+14BF:  RRF    4E,F
+14C0:  RRF    4D,F
+14C1:  DECFSZ 4A,F
+14C2:  GOTO   4BB
+14C3:  BTFSS  4B.7
+14C4:  GOTO   4C8
+14C5:  BSF    4C.0
+14C6:  GOTO   5AB
+14C7:  BCF    4C.0
+14C8:  BCF    4A.0
+14C9:  BSF    4C.4
+14CA:  MOVLW  45
+14CB:  MOVWF  04
+14CC:  BCF    03.7
+14CD:  GOTO   5C0
+14CE:  BCF    4C.4
+14CF:  BTFSC  4B.7
+14D0:  GOTO   4DB
+14D1:  BTFSS  4A.0
+14D2:  GOTO   4E6
+14D3:  RRF    50,F
+14D4:  RRF    4F,F
+14D5:  RRF    4E,F
+14D6:  RRF    4D,F
+14D7:  INCF   77,F
+14D8:  BTFSC  03.2
+14D9:  GOTO   5A6
+14DA:  GOTO   4E6
+14DB:  BTFSC  50.7
+14DC:  GOTO   4E9
+14DD:  BCF    03.0
+14DE:  RLF    4D,F
+14DF:  RLF    4E,F
+14E0:  RLF    4F,F
+14E1:  RLF    50,F
+14E2:  DECF   77,F
+14E3:  BTFSC  03.2
+14E4:  GOTO   5A6
+14E5:  GOTO   4DB
+14E6:  BSF    4C.6
+14E7:  GOTO   553
+14E8:  BCF    4C.6
+14E9:  MOVF   43,W
+14EA:  MOVWF  4B
+14EB:  BTFSS  4B.7
+14EC:  GOTO   4EF
+14ED:  BSF    50.7
+14EE:  GOTO   59F
+14EF:  BCF    50.7
+14F0:  GOTO   59F
+14F1:  MOVF   46,W
+14F2:  MOVWF  4A
+14F3:  MOVWF  77
+14F4:  MOVF   42,W
+14F5:  SUBWF  4A,F
+14F6:  MOVF   43,W
+14F7:  MOVWF  50
+14F8:  BSF    50.7
+14F9:  MOVF   44,W
+14FA:  MOVWF  4F
+14FB:  MOVF   45,W
+14FC:  MOVWF  4E
+14FD:  CLRF   4D
+14FE:  BCF    03.0
+14FF:  RRF    50,F
+1500:  RRF    4F,F
+1501:  RRF    4E,F
+1502:  RRF    4D,F
+1503:  DECFSZ 4A,F
+1504:  GOTO   4FD
+1505:  BTFSS  4B.7
+1506:  GOTO   50A
+1507:  BSF    4C.1
+1508:  GOTO   5AB
+1509:  BCF    4C.1
+150A:  BCF    4A.0
+150B:  BSF    4C.5
+150C:  MOVLW  49
+150D:  MOVWF  04
+150E:  BCF    03.7
+150F:  GOTO   5C0
+1510:  BCF    4C.5
+1511:  BTFSC  4B.7
+1512:  GOTO   51D
+1513:  BTFSS  4A.0
+1514:  GOTO   528
+1515:  RRF    50,F
+1516:  RRF    4F,F
+1517:  RRF    4E,F
+1518:  RRF    4D,F
+1519:  INCF   77,F
+151A:  BTFSC  03.2
+151B:  GOTO   5A6
+151C:  GOTO   528
+151D:  BTFSC  50.7
+151E:  GOTO   52B
+151F:  BCF    03.0
+1520:  RLF    4D,F
+1521:  RLF    4E,F
+1522:  RLF    4F,F
+1523:  RLF    50,F
+1524:  DECF   77,F
+1525:  BTFSC  03.2
+1526:  GOTO   5A6
+1527:  GOTO   51D
+1528:  BSF    4C.7
+1529:  GOTO   553
+152A:  BCF    4C.7
+152B:  MOVF   47,W
+152C:  MOVWF  4B
+152D:  BTFSS  4B.7
+152E:  GOTO   531
+152F:  BSF    50.7
+1530:  GOTO   59F
+1531:  BCF    50.7
+1532:  GOTO   59F
+1533:  MOVF   47,W
+1534:  MOVWF  50
+1535:  BSF    50.7
+1536:  MOVF   48,W
+1537:  MOVWF  4F
+1538:  MOVF   49,W
+1539:  MOVWF  4E
+153A:  BTFSS  4B.7
+153B:  GOTO   540
+153C:  BCF    50.7
+153D:  BSF    4C.2
+153E:  GOTO   5AB
+153F:  BCF    4C.2
+1540:  CLRF   4D
+1541:  BCF    4A.0
+1542:  MOVLW  45
+1543:  MOVWF  04
+1544:  BCF    03.7
+1545:  GOTO   5C0
+1546:  BTFSC  4B.7
+1547:  GOTO   569
+1548:  MOVF   43,W
+1549:  MOVWF  4B
+154A:  BTFSS  4A.0
+154B:  GOTO   553
+154C:  RRF    50,F
+154D:  RRF    4F,F
+154E:  RRF    4E,F
+154F:  RRF    4D,F
+1550:  INCF   77,F
+1551:  BTFSC  03.2
+1552:  GOTO   5A6
+1553:  BTFSS  4D.7
+1554:  GOTO   564
+1555:  INCF   4E,F
+1556:  BTFSS  03.2
+1557:  GOTO   564
+1558:  INCF   4F,F
+1559:  BTFSS  03.2
+155A:  GOTO   564
+155B:  INCF   50,F
+155C:  BTFSS  03.2
+155D:  GOTO   564
+155E:  RRF    50,F
+155F:  RRF    4F,F
+1560:  RRF    4E,F
+1561:  INCF   77,F
+1562:  BTFSC  03.2
+1563:  GOTO   5A6
+1564:  BTFSC  4C.6
+1565:  GOTO   4E8
+1566:  BTFSC  4C.7
+1567:  GOTO   52A
+1568:  GOTO   588
+1569:  MOVLW  80
+156A:  XORWF  50,F
+156B:  BTFSS  50.7
+156C:  GOTO   571
+156D:  GOTO   5AB
+156E:  MOVF   47,W
+156F:  MOVWF  4B
+1570:  GOTO   57E
+1571:  MOVF   43,W
+1572:  MOVWF  4B
+1573:  MOVF   50,F
+1574:  BTFSS  03.2
+1575:  GOTO   57E
+1576:  MOVF   4F,F
+1577:  BTFSS  03.2
+1578:  GOTO   57E
+1579:  MOVF   4E,F
+157A:  BTFSS  03.2
+157B:  GOTO   57E
+157C:  CLRF   77
+157D:  GOTO   59F
+157E:  BTFSC  50.7
+157F:  GOTO   588
+1580:  BCF    03.0
+1581:  RLF    4D,F
+1582:  RLF    4E,F
+1583:  RLF    4F,F
+1584:  RLF    50,F
+1585:  DECFSZ 77,F
+1586:  GOTO   57E
+1587:  GOTO   5A6
+1588:  BTFSS  4B.7
+1589:  GOTO   58C
+158A:  BSF    50.7
+158B:  GOTO   59F
+158C:  BCF    50.7
+158D:  GOTO   59F
+158E:  MOVF   46,W
+158F:  MOVWF  77
+1590:  MOVF   47,W
+1591:  MOVWF  50
+1592:  MOVF   48,W
+1593:  MOVWF  4F
+1594:  MOVF   49,W
+1595:  MOVWF  4E
+1596:  GOTO   59F
+1597:  MOVF   42,W
+1598:  MOVWF  77
+1599:  MOVF   43,W
+159A:  MOVWF  50
+159B:  MOVF   44,W
+159C:  MOVWF  4F
+159D:  MOVF   45,W
+159E:  MOVWF  4E
+159F:  MOVF   50,W
+15A0:  MOVWF  78
+15A1:  MOVF   4F,W
+15A2:  MOVWF  79
+15A3:  MOVF   4E,W
+15A4:  MOVWF  7A
+15A5:  GOTO   5DE
+15A6:  CLRF   77
+15A7:  CLRF   78
+15A8:  CLRF   79
+15A9:  CLRF   7A
+15AA:  GOTO   5DE
+15AB:  CLRF   4D
+15AC:  COMF   4E,F
+15AD:  COMF   4F,F
+15AE:  COMF   50,F
+15AF:  COMF   4D,F
+15B0:  INCF   4D,F
+15B1:  BTFSS  03.2
+15B2:  GOTO   5B9
+15B3:  INCF   4E,F
+15B4:  BTFSS  03.2
+15B5:  GOTO   5B9
+15B6:  INCF   4F,F
+15B7:  BTFSC  03.2
+15B8:  INCF   50,F
+15B9:  BTFSC  4C.0
+15BA:  GOTO   4C7
+15BB:  BTFSC  4C.1
+15BC:  GOTO   509
+15BD:  BTFSC  4C.2
+15BE:  GOTO   53F
+15BF:  GOTO   56E
+15C0:  MOVF   00,W
+15C1:  ADDWF  4E,F
+15C2:  BTFSS  03.0
+15C3:  GOTO   5CA
+15C4:  INCF   4F,F
+15C5:  BTFSS  03.2
+15C6:  GOTO   5CA
+15C7:  INCF   50,F
+15C8:  BTFSC  03.2
+15C9:  BSF    4A.0
+15CA:  DECF   04,F
+15CB:  MOVF   00,W
+15CC:  ADDWF  4F,F
+15CD:  BTFSS  03.0
+15CE:  GOTO   5D2
+15CF:  INCF   50,F
+15D0:  BTFSC  03.2
+15D1:  BSF    4A.0
+15D2:  DECF   04,F
+15D3:  MOVF   00,W
+15D4:  BTFSS  00.7
+15D5:  XORLW  80
+15D6:  ADDWF  50,F
+15D7:  BTFSC  03.0
+15D8:  BSF    4A.0
+15D9:  BTFSC  4C.4
+15DA:  GOTO   4CE
+15DB:  BTFSC  4C.5
+15DC:  GOTO   510
+15DD:  GOTO   546
+15DE:  BCF    0A.3
+15DF:  BSF    0A.4
+15E0:  GOTO   677 (RETURN)
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 *=16 
+.................... #include <VL53L0X.h> 
+.................... #ifndef VL53L0X_h 
+.................... #define VL53L0X_h 
+....................  
+.................... //#include <Arduino.h> 
+....................  
+....................  
+....................     // register addresses from API vl53l0x_device.h (ordered as listed there) 
+....................     enum regAddr 
+....................     { 
+....................       SYSRANGE_START                              = 0x00, 
+....................  
+....................       SYSTEM_THRESH_HIGH                          = 0x0C, 
+....................       SYSTEM_THRESH_LOW                           = 0x0E, 
+....................  
+....................       SYSTEM_SEQUENCE_CONFIG                      = 0x01, 
+....................       SYSTEM_RANGE_CONFIG                         = 0x09, 
+....................       SYSTEM_INTERMEASUREMENT_PERIOD              = 0x04, 
+....................  
+....................       SYSTEM_INTERRUPT_CONFIG_GPIO                = 0x0A, 
+....................  
+....................       GPIO_HV_MUX_ACTIVE_HIGH                     = 0x84, 
+....................  
+....................       SYSTEM_INTERRUPT_CLEAR                      = 0x0B, 
+....................  
+....................       RESULT_INTERRUPT_STATUS                     = 0x13, 
+....................       RESULT_RANGE_STATUS                         = 0x14, 
+....................  
+....................       RESULT_CORE_AMBIENT_WINDOW_EVENTS_RTN       = 0xBC, 
+....................       RESULT_CORE_RANGING_TOTAL_EVENTS_RTN        = 0xC0, 
+....................       RESULT_CORE_AMBIENT_WINDOW_EVENTS_REF       = 0xD0, 
+....................       RESULT_CORE_RANGING_TOTAL_EVENTS_REF        = 0xD4, 
+....................       RESULT_PEAK_SIGNAL_RATE_REF                 = 0xB6, 
+....................  
+....................       ALGO_PART_TO_PART_RANGE_OFFSET_MM           = 0x28, 
+....................  
+....................       I2C_SLAVE_DEVICE_ADDRESS                    = 0x8A, 
+....................  
+....................       MSRC_CONFIG_CONTROL                         = 0x60, 
+....................  
+....................       PRE_RANGE_CONFIG_MIN_SNR                    = 0x27, 
+....................       PRE_RANGE_CONFIG_VALID_PHASE_LOW            = 0x56, 
+....................       PRE_RANGE_CONFIG_VALID_PHASE_HIGH           = 0x57, 
+....................       PRE_RANGE_MIN_COUNT_RATE_RTN_LIMIT          = 0x64, 
+....................  
+....................       FINAL_RANGE_CONFIG_MIN_SNR                  = 0x67, 
+....................       FINAL_RANGE_CONFIG_VALID_PHASE_LOW          = 0x47, 
+....................       FINAL_RANGE_CONFIG_VALID_PHASE_HIGH         = 0x48, 
+....................       FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT = 0x44, 
+....................  
+....................       PRE_RANGE_CONFIG_SIGMA_THRESH_HI            = 0x61, 
+....................       PRE_RANGE_CONFIG_SIGMA_THRESH_LO            = 0x62, 
+....................  
+....................       PRE_RANGE_CONFIG_VCSEL_PERIOD               = 0x50, 
+....................       PRE_RANGE_CONFIG_TIMEOUT_MACROP_HI          = 0x51, 
+....................       PRE_RANGE_CONFIG_TIMEOUT_MACROP_LO          = 0x52, 
+....................  
+....................       SYSTEM_HISTOGRAM_BIN                        = 0x81, 
+....................       HISTOGRAM_CONFIG_INITIAL_PHASE_SELECT       = 0x33, 
+....................       HISTOGRAM_CONFIG_READOUT_CTRL               = 0x55, 
+....................  
+....................       FINAL_RANGE_CONFIG_VCSEL_PERIOD             = 0x70, 
+....................       FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI        = 0x71, 
+....................       FINAL_RANGE_CONFIG_TIMEOUT_MACROP_LO        = 0x72, 
+....................       CROSSTALK_COMPENSATION_PEAK_RATE_MCPS       = 0x20, 
+....................  
+....................       MSRC_CONFIG_TIMEOUT_MACROP                  = 0x46, 
+....................  
+....................       SOFT_RESET_GO2_SOFT_RESET_N                 = 0xBF, 
+....................       IDENTIFICATION_MODEL_ID                     = 0xC0, 
+....................       IDENTIFICATION_REVISION_ID                  = 0xC2, 
+....................  
+....................       OSC_CALIBRATE_VAL                           = 0xF8, 
+....................  
+....................       GLOBAL_CONFIG_VCSEL_WIDTH                   = 0x32, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_0            = 0xB0, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_1            = 0xB1, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_2            = 0xB2, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_3            = 0xB3, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_4            = 0xB4, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_5            = 0xB5, 
+....................  
+....................       GLOBAL_CONFIG_REF_EN_START_SELECT           = 0xB6, 
+....................       DYNAMIC_SPAD_NUM_REQUESTED_REF_SPAD         = 0x4E, 
+....................       DYNAMIC_SPAD_REF_EN_START_OFFSET            = 0x4F, 
+....................       POWER_MANAGEMENT_GO1_POWER_FORCE            = 0x80, 
+....................  
+....................       VHV_CONFIG_PAD_SCL_SDA__EXTSUP_HV           = 0x89, 
+....................  
+....................       ALGO_PHASECAL_LIM                           = 0x30, 
+....................       ALGO_PHASECAL_CONFIG_TIMEOUT                = 0x30, 
+....................     }; 
+....................  
+....................     // private variables 
+....................  
+....................     typedef struct  
+....................     { 
+....................       boolean tcc, msrc, dss, pre_range, final_range; 
+....................     } SequenceStepEnables; 
+....................  
+....................  
+....................  
+....................     typedef struct  
+....................     { 
+....................       int16 pre_range_vcsel_period_pclks, final_range_vcsel_period_pclks; 
+....................  
+....................       int16 msrc_dss_tcc_mclks, pre_range_mclks, final_range_mclks; 
+....................       int32 msrc_dss_tcc_us,    pre_range_us,    final_range_us; 
+....................     } SequenceStepTimeouts; 
+....................  
+....................     void getSequenceStepEnables(SequenceStepEnables * enables); 
+....................     void getSequenceStepTimeouts(SequenceStepEnables * enables, SequenceStepTimeouts * timeouts); 
+....................      
+....................      
+....................     enum vcselPeriodType { VcselPeriodPreRange, VcselPeriodFinalRange }; 
+....................  
+....................     int8 address; 
+....................     int16 io_timeout; 
+....................     boolean did_timeout; 
+....................     int16 timeout_start_ms; 
+....................  
+....................     int8 stop_variable; // read by init and used when starting measurement; is StopVariable field of VL53L0X_DevData_t structure in API 
+....................     int32 measurement_timing_budget_us; 
+....................  
+....................     boolean getSpadInfo(int8 * count, boolean * type_is_aperture); 
+....................  
+....................     int8 last_status; // status of last I2C transmission 
+....................  
+....................     VL53L0X(void); 
+....................  
+....................     void setAddress(int8 new_addr); 
+....................     int8 getAddress(void) { return address; } 
+....................  
+....................     boolean init(boolean io_2v8 = TRUE); 
+....................     #separate boolean init2(); 
+....................  
+....................     void writeReg(int8 reg, int8 value); 
+....................     void writeReg16Bit(int8 reg, int16 value); 
+....................     void writeReg32Bit(int8 reg, int32 value); 
+....................     int8 readReg(int8 reg); 
+....................     int16 readReg16Bit(int8 reg); 
+....................     int32 readReg32Bit(int8 reg); 
+....................  
+....................     void writeMulti(int8 reg, int8  * src, int8 count); 
+....................     void readMulti(int8 reg, int8 * dst, int8 count); 
+....................  
+....................     boolean setSignalRateLimit(float limit_Mcps); 
+....................     float getSignalRateLimit(void); 
+....................  
+....................     boolean setMeasurementTimingBudget(int32 budget_us); 
+....................     int32 getMeasurementTimingBudget(void); 
+....................  
+....................     boolean setVcselPulsePeriod(vcselPeriodType type, int8 period_pclks); 
+....................     int8 getVcselPulsePeriod(vcselPeriodType type); 
+....................  
+....................     void startContinuous(int32 period_ms = 0); 
+....................     void stopContinuous(void); 
+....................     int16 readRangeContinuousMillimeters(void); 
+....................     int16 readRangeSingleMillimeters(void); 
+....................  
+....................     void setTimeout(int16 timeout) { io_timeout = timeout; } 
+....................     int16 getTimeout(void) { return io_timeout; } 
+....................     boolean timeoutOccurred(void); 
+....................  
+....................  
+....................  
+....................     boolean performSingleRefCalibration(int8 vhv_init_byte); 
+....................  
+....................     static int16 decodeTimeout(int16 value); 
+....................     static int16 encodeTimeout(int16 timeout_mclks); 
+....................     static int32 timeoutMclksToMicroseconds(int16 timeout_period_mclks, int8 vcsel_period_pclks); 
+....................     static int32 timeoutMicrosecondsToMclks(int32 timeout_period_us, int8 vcsel_period_pclks); 
+....................  
+....................  
+.................... #endif 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES PUT                      //Power Up Timer 
+.................... #FUSES NOMCLR                   //Master Clear pin not enabled 
+.................... #FUSES NOPROTECT                //Code not protected from reading 
+.................... #FUSES NOCPD                    //No EE protection 
+.................... #FUSES BROWNOUT                 //Brownout reset 
+.................... #FUSES IESO                     //Internal External Switch Over mode enabled 
+.................... #FUSES FCMEN                    //Fail-safe clock monitor enabled 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NODEBUG                  //No Debug mode for ICD 
+.................... #FUSES NOWRT                    //Program memory not write protected 
+.................... #FUSES BORV40                   //Brownout reset at 4.0V 
+.................... #FUSES RESERVED                 //Used to set the reserved FUSE bits 
+.................... #FUSES INTRC_IO  
+....................  
+.................... #use delay(clock=8M) 
+*
+0F6D:  MOVLW  47
+0F6E:  MOVWF  04
+0F6F:  BCF    03.7
+0F70:  MOVF   00,W
+0F71:  BTFSC  03.2
+0F72:  GOTO   780
+0F73:  MOVLW  02
+0F74:  MOVWF  78
+0F75:  CLRF   77
+0F76:  DECFSZ 77,F
+0F77:  GOTO   776
+0F78:  DECFSZ 78,F
+0F79:  GOTO   775
+0F7A:  MOVLW  97
+0F7B:  MOVWF  77
+0F7C:  DECFSZ 77,F
+0F7D:  GOTO   77C
+0F7E:  DECFSZ 00,F
+0F7F:  GOTO   773
+....................  
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8) 
+.................... #use i2c(MASTER, I2C1, FORCE_HW) 
+*
+0108:  BCF    14.7
+0109:  BCF    0C.3
+010A:  BSF    03.5
+010B:  MOVF   4A,W
+010C:  BCF    03.5
+010D:  MOVWF  13
+010E:  MOVLW  02
+010F:  BTFSC  14.7
+0110:  GOTO   118
+0111:  BTFSS  0C.3
+0112:  GOTO   111
+0113:  MOVLW  00
+0114:  BSF    03.5
+0115:  BTFSC  11.6
+0116:  MOVLW  01
+0117:  BCF    03.5
+0118:  MOVWF  78
+0119:  RETURN
+011A:  BCF    14.6
+011B:  BSF    03.5
+011C:  BSF    11.3
+011D:  BTFSC  11.3
+011E:  GOTO   11D
+011F:  BTFSC  77.0
+0120:  BCF    11.5
+0121:  BTFSS  77.0
+0122:  BSF    11.5
+0123:  BSF    11.4
+0124:  BTFSC  11.4
+0125:  GOTO   124
+0126:  BCF    03.5
+0127:  MOVF   13,W
+0128:  MOVWF  78
+0129:  RETURN
+....................  
+....................  
+.................... #define millis()  (msTimer) 
+....................  
+.................... int state = 0; 
+.................... int16 duty = 1200; 
+.................... int32 msTimer=0; 
+....................  
+.................... #INT_TIMER1 
+.................... void timer1_isr() { 
+....................    if(state == 0){ 
+*
+0051:  MOVF   38,F
+0052:  BTFSS  03.2
+0053:  GOTO   073
+....................       output_high(PIN_B5); 
+0054:  BSF    03.5
+0055:  BCF    06.5
+0056:  BCF    03.5
+0057:  BSF    06.5
+....................       state = 1; 
+0058:  MOVLW  01
+0059:  MOVWF  38
+....................       set_timer1(65535-duty); 
+005A:  MOVF   39,W
+005B:  SUBLW  FF
+005C:  BSF    03.5
+005D:  MOVWF  62
+005E:  MOVLW  FF
+005F:  MOVWF  63
+0060:  BCF    03.5
+0061:  MOVF   3A,W
+0062:  BTFSS  03.0
+0063:  INCFSZ 3A,W
+0064:  GOTO   066
+0065:  GOTO   069
+0066:  BSF    03.5
+0067:  SUBWF  63,F
+0068:  BCF    03.5
+0069:  CLRF   0E
+006A:  BSF    03.5
+006B:  MOVF   63,W
+006C:  BCF    03.5
+006D:  MOVWF  0F
+006E:  BSF    03.5
+006F:  MOVF   62,W
+0070:  BCF    03.5
+0071:  MOVWF  0E
+....................    } 
+0072:  GOTO   097
+....................    else if(state == 1){ 
+0073:  DECFSZ 38,W
+0074:  GOTO   097
+....................       output_low(PIN_B5); 
+0075:  BSF    03.5
+0076:  BCF    06.5
+0077:  BCF    03.5
+0078:  BCF    06.5
+....................       state = 0; 
+0079:  CLRF   38
+....................       set_timer1(65535-(5000-duty)); 
+007A:  MOVF   39,W
+007B:  SUBLW  88
+007C:  MOVWF  77
+007D:  MOVLW  13
+007E:  MOVWF  7A
+007F:  MOVF   3A,W
+0080:  BTFSS  03.0
+0081:  INCFSZ 3A,W
+0082:  SUBWF  7A,F
+0083:  MOVF   77,W
+0084:  SUBLW  FF
+0085:  BSF    03.5
+0086:  MOVWF  62
+0087:  MOVLW  FF
+0088:  MOVWF  63
+0089:  MOVF   7A,W
+008A:  BTFSS  03.0
+008B:  INCFSZ 7A,W
+008C:  SUBWF  63,F
+008D:  BCF    03.5
+008E:  CLRF   0E
+008F:  BSF    03.5
+0090:  MOVF   63,W
+0091:  BCF    03.5
+0092:  MOVWF  0F
+0093:  BSF    03.5
+0094:  MOVF   62,W
+0095:  BCF    03.5
+0096:  MOVWF  0E
+....................    } 
+....................    msTimer++; 
+0097:  MOVLW  01
+0098:  ADDWF  3B,F
+0099:  BTFSC  03.0
+009A:  INCF   3C,F
+009B:  BTFSC  03.2
+009C:  INCF   3D,F
+009D:  BTFSC  03.2
+009E:  INCF   3E,F
+009F:  BCF    0C.0
+00A0:  BCF    0A.3
+00A1:  BCF    0A.4
+00A2:  GOTO   02D
+.................... } 
+....................  
+....................  
+.................... void pic_setup() { 
+....................   #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8) 
+....................    setup_timer_1(T1_INTERNAL | T1_DIV_BY_8); 
+....................    set_timer1(65286); // keep period at 1 ms (at 8 MHz) 
+....................    enable_interrupts(INT_TIMER1); 
+....................    enable_interrupts(GLOBAL); 
+.................... } 
+....................  
+.................... #define LONG_RANGE 
+.................... #define HIGH_ACCURACY 
+....................  
+.................... void setup() 
+.................... { 
+....................    
+....................    output_high(PIN_B6); 
+*
+1000:  BSF    03.5
+1001:  BCF    06.6
+1002:  BCF    03.5
+1003:  BSF    06.6
+....................    //delay_ms(1000); 
+....................    output_low(PIN_B6); 
+1004:  BSF    03.5
+1005:  BCF    06.6
+1006:  BCF    03.5
+1007:  BCF    06.6
+....................    printf("Starting\r\n"); 
+1008:  MOVLW  A3
+1009:  BSF    03.6
+100A:  MOVWF  0D
+100B:  MOVLW  00
+100C:  MOVWF  0F
+100D:  BCF    0A.4
+100E:  BCF    03.6
+100F:  CALL   0B0
+1010:  BSF    0A.4
+....................  //  pic_setup(); 
+....................  
+....................   init(); 
+1011:  MOVLW  01
+1012:  MOVWF  42
+....................  // setTimeout(200); 
+....................  
+.................... #if defined LONG_RANGE 
+....................   // lower the return signal rate limit (default is 0.25 MCPS) 
+....................   setSignalRateLimit(0.1); 
+*
+1473:  MOVLW  CD
+1474:  MOVWF  51
+1475:  MOVLW  CC
+1476:  MOVWF  50
+1477:  MOVLW  4C
+1478:  MOVWF  4F
+1479:  MOVLW  7B
+147A:  MOVWF  4E
+147B:  BCF    0A.4
+147C:  CALL   1F2
+147D:  BSF    0A.4
+....................   // increase laser pulse periods (defaults are 14 and 10 PCLKs) 
+....................   setVcselPulsePeriod(VcselPeriodPreRange, 18); 
+147E:  CLRF   42
+147F:  MOVLW  12
+1480:  MOVWF  43
+1481:  BCF    0A.4
+1482:  BSF    0A.3
+1483:  CALL   29F
+1484:  BSF    0A.4
+1485:  BCF    0A.3
+....................   setVcselPulsePeriod(VcselPeriodFinalRange, 14); 
+1486:  MOVLW  01
+1487:  MOVWF  42
+1488:  MOVLW  0E
+1489:  MOVWF  43
+148A:  BCF    0A.4
+148B:  BSF    0A.3
+148C:  CALL   29F
+148D:  BSF    0A.4
+148E:  BCF    0A.3
+.................... #endif 
+....................  
+.................... #if defined HIGH_SPEED 
+....................   // reduce timing budget to 20 ms (default is about 33 ms) 
+....................   setMeasurementTimingBudget(20000); 
+.................... #elif defined HIGH_ACCURACY 
+....................   // increase timing budget to 200 ms 
+....................   setMeasurementTimingBudget(200000); 
+148F:  CLRF   66
+1490:  MOVLW  03
+1491:  MOVWF  65
+1492:  MOVLW  0D
+1493:  MOVWF  64
+1494:  MOVLW  40
+1495:  MOVWF  63
+1496:  BCF    0A.4
+1497:  BSF    0A.3
+1498:  CALL   000
+1499:  BSF    0A.4
+149A:  BCF    0A.3
+.................... #endif 
+149B:  BCF    0A.3
+149C:  BSF    0A.4
+149D:  GOTO   63F (RETURN)
+.................... } 
+.................... void loop(int8 times) 
+.................... { 
+....................   printf("%d\r\n", times); 
+*
+0D57:  MOVF   43,W
+0D58:  MOVWF  46
+0D59:  MOVLW  18
+0D5A:  MOVWF  47
+*
+0DB9:  MOVLW  0D
+0DBA:  BTFSS  0C.4
+0DBB:  GOTO   5BA
+0DBC:  MOVWF  19
+0DBD:  MOVLW  0A
+0DBE:  BTFSS  0C.4
+0DBF:  GOTO   5BE
+0DC0:  MOVWF  19
+....................   printf("%lu\r\n", readRangeSingleMillimeters()); 
+0DC1:  CALL   4B4
+0DC2:  MOVF   79,W
+0DC3:  MOVWF  47
+0DC4:  MOVF   78,W
+0DC5:  MOVWF  46
+0DC6:  MOVLW  10
+0DC7:  MOVWF  04
+0DC8:  MOVF   47,W
+0DC9:  MOVWF  49
+0DCA:  MOVF   46,W
+0DCB:  MOVWF  48
+*
+0E24:  MOVLW  0D
+0E25:  BTFSS  0C.4
+0E26:  GOTO   625
+0E27:  MOVWF  19
+0E28:  MOVLW  0A
+0E29:  BTFSS  0C.4
+0E2A:  GOTO   629
+0E2B:  MOVWF  19
+....................   int16 distance = readRangeSingleMillimeters(); 
+0E2C:  CALL   4B4
+0E2D:  MOVF   79,W
+0E2E:  MOVWF  45
+0E2F:  MOVF   78,W
+0E30:  MOVWF  44
+....................    
+....................   //car1 
+....................   if(times == 3){ 
+0E31:  MOVF   43,W
+0E32:  SUBLW  03
+0E33:  BTFSS  03.2
+0E34:  GOTO   64C
+....................       if(distance > 220){ 
+0E35:  MOVF   45,F
+0E36:  BTFSS  03.2
+0E37:  GOTO   63C
+0E38:  MOVF   44,W
+0E39:  SUBLW  DC
+0E3A:  BTFSC  03.0
+0E3B:  GOTO   641
+....................          output_high(PIN_B0);  
+0E3C:  BSF    03.5
+0E3D:  BCF    06.0
+0E3E:  BCF    03.5
+0E3F:  BSF    06.0
+....................       } 
+0E40:  GOTO   64C
+....................       else{ 
+....................          if(distance < 100){ 
+0E41:  MOVF   45,F
+0E42:  BTFSS  03.2
+0E43:  GOTO   648
+0E44:  MOVF   44,W
+0E45:  SUBLW  63
+0E46:  BTFSC  03.0
+....................          } 
+0E47:  GOTO   64C
+....................          else{ 
+....................             output_low(PIN_B0); 
+0E48:  BSF    03.5
+0E49:  BCF    06.0
+0E4A:  BCF    03.5
+0E4B:  BCF    06.0
+....................          } 
+....................       } 
+....................   } 
+....................    //car2 
+....................   if(times == 6){ 
+0E4C:  MOVF   43,W
+0E4D:  SUBLW  06
+0E4E:  BTFSS  03.2
+0E4F:  GOTO   671
+....................       if((distance > 210) && (distance < 300)){ 
+0E50:  MOVF   45,F
+0E51:  BTFSS  03.2
+0E52:  GOTO   657
+0E53:  MOVF   44,W
+0E54:  SUBLW  D2
+0E55:  BTFSC  03.0
+0E56:  GOTO   666
+0E57:  MOVF   45,W
+0E58:  SUBLW  01
+0E59:  BTFSS  03.0
+0E5A:  GOTO   666
+0E5B:  BTFSS  03.2
+0E5C:  GOTO   661
+0E5D:  MOVF   44,W
+0E5E:  SUBLW  2B
+0E5F:  BTFSS  03.0
+0E60:  GOTO   666
+....................          output_low(PIN_B1);  
+0E61:  BSF    03.5
+0E62:  BCF    06.1
+0E63:  BCF    03.5
+0E64:  BCF    06.1
+....................       }else{ 
+0E65:  GOTO   671
+....................          if(distance < 211){ 
+0E66:  MOVF   45,F
+0E67:  BTFSS  03.2
+0E68:  GOTO   66D
+0E69:  MOVF   44,W
+0E6A:  SUBLW  D2
+0E6B:  BTFSC  03.0
+....................          } 
+0E6C:  GOTO   671
+....................          else{ 
+....................             output_high(PIN_B1); 
+0E6D:  BSF    03.5
+0E6E:  BCF    06.1
+0E6F:  BCF    03.5
+0E70:  BSF    06.1
+....................          } 
+....................       } 
+....................   } 
+....................    
+....................   //car3 
+....................   if(times == 9) { 
+0E71:  MOVF   43,W
+0E72:  SUBLW  09
+0E73:  BTFSS  03.2
+0E74:  GOTO   69D
+....................       if((distance > 270) && (distance < 330)){ 
+0E75:  MOVF   45,W
+0E76:  SUBLW  00
+0E77:  BTFSC  03.0
+0E78:  GOTO   68F
+0E79:  XORLW  FF
+0E7A:  BTFSS  03.2
+0E7B:  GOTO   680
+0E7C:  MOVF   44,W
+0E7D:  SUBLW  0E
+0E7E:  BTFSC  03.0
+0E7F:  GOTO   68F
+0E80:  MOVF   45,W
+0E81:  SUBLW  01
+0E82:  BTFSS  03.0
+0E83:  GOTO   68F
+0E84:  BTFSS  03.2
+0E85:  GOTO   68A
+0E86:  MOVF   44,W
+0E87:  SUBLW  49
+0E88:  BTFSS  03.0
+0E89:  GOTO   68F
+....................          output_low(PIN_B2);  
+0E8A:  BSF    03.5
+0E8B:  BCF    06.2
+0E8C:  BCF    03.5
+0E8D:  BCF    06.2
+....................       }else{ 
+0E8E:  GOTO   69D
+....................          if(distance < 271){ 
+0E8F:  MOVF   45,W
+0E90:  SUBLW  01
+0E91:  BTFSS  03.0
+0E92:  GOTO   699
+0E93:  BTFSS  03.2
+0E94:  GOTO   698
+0E95:  MOVF   44,W
+0E96:  SUBLW  0E
+0E97:  BTFSC  03.0
+....................          } 
+0E98:  GOTO   69D
+....................          else{ 
+....................             output_high(PIN_B2); 
+0E99:  BSF    03.5
+0E9A:  BCF    06.2
+0E9B:  BCF    03.5
+0E9C:  BSF    06.2
+....................          } 
+....................       } 
+....................   } 
+....................    
+....................   //car4 
+....................   if(times == 12){ 
+0E9D:  MOVF   43,W
+0E9E:  SUBLW  0C
+0E9F:  BTFSS  03.2
+0EA0:  GOTO   6C9
+....................       if((distance > 420) && (distance < 445)){ 
+0EA1:  MOVF   45,W
+0EA2:  SUBLW  00
+0EA3:  BTFSC  03.0
+0EA4:  GOTO   6BB
+0EA5:  XORLW  FF
+0EA6:  BTFSS  03.2
+0EA7:  GOTO   6AC
+0EA8:  MOVF   44,W
+0EA9:  SUBLW  A4
+0EAA:  BTFSC  03.0
+0EAB:  GOTO   6BB
+0EAC:  MOVF   45,W
+0EAD:  SUBLW  01
+0EAE:  BTFSS  03.0
+0EAF:  GOTO   6BB
+0EB0:  BTFSS  03.2
+0EB1:  GOTO   6B6
+0EB2:  MOVF   44,W
+0EB3:  SUBLW  BC
+0EB4:  BTFSS  03.0
+0EB5:  GOTO   6BB
+....................          output_low(PIN_B3);  
+0EB6:  BSF    03.5
+0EB7:  BCF    06.3
+0EB8:  BCF    03.5
+0EB9:  BCF    06.3
+....................       } 
+0EBA:  GOTO   6C9
+....................       else{ 
+....................       //output_low(PIN_B3); 
+....................          if(distance < 421){ 
+0EBB:  MOVF   45,W
+0EBC:  SUBLW  01
+0EBD:  BTFSS  03.0
+0EBE:  GOTO   6C5
+0EBF:  BTFSS  03.2
+0EC0:  GOTO   6C4
+0EC1:  MOVF   44,W
+0EC2:  SUBLW  A4
+0EC3:  BTFSC  03.0
+....................          } 
+0EC4:  GOTO   6C9
+....................          else{ 
+....................             output_high(PIN_B3); 
+0EC5:  BSF    03.5
+0EC6:  BCF    06.3
+0EC7:  BCF    03.5
+0EC8:  BSF    06.3
+....................          } 
+....................       } 
+....................   } 
+....................    
+....................   //car5 
+....................   if(times == 20){ 
+0EC9:  MOVF   43,W
+0ECA:  SUBLW  14
+0ECB:  BTFSS  03.2
+0ECC:  GOTO   6F5
+....................       if((distance > 430) && (distance < 460)){ 
+0ECD:  MOVF   45,W
+0ECE:  SUBLW  00
+0ECF:  BTFSC  03.0
+0ED0:  GOTO   6E7
+0ED1:  XORLW  FF
+0ED2:  BTFSS  03.2
+0ED3:  GOTO   6D8
+0ED4:  MOVF   44,W
+0ED5:  SUBLW  AE
+0ED6:  BTFSC  03.0
+0ED7:  GOTO   6E7
+0ED8:  MOVF   45,W
+0ED9:  SUBLW  01
+0EDA:  BTFSS  03.0
+0EDB:  GOTO   6E7
+0EDC:  BTFSS  03.2
+0EDD:  GOTO   6E2
+0EDE:  MOVF   44,W
+0EDF:  SUBLW  CB
+0EE0:  BTFSS  03.0
+0EE1:  GOTO   6E7
+....................          output_low(PIN_B4);  
+0EE2:  BSF    03.5
+0EE3:  BCF    06.4
+0EE4:  BCF    03.5
+0EE5:  BCF    06.4
+....................       } 
+0EE6:  GOTO   6F5
+....................       else{ 
+....................       //output_low(PIN_B4); 
+....................          if(distance < 431){ 
+0EE7:  MOVF   45,W
+0EE8:  SUBLW  01
+0EE9:  BTFSS  03.0
+0EEA:  GOTO   6F1
+0EEB:  BTFSS  03.2
+0EEC:  GOTO   6F0
+0EED:  MOVF   44,W
+0EEE:  SUBLW  AE
+0EEF:  BTFSC  03.0
+....................          } 
+0EF0:  GOTO   6F5
+....................          else{ 
+....................             output_high(PIN_B4); 
+0EF1:  BSF    03.5
+0EF2:  BCF    06.4
+0EF3:  BCF    03.5
+0EF4:  BSF    06.4
+....................          } 
+....................       } 
+....................   } 
+....................    
+....................   //car6 
+....................   if(times == 23){ 
+0EF5:  MOVF   43,W
+0EF6:  SUBLW  17
+0EF7:  BTFSS  03.2
+0EF8:  GOTO   721
+....................       if((distance > 350) && (distance < 380)){ 
+0EF9:  MOVF   45,W
+0EFA:  SUBLW  00
+0EFB:  BTFSC  03.0
+0EFC:  GOTO   713
+0EFD:  XORLW  FF
+0EFE:  BTFSS  03.2
+0EFF:  GOTO   704
+0F00:  MOVF   44,W
+0F01:  SUBLW  5E
+0F02:  BTFSC  03.0
+0F03:  GOTO   713
+0F04:  MOVF   45,W
+0F05:  SUBLW  01
+0F06:  BTFSS  03.0
+0F07:  GOTO   713
+0F08:  BTFSS  03.2
+0F09:  GOTO   70E
+0F0A:  MOVF   44,W
+0F0B:  SUBLW  7B
+0F0C:  BTFSS  03.0
+0F0D:  GOTO   713
+....................          output_low(PIN_B6);  
+0F0E:  BSF    03.5
+0F0F:  BCF    06.6
+0F10:  BCF    03.5
+0F11:  BCF    06.6
+....................       }else{ 
+0F12:  GOTO   721
+....................          if(distance < 350){ 
+0F13:  MOVF   45,W
+0F14:  SUBLW  01
+0F15:  BTFSS  03.0
+0F16:  GOTO   71D
+0F17:  BTFSS  03.2
+0F18:  GOTO   71C
+0F19:  MOVF   44,W
+0F1A:  SUBLW  5D
+0F1B:  BTFSC  03.0
+....................          } 
+0F1C:  GOTO   721
+....................          else{ 
+....................             output_high(PIN_B6); 
+0F1D:  BSF    03.5
+0F1E:  BCF    06.6
+0F1F:  BCF    03.5
+0F20:  BSF    06.6
+....................          } 
+....................       } 
+....................   } 
+....................    
+....................   //car7 
+....................   if(times == 26){ 
+0F21:  MOVF   43,W
+0F22:  SUBLW  1A
+0F23:  BTFSS  03.2
+0F24:  GOTO   74A
+....................       if((distance > 210) && (distance < 300)){ 
+0F25:  MOVF   45,F
+0F26:  BTFSS  03.2
+0F27:  GOTO   72C
+0F28:  MOVF   44,W
+0F29:  SUBLW  D2
+0F2A:  BTFSC  03.0
+0F2B:  GOTO   73D
+0F2C:  MOVF   45,W
+0F2D:  SUBLW  01
+0F2E:  BTFSS  03.0
+0F2F:  GOTO   73D
+0F30:  BTFSS  03.2
+0F31:  GOTO   736
+0F32:  MOVF   44,W
+0F33:  SUBLW  2B
+0F34:  BTFSS  03.0
+0F35:  GOTO   73D
+....................          output_low(PIN_C0);  
+0F36:  BCF    37.0
+0F37:  MOVF   37,W
+0F38:  BSF    03.5
+0F39:  MOVWF  07
+0F3A:  BCF    03.5
+0F3B:  BCF    07.0
+....................       }else{ 
+0F3C:  GOTO   74A
+....................          if(distance < 211){ 
+0F3D:  MOVF   45,F
+0F3E:  BTFSS  03.2
+0F3F:  GOTO   744
+0F40:  MOVF   44,W
+0F41:  SUBLW  D2
+0F42:  BTFSC  03.0
+....................          } 
+0F43:  GOTO   74A
+....................          else{ 
+....................             output_high(PIN_C0); 
+0F44:  BCF    37.0
+0F45:  MOVF   37,W
+0F46:  BSF    03.5
+0F47:  MOVWF  07
+0F48:  BCF    03.5
+0F49:  BSF    07.0
+....................          } 
+....................       } 
+....................   } 
+....................    
+....................   //car8 
+....................   if(times == 30){ 
+0F4A:  MOVF   43,W
+0F4B:  SUBLW  1E
+0F4C:  BTFSS  03.2
+0F4D:  GOTO   769
+....................       if(distance > 220){ 
+0F4E:  MOVF   45,F
+0F4F:  BTFSS  03.2
+0F50:  GOTO   755
+0F51:  MOVF   44,W
+0F52:  SUBLW  DC
+0F53:  BTFSC  03.0
+0F54:  GOTO   75C
+....................          output_high(PIN_C5);  
+0F55:  BCF    37.5
+0F56:  MOVF   37,W
+0F57:  BSF    03.5
+0F58:  MOVWF  07
+0F59:  BCF    03.5
+0F5A:  BSF    07.5
+....................       }else{ 
+0F5B:  GOTO   769
+....................       //output_low(PIN_C5); 
+....................          if(distance < 100){ 
+0F5C:  MOVF   45,F
+0F5D:  BTFSS  03.2
+0F5E:  GOTO   763
+0F5F:  MOVF   44,W
+0F60:  SUBLW  63
+0F61:  BTFSC  03.0
+....................          } 
+0F62:  GOTO   769
+....................          else{ 
+....................             output_low(PIN_C5); 
+0F63:  BCF    37.5
+0F64:  MOVF   37,W
+0F65:  BSF    03.5
+0F66:  MOVWF  07
+0F67:  BCF    03.5
+0F68:  BCF    07.5
+....................             } 
+....................       } 
+....................   } 
+....................  
+.................... delay_ms(500); 
+0F69:  MOVLW  02
+0F6A:  MOVWF  46
+0F6B:  MOVLW  FA
+0F6C:  MOVWF  47
+*
+0F80:  DECFSZ 46,F
+0F81:  GOTO   76B
+0F82:  RETURN
+.................... } 
+....................  
+.................... void main() 
+*
+15E1:  MOVF   03,W
+15E2:  ANDLW  1F
+15E3:  MOVWF  03
+15E4:  MOVLW  71
+15E5:  BSF    03.5
+15E6:  MOVWF  0F
+15E7:  CLRF   10
+15E8:  MOVF   0F,W
+15E9:  BSF    03.6
+15EA:  BCF    07.3
+15EB:  MOVLW  0C
+15EC:  BCF    03.6
+15ED:  MOVWF  19
+15EE:  MOVLW  A2
+15EF:  MOVWF  18
+15F0:  MOVLW  90
+15F1:  BCF    03.5
+15F2:  MOVWF  18
+15F3:  MOVLW  FF
+15F4:  MOVWF  37
+15F5:  BSF    37.3
+15F6:  MOVF   37,W
+15F7:  BSF    03.5
+15F8:  MOVWF  07
+15F9:  BCF    03.5
+15FA:  BSF    37.4
+15FB:  MOVF   37,W
+15FC:  BSF    03.5
+15FD:  MOVWF  07
+15FE:  MOVLW  13
+15FF:  MOVWF  13
+1600:  MOVLW  28
+1601:  BCF    03.5
+1602:  MOVWF  14
+1603:  BSF    03.5
+1604:  BSF    14.7
+1605:  BCF    14.6
+1606:  BCF    03.5
+1607:  CLRF   38
+1608:  MOVLW  04
+1609:  MOVWF  3A
+160A:  MOVLW  B0
+160B:  MOVWF  39
+160C:  CLRF   3E
+160D:  CLRF   3D
+160E:  CLRF   3C
+160F:  CLRF   3B
+1610:  BSF    03.5
+1611:  BSF    03.6
+1612:  BCF    07.3
+1613:  MOVLW  0C
+1614:  BCF    03.6
+1615:  MOVWF  19
+1616:  MOVLW  A2
+1617:  MOVWF  18
+1618:  MOVLW  90
+1619:  BCF    03.5
+161A:  MOVWF  18
+161B:  CLRF   40
+161C:  CLRF   3F
+161D:  BSF    03.5
+161E:  BSF    03.6
+161F:  MOVF   09,W
+1620:  ANDLW  C0
+1621:  MOVWF  09
+1622:  BCF    03.6
+1623:  BCF    1F.4
+1624:  BCF    1F.5
+1625:  MOVLW  00
+1626:  BSF    03.6
+1627:  MOVWF  08
+1628:  BCF    03.5
+1629:  CLRF   07
+162A:  CLRF   08
+162B:  CLRF   09
+162C:  BCF    03.7
+.................... { 
+....................    output_low(PIN_B5); 
+162D:  BSF    03.5
+162E:  BCF    03.6
+162F:  BCF    06.5
+1630:  BCF    03.5
+1631:  BCF    06.5
+....................    setup_timer_1(T1_INTERNAL | T1_DIV_BY_4); 
+1632:  MOVLW  25
+1633:  MOVWF  10
+....................    set_timer1(65035); 
+1634:  CLRF   0E
+1635:  MOVLW  FE
+1636:  MOVWF  0F
+1637:  MOVLW  0B
+1638:  MOVWF  0E
+....................    enable_interrupts(INT_TIMER1); 
+1639:  BSF    03.5
+163A:  BSF    0C.0
+....................    enable_interrupts(GLOBAL); 
+163B:  MOVLW  C0
+163C:  BCF    03.5
+163D:  IORWF  0B,F
+....................     
+....................    setup(); 
+163E:  GOTO   000
+....................     
+....................    while (1){ 
+....................       loop(0); 
+163F:  CLRF   43
+1640:  BCF    0A.4
+1641:  BSF    0A.3
+1642:  CALL   557
+1643:  BSF    0A.4
+1644:  BCF    0A.3
+....................       printf("-----------\n"); 
+1645:  MOVLW  A9
+1646:  BSF    03.6
+1647:  MOVWF  0D
+1648:  MOVLW  00
+1649:  MOVWF  0F
+164A:  BCF    0A.4
+164B:  BCF    03.6
+164C:  CALL   0B0
+164D:  BSF    0A.4
+....................       duty = 280; 
+164E:  MOVLW  01
+164F:  MOVWF  3A
+1650:  MOVLW  18
+1651:  MOVWF  39
+....................        
+....................       for(int8 i=0;i<32;i++){ 
+1652:  CLRF   41
+1653:  MOVF   41,W
+1654:  SUBLW  1F
+1655:  BTFSS  03.0
+1656:  GOTO   688
+....................          loop(i+1); 
+1657:  MOVLW  01
+1658:  ADDWF  41,W
+1659:  MOVWF  42
+165A:  MOVWF  43
+165B:  BCF    0A.4
+165C:  BSF    0A.3
+165D:  CALL   557
+165E:  BSF    0A.4
+165F:  BCF    0A.3
+....................          duty += 28.75; 
+1660:  MOVF   3A,W
+1661:  MOVWF  43
+1662:  MOVF   39,W
+1663:  MOVWF  42
+1664:  BCF    0A.4
+1665:  GOTO   7A2
+1666:  BSF    0A.4
+1667:  BCF    03.1
+1668:  MOVF   7A,W
+1669:  MOVWF  45
+166A:  MOVF   79,W
+166B:  MOVWF  44
+166C:  MOVF   78,W
+166D:  MOVWF  43
+166E:  MOVF   77,W
+166F:  MOVWF  42
+1670:  CLRF   49
+1671:  CLRF   48
+1672:  MOVLW  66
+1673:  MOVWF  47
+1674:  MOVLW  83
+1675:  MOVWF  46
+1676:  GOTO   49E
+1677:  MOVF   7A,W
+1678:  MOVWF  55
+1679:  MOVF   79,W
+167A:  MOVWF  54
+167B:  MOVF   78,W
+167C:  MOVWF  53
+167D:  MOVF   77,W
+167E:  MOVWF  52
+167F:  BCF    0A.4
+1680:  CALL   1AB
+1681:  BSF    0A.4
+1682:  MOVF   79,W
+1683:  MOVWF  3A
+1684:  MOVF   78,W
+1685:  MOVWF  39
+1686:  INCF   41,F
+1687:  GOTO   653
+....................           
+....................       } 
+1688:  GOTO   63F
+....................    } 
+.................... } 
+....................  
+.................... #include <VL53L0X.c> 
+.................... // Most of the functionality of this library is based on the VL53L0X API 
+.................... // provided by ST (STSW-IMG005), and some of the explanatory comments are quoted 
+.................... // or paraphrased from the API source code, API user manual (UM2039), and the 
+.................... // VL53L0X datasheet. 
+....................  
+.................... #include <VL53L0X.h> 
+.................... #ifndef VL53L0X_h 
+.................... #define VL53L0X_h 
+....................  
+.................... //#include <Arduino.h> 
+....................  
+....................  
+....................     // register addresses from API vl53l0x_device.h (ordered as listed there) 
+....................     enum regAddr 
+....................     { 
+....................       SYSRANGE_START                              = 0x00, 
+....................  
+....................       SYSTEM_THRESH_HIGH                          = 0x0C, 
+....................       SYSTEM_THRESH_LOW                           = 0x0E, 
+....................  
+....................       SYSTEM_SEQUENCE_CONFIG                      = 0x01, 
+....................       SYSTEM_RANGE_CONFIG                         = 0x09, 
+....................       SYSTEM_INTERMEASUREMENT_PERIOD              = 0x04, 
+....................  
+....................       SYSTEM_INTERRUPT_CONFIG_GPIO                = 0x0A, 
+....................  
+....................       GPIO_HV_MUX_ACTIVE_HIGH                     = 0x84, 
+....................  
+....................       SYSTEM_INTERRUPT_CLEAR                      = 0x0B, 
+....................  
+....................       RESULT_INTERRUPT_STATUS                     = 0x13, 
+....................       RESULT_RANGE_STATUS                         = 0x14, 
+....................  
+....................       RESULT_CORE_AMBIENT_WINDOW_EVENTS_RTN       = 0xBC, 
+....................       RESULT_CORE_RANGING_TOTAL_EVENTS_RTN        = 0xC0, 
+....................       RESULT_CORE_AMBIENT_WINDOW_EVENTS_REF       = 0xD0, 
+....................       RESULT_CORE_RANGING_TOTAL_EVENTS_REF        = 0xD4, 
+....................       RESULT_PEAK_SIGNAL_RATE_REF                 = 0xB6, 
+....................  
+....................       ALGO_PART_TO_PART_RANGE_OFFSET_MM           = 0x28, 
+....................  
+....................       I2C_SLAVE_DEVICE_ADDRESS                    = 0x8A, 
+....................  
+....................       MSRC_CONFIG_CONTROL                         = 0x60, 
+....................  
+....................       PRE_RANGE_CONFIG_MIN_SNR                    = 0x27, 
+....................       PRE_RANGE_CONFIG_VALID_PHASE_LOW            = 0x56, 
+....................       PRE_RANGE_CONFIG_VALID_PHASE_HIGH           = 0x57, 
+....................       PRE_RANGE_MIN_COUNT_RATE_RTN_LIMIT          = 0x64, 
+....................  
+....................       FINAL_RANGE_CONFIG_MIN_SNR                  = 0x67, 
+....................       FINAL_RANGE_CONFIG_VALID_PHASE_LOW          = 0x47, 
+....................       FINAL_RANGE_CONFIG_VALID_PHASE_HIGH         = 0x48, 
+....................       FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT = 0x44, 
+....................  
+....................       PRE_RANGE_CONFIG_SIGMA_THRESH_HI            = 0x61, 
+....................       PRE_RANGE_CONFIG_SIGMA_THRESH_LO            = 0x62, 
+....................  
+....................       PRE_RANGE_CONFIG_VCSEL_PERIOD               = 0x50, 
+....................       PRE_RANGE_CONFIG_TIMEOUT_MACROP_HI          = 0x51, 
+....................       PRE_RANGE_CONFIG_TIMEOUT_MACROP_LO          = 0x52, 
+....................  
+....................       SYSTEM_HISTOGRAM_BIN                        = 0x81, 
+....................       HISTOGRAM_CONFIG_INITIAL_PHASE_SELECT       = 0x33, 
+....................       HISTOGRAM_CONFIG_READOUT_CTRL               = 0x55, 
+....................  
+....................       FINAL_RANGE_CONFIG_VCSEL_PERIOD             = 0x70, 
+....................       FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI        = 0x71, 
+....................       FINAL_RANGE_CONFIG_TIMEOUT_MACROP_LO        = 0x72, 
+....................       CROSSTALK_COMPENSATION_PEAK_RATE_MCPS       = 0x20, 
+....................  
+....................       MSRC_CONFIG_TIMEOUT_MACROP                  = 0x46, 
+....................  
+....................       SOFT_RESET_GO2_SOFT_RESET_N                 = 0xBF, 
+....................       IDENTIFICATION_MODEL_ID                     = 0xC0, 
+....................       IDENTIFICATION_REVISION_ID                  = 0xC2, 
+....................  
+....................       OSC_CALIBRATE_VAL                           = 0xF8, 
+....................  
+....................       GLOBAL_CONFIG_VCSEL_WIDTH                   = 0x32, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_0            = 0xB0, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_1            = 0xB1, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_2            = 0xB2, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_3            = 0xB3, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_4            = 0xB4, 
+....................       GLOBAL_CONFIG_SPAD_ENABLES_REF_5            = 0xB5, 
+....................  
+....................       GLOBAL_CONFIG_REF_EN_START_SELECT           = 0xB6, 
+....................       DYNAMIC_SPAD_NUM_REQUESTED_REF_SPAD         = 0x4E, 
+....................       DYNAMIC_SPAD_REF_EN_START_OFFSET            = 0x4F, 
+....................       POWER_MANAGEMENT_GO1_POWER_FORCE            = 0x80, 
+....................  
+....................       VHV_CONFIG_PAD_SCL_SDA__EXTSUP_HV           = 0x89, 
+....................  
+....................       ALGO_PHASECAL_LIM                           = 0x30, 
+....................       ALGO_PHASECAL_CONFIG_TIMEOUT                = 0x30, 
+....................     }; 
+....................  
+....................     // private variables 
+....................  
+....................     typedef struct  
+....................     { 
+....................       boolean tcc, msrc, dss, pre_range, final_range; 
+....................     } SequenceStepEnables; 
+....................  
+....................  
+....................  
+....................     typedef struct  
+....................     { 
+....................       int16 pre_range_vcsel_period_pclks, final_range_vcsel_period_pclks; 
+....................  
+....................       int16 msrc_dss_tcc_mclks, pre_range_mclks, final_range_mclks; 
+....................       int32 msrc_dss_tcc_us,    pre_range_us,    final_range_us; 
+....................     } SequenceStepTimeouts; 
+....................  
+....................     void getSequenceStepEnables(SequenceStepEnables * enables); 
+....................     void getSequenceStepTimeouts(SequenceStepEnables * enables, SequenceStepTimeouts * timeouts); 
+....................      
+....................      
+....................     enum vcselPeriodType { VcselPeriodPreRange, VcselPeriodFinalRange }; 
+....................  
+....................     int8 address; 
+....................     int16 io_timeout; 
+....................     boolean did_timeout; 
+....................     int16 timeout_start_ms; 
+....................  
+....................     int8 stop_variable; // read by init and used when starting measurement; is StopVariable field of VL53L0X_DevData_t structure in API 
+....................     int32 measurement_timing_budget_us; 
+....................  
+....................     boolean getSpadInfo(int8 * count, boolean * type_is_aperture); 
+....................  
+....................     int8 last_status; // status of last I2C transmission 
+....................  
+....................     VL53L0X(void); 
+....................  
+....................     void setAddress(int8 new_addr); 
+....................     int8 getAddress(void) { return address; } 
+....................  
+....................     boolean init(boolean io_2v8 = TRUE); 
+....................     #separate boolean init2(); 
+....................  
+....................     void writeReg(int8 reg, int8 value); 
+....................     void writeReg16Bit(int8 reg, int16 value); 
+....................     void writeReg32Bit(int8 reg, int32 value); 
+....................     int8 readReg(int8 reg); 
+....................     int16 readReg16Bit(int8 reg); 
+....................     int32 readReg32Bit(int8 reg); 
+....................  
+....................     void writeMulti(int8 reg, int8  * src, int8 count); 
+....................     void readMulti(int8 reg, int8 * dst, int8 count); 
+....................  
+....................     boolean setSignalRateLimit(float limit_Mcps); 
+....................     float getSignalRateLimit(void); 
+....................  
+....................     boolean setMeasurementTimingBudget(int32 budget_us); 
+....................     int32 getMeasurementTimingBudget(void); 
+....................  
+....................     boolean setVcselPulsePeriod(vcselPeriodType type, int8 period_pclks); 
+....................     int8 getVcselPulsePeriod(vcselPeriodType type); 
+....................  
+....................     void startContinuous(int32 period_ms = 0); 
+....................     void stopContinuous(void); 
+....................     int16 readRangeContinuousMillimeters(void); 
+....................     int16 readRangeSingleMillimeters(void); 
+....................  
+....................     void setTimeout(int16 timeout) { io_timeout = timeout; } 
+....................     int16 getTimeout(void) { return io_timeout; } 
+....................     boolean timeoutOccurred(void); 
+....................  
+....................  
+....................  
+....................     boolean performSingleRefCalibration(int8 vhv_init_byte); 
+....................  
+....................     static int16 decodeTimeout(int16 value); 
+....................     static int16 encodeTimeout(int16 timeout_mclks); 
+....................     static int32 timeoutMclksToMicroseconds(int16 timeout_period_mclks, int8 vcsel_period_pclks); 
+....................     static int32 timeoutMicrosecondsToMclks(int32 timeout_period_us, int8 vcsel_period_pclks); 
+....................  
+....................  
+.................... #endif 
+....................  
+....................  
+....................  
+....................  
+.................... // #include <Wire.h> 
+....................  
+.................... // Defines ///////////////////////////////////////////////////////////////////// 
+....................  
+.................... // The Arduino two-wire interface uses a 7-bit number for the address, 
+.................... // and sets the last bit correctly based on reads and writes 
+.................... //#define ADDRESS_DEFAULT 0b0101001 
+....................  
+.................... // 8 bit i2c address 
+.................... #define ADDRESS_DEFAULT 0b01010010 
+....................  
+.................... // Record the current time to check an upcoming timeout against 
+.................... #define startTimeout() (timeout_start_ms = millis()) 
+.................... //#define startTimeout() (timeout_start_ms = 0) 
+....................  
+.................... // Check if timeout is enabled (set to nonzero value) and has expired 
+.................... #define checkTimeoutExpired() (io_timeout > 0 && ((int16)millis() - timeout_start_ms) > io_timeout) 
+....................  
+.................... // Decode VCSEL (vertical cavity surface emitting laser) pulse period in PCLKs 
+.................... // from register value 
+.................... // based on VL53L0X_decode_vcsel_period() 
+.................... #define decodeVcselPeriod(reg_val)      (((reg_val) + 1) << 1) 
+....................  
+.................... // Encode VCSEL pulse period register value from period in PCLKs 
+.................... // based on VL53L0X_encode_vcsel_period() 
+.................... #define encodeVcselPeriod(period_pclks) (((period_pclks) >> 1) - 1) 
+....................  
+.................... // Calculate macro period in *nanoseconds* from VCSEL period in PCLKs 
+.................... // based on VL53L0X_calc_macro_period_ps() 
+.................... // PLL_period_ps = 1655; macro_period_vclks = 2304 
+.................... #define calcMacroPeriod(vcsel_period_pclks) ((((int32)2304 * (vcsel_period_pclks) * 1655) + 500) / 1000) 
+....................  
+1689:  SLEEP
+.................... // Constructors //////////////////////////////////////////////////////////////// 
+....................  
+.................... // VL53L0X(void) 
+.................... //   : address(ADDRESS_DEFAULT) 
+.................... //   , io_timeout(0) // no timeout 
+.................... //   , did_timeout(false) 
+.................... // { 
+.................... // } 
+.................... //!VL53L0X(void) { 
+.................... //!  address = (ADDRESS_DEFAULT); 
+.................... //!  io_timeout =0 ; // no timeout 
+.................... //!  did_timeout = false; 
+.................... //!} 
+.................... // Public Methods ////////////////////////////////////////////////////////////// 
+....................  
+.................... void setAddress(int8 new_addr) 
+.................... { 
+....................   writeReg(I2C_SLAVE_DEVICE_ADDRESS, new_addr & 0x7F); 
+....................   address = new_addr; 
+.................... } 
+....................  
+.................... // Initialize sensor using sequence based on VL53L0X_DataInit(), 
+.................... // VL53L0X_StaticInit(), and VL53L0X_PerformRefCalibration(). 
+.................... // This function does not perform reference SPAD calibration 
+.................... // (VL53L0X_PerformRefSpadManagement()), since the API user manual says that it 
+.................... // is performed by ST on the bare modules; it seems like that should work well 
+.................... // enough unless a cover glass is added. 
+.................... // If io_2v8 (optional) is true or not given, the sensor is configured for 2V8 
+.................... // mode. 
+.................... boolean init(boolean io_2v8) 
+.................... { 
+....................   // VL53L0X_DataInit() begin 
+....................   address = (ADDRESS_DEFAULT); 
+*
+1013:  MOVLW  52
+1014:  MOVWF  2B
+....................   io_timeout =0 ; // no timeout 
+1015:  CLRF   2D
+1016:  CLRF   2C
+....................   did_timeout = false; 
+1017:  BCF    2E.0
+....................    
+....................   // sensor uses 1V8 mode for I/O by default; switch to 2V8 mode if necessary 
+....................   if (io_2v8) 
+1018:  MOVF   42,F
+1019:  BTFSC  03.2
+101A:  GOTO   02C
+....................   { 
+....................     writeReg(VHV_CONFIG_PAD_SCL_SDA__EXTSUP_HV, 
+....................       readReg(VHV_CONFIG_PAD_SCL_SDA__EXTSUP_HV) | 0x01); // set bit 0 
+101B:  MOVLW  89
+101C:  BSF    03.5
+101D:  MOVWF  47
+101E:  BCF    0A.4
+101F:  BCF    03.5
+1020:  CALL   12A
+1021:  BSF    0A.4
+1022:  MOVF   78,W
+1023:  IORLW  01
+1024:  MOVWF  4E
+1025:  MOVLW  89
+1026:  MOVWF  65
+1027:  MOVF   4E,W
+1028:  MOVWF  66
+1029:  BCF    0A.4
+102A:  CALL   150
+102B:  BSF    0A.4
+....................   } 
+....................  
+....................   // "Set I2C standard mode" 
+....................   writeReg(0x88, 0x00); 
+102C:  MOVLW  88
+102D:  MOVWF  65
+102E:  CLRF   66
+102F:  BCF    0A.4
+1030:  CALL   150
+1031:  BSF    0A.4
+....................  
+....................   writeReg(0x80, 0x01); 
+1032:  MOVLW  80
+1033:  MOVWF  65
+1034:  MOVLW  01
+1035:  MOVWF  66
+1036:  BCF    0A.4
+1037:  CALL   150
+1038:  BSF    0A.4
+....................   writeReg(0xFF, 0x01); 
+1039:  MOVLW  FF
+103A:  MOVWF  65
+103B:  MOVLW  01
+103C:  MOVWF  66
+103D:  BCF    0A.4
+103E:  CALL   150
+103F:  BSF    0A.4
+....................   writeReg(0x00, 0x00); 
+1040:  CLRF   65
+1041:  CLRF   66
+1042:  BCF    0A.4
+1043:  CALL   150
+1044:  BSF    0A.4
+....................   stop_variable = readReg(0x91); 
+1045:  MOVLW  91
+1046:  BSF    03.5
+1047:  MOVWF  47
+1048:  BCF    0A.4
+1049:  BCF    03.5
+104A:  CALL   12A
+104B:  BSF    0A.4
+104C:  MOVF   78,W
+104D:  MOVWF  31
+....................   writeReg(0x00, 0x01); 
+104E:  CLRF   65
+104F:  MOVLW  01
+1050:  MOVWF  66
+1051:  BCF    0A.4
+1052:  CALL   150
+1053:  BSF    0A.4
+....................   writeReg(0xFF, 0x00); 
+1054:  MOVLW  FF
+1055:  MOVWF  65
+1056:  CLRF   66
+1057:  BCF    0A.4
+1058:  CALL   150
+1059:  BSF    0A.4
+....................   writeReg(0x80, 0x00); 
+105A:  MOVLW  80
+105B:  MOVWF  65
+105C:  CLRF   66
+105D:  BCF    0A.4
+105E:  CALL   150
+105F:  BSF    0A.4
+....................  
+....................   // disable SIGNAL_RATE_MSRC (bit 1) and SIGNAL_RATE_PRE_RANGE (bit 4) limit checks 
+....................   writeReg(MSRC_CONFIG_CONTROL, readReg(MSRC_CONFIG_CONTROL) | 0x12); 
+1060:  MOVLW  60
+1061:  BSF    03.5
+1062:  MOVWF  47
+1063:  BCF    0A.4
+1064:  BCF    03.5
+1065:  CALL   12A
+1066:  BSF    0A.4
+1067:  MOVF   78,W
+1068:  IORLW  12
+1069:  MOVWF  4E
+106A:  MOVLW  60
+106B:  MOVWF  65
+106C:  MOVF   4E,W
+106D:  MOVWF  66
+106E:  BCF    0A.4
+106F:  CALL   150
+1070:  BSF    0A.4
+....................  
+....................   // set final range signal rate limit to 0.25 MCPS (million counts per second) 
+....................   setSignalRateLimit(0.25); 
+1071:  CLRF   51
+1072:  CLRF   50
+1073:  CLRF   4F
+1074:  MOVLW  7D
+1075:  MOVWF  4E
+1076:  BCF    0A.4
+1077:  CALL   1F2
+1078:  BSF    0A.4
+....................  
+....................   writeReg(SYSTEM_SEQUENCE_CONFIG, 0xFF); 
+1079:  MOVLW  01
+107A:  MOVWF  65
+107B:  MOVLW  FF
+107C:  MOVWF  66
+107D:  BCF    0A.4
+107E:  CALL   150
+107F:  BSF    0A.4
+....................  
+....................   // VL53L0X_DataInit() end 
+....................  
+....................   // VL53L0X_StaticInit() begin 
+....................  
+....................   int8 spad_count; 
+....................   //boolean spad_type_is_aperture;    // boolean can't be used as a pointer 
+....................   int8 spad_type_is_aperture; 
+....................    
+....................    
+....................    
+....................   if (!getSpadInfo(&spad_count, &spad_type_is_aperture)) { return false; } 
+1080:  CLRF   4F
+1081:  MOVLW  43
+1082:  MOVWF  4E
+1083:  CLRF   51
+1084:  MOVLW  44
+1085:  MOVWF  50
+*
+1159:  MOVF   78,F
+115A:  BTFSS  03.2
+115B:  GOTO   15F
+115C:  MOVLW  00
+115D:  MOVWF  78
+115E:  GOTO   473
+....................  
+....................   // The SPAD map (RefGoodSpadMap) is read by VL53L0X_get_info_from_device() in 
+....................   // the API, but the same data seems to be more easily readable from 
+....................   // GLOBAL_CONFIG_SPAD_ENABLES_REF_0 through _6, so read it from there 
+....................   int8 ref_spad_map[6]; 
+....................   readMulti(GLOBAL_CONFIG_SPAD_ENABLES_REF_0, ref_spad_map, 6); 
+115F:  MOVLW  B0
+1160:  MOVWF  4E
+1161:  CLRF   50
+1162:  MOVLW  45
+1163:  MOVWF  4F
+1164:  MOVLW  06
+1165:  MOVWF  51
+....................  
+....................   // -- VL53L0X_set_reference_spads() begin (assume NVM values are valid) 
+....................  
+....................   writeReg(0xFF, 0x01); 
+*
+11B4:  MOVLW  FF
+11B5:  BCF    03.5
+11B6:  MOVWF  65
+11B7:  MOVLW  01
+11B8:  MOVWF  66
+11B9:  BCF    0A.4
+11BA:  CALL   150
+11BB:  BSF    0A.4
+....................   writeReg(DYNAMIC_SPAD_REF_EN_START_OFFSET, 0x00); 
+11BC:  MOVLW  4F
+11BD:  MOVWF  65
+11BE:  CLRF   66
+11BF:  BCF    0A.4
+11C0:  CALL   150
+11C1:  BSF    0A.4
+....................   writeReg(DYNAMIC_SPAD_NUM_REQUESTED_REF_SPAD, 0x2C); 
+11C2:  MOVLW  4E
+11C3:  MOVWF  65
+11C4:  MOVLW  2C
+11C5:  MOVWF  66
+11C6:  BCF    0A.4
+11C7:  CALL   150
+11C8:  BSF    0A.4
+....................   writeReg(0xFF, 0x00); 
+11C9:  MOVLW  FF
+11CA:  MOVWF  65
+11CB:  CLRF   66
+11CC:  BCF    0A.4
+11CD:  CALL   150
+11CE:  BSF    0A.4
+....................   writeReg(GLOBAL_CONFIG_REF_EN_START_SELECT, 0xB4); 
+11CF:  MOVLW  B6
+11D0:  MOVWF  65
+11D1:  MOVLW  B4
+11D2:  MOVWF  66
+11D3:  BCF    0A.4
+11D4:  CALL   150
+11D5:  BSF    0A.4
+....................  
+....................   int8 first_spad_to_enable = spad_type_is_aperture ? 12 : 0; // 12 is the first aperture spad 
+....................   int8 spads_enabled = 0; 
+11D6:  MOVF   44,F
+11D7:  BTFSC  03.2
+11D8:  GOTO   1DB
+11D9:  MOVLW  0C
+11DA:  GOTO   1DC
+11DB:  MOVLW  00
+11DC:  MOVWF  4B
+11DD:  CLRF   4C
+....................  
+....................   for (int8 i = 0; i < 48; i++) 
+11DE:  CLRF   4D
+11DF:  MOVF   4D,W
+11E0:  SUBLW  2F
+11E1:  BTFSS  03.0
+11E2:  GOTO   224
+....................   { 
+....................     if (i < first_spad_to_enable || spads_enabled == spad_count) 
+11E3:  MOVF   4B,W
+11E4:  SUBWF  4D,W
+11E5:  BTFSS  03.0
+11E6:  GOTO   1EB
+11E7:  MOVF   43,W
+11E8:  SUBWF  4C,W
+11E9:  BTFSS  03.2
+11EA:  GOTO   206
+....................     { 
+....................       // This bit is lower than the first one that should be enabled, or 
+....................       // (reference_spad_count) bits have already been enabled, so zero this bit 
+....................       ref_spad_map[i / 8] &= ~(1 << (i % 8)); 
+11EB:  RRF    4D,W
+11EC:  MOVWF  77
+11ED:  RRF    77,F
+11EE:  RRF    77,F
+11EF:  MOVLW  1F
+11F0:  ANDWF  77,F
+11F1:  MOVF   77,W
+11F2:  ADDLW  45
+11F3:  MOVWF  04
+11F4:  BCF    03.7
+11F5:  MOVF   4D,W
+11F6:  ANDLW  07
+11F7:  MOVWF  78
+11F8:  MOVLW  01
+11F9:  MOVWF  77
+11FA:  MOVF   78,F
+11FB:  BTFSC  03.2
+11FC:  GOTO   201
+11FD:  BCF    03.0
+11FE:  RLF    77,F
+11FF:  DECFSZ 78,F
+1200:  GOTO   1FD
+1201:  MOVF   77,W
+1202:  XORLW  FF
+1203:  ANDWF  00,W
+1204:  MOVWF  00
+....................     } 
+1205:  GOTO   222
+....................     else if ((ref_spad_map[i / 8] >> (i % 8)) & 0x1) 
+1206:  RRF    4D,W
+1207:  MOVWF  77
+1208:  RRF    77,F
+1209:  RRF    77,F
+120A:  MOVLW  1F
+120B:  ANDWF  77,F
+120C:  MOVF   77,W
+120D:  ADDLW  45
+120E:  MOVWF  04
+120F:  BCF    03.7
+1210:  MOVF   00,W
+1211:  MOVWF  4E
+1212:  MOVF   4D,W
+1213:  ANDLW  07
+1214:  MOVWF  78
+1215:  MOVF   4E,W
+1216:  MOVWF  77
+1217:  MOVF   78,F
+1218:  BTFSC  03.2
+1219:  GOTO   21E
+121A:  BCF    03.0
+121B:  RRF    77,F
+121C:  DECFSZ 78,F
+121D:  GOTO   21A
+121E:  MOVF   77,W
+121F:  ANDLW  01
+1220:  BTFSS  03.2
+....................     { 
+....................       spads_enabled++; 
+1221:  INCF   4C,F
+....................     } 
+1222:  INCF   4D,F
+1223:  GOTO   1DF
+....................   } 
+....................  
+....................   writeMulti(GLOBAL_CONFIG_SPAD_ENABLES_REF_0, ref_spad_map, 6); 
+1224:  MOVLW  B0
+1225:  MOVWF  4E
+1226:  CLRF   50
+1227:  MOVLW  45
+1228:  MOVWF  4F
+1229:  MOVLW  06
+122A:  MOVWF  51
+....................  
+....................   // -- VL53L0X_set_reference_spads() end 
+....................  
+....................   // -- VL53L0X_load_tuning_settings() begin 
+....................   // DefaultTuningSettings from vl53l0x_tuning.h 
+....................  
+....................   writeReg(0xFF, 0x01); 
+*
+125C:  MOVLW  FF
+125D:  BCF    03.5
+125E:  MOVWF  65
+125F:  MOVLW  01
+1260:  MOVWF  66
+1261:  BCF    0A.4
+1262:  CALL   150
+1263:  BSF    0A.4
+....................   writeReg(0x00, 0x00); 
+1264:  CLRF   65
+1265:  CLRF   66
+1266:  BCF    0A.4
+1267:  CALL   150
+1268:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x00); 
+1269:  MOVLW  FF
+126A:  MOVWF  65
+126B:  CLRF   66
+126C:  BCF    0A.4
+126D:  CALL   150
+126E:  BSF    0A.4
+....................   writeReg(0x09, 0x00); 
+126F:  MOVLW  09
+1270:  MOVWF  65
+1271:  CLRF   66
+1272:  BCF    0A.4
+1273:  CALL   150
+1274:  BSF    0A.4
+....................   writeReg(0x10, 0x00); 
+1275:  MOVLW  10
+1276:  MOVWF  65
+1277:  CLRF   66
+1278:  BCF    0A.4
+1279:  CALL   150
+127A:  BSF    0A.4
+....................   writeReg(0x11, 0x00); 
+127B:  MOVLW  11
+127C:  MOVWF  65
+127D:  CLRF   66
+127E:  BCF    0A.4
+127F:  CALL   150
+1280:  BSF    0A.4
+....................  
+....................   writeReg(0x24, 0x01); 
+1281:  MOVLW  24
+1282:  MOVWF  65
+1283:  MOVLW  01
+1284:  MOVWF  66
+1285:  BCF    0A.4
+1286:  CALL   150
+1287:  BSF    0A.4
+....................   writeReg(0x25, 0xFF); 
+1288:  MOVLW  25
+1289:  MOVWF  65
+128A:  MOVLW  FF
+128B:  MOVWF  66
+128C:  BCF    0A.4
+128D:  CALL   150
+128E:  BSF    0A.4
+....................   writeReg(0x75, 0x00); 
+128F:  MOVLW  75
+1290:  MOVWF  65
+1291:  CLRF   66
+1292:  BCF    0A.4
+1293:  CALL   150
+1294:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x01); 
+1295:  MOVLW  FF
+1296:  MOVWF  65
+1297:  MOVLW  01
+1298:  MOVWF  66
+1299:  BCF    0A.4
+129A:  CALL   150
+129B:  BSF    0A.4
+....................   writeReg(0x4E, 0x2C); 
+129C:  MOVLW  4E
+129D:  MOVWF  65
+129E:  MOVLW  2C
+129F:  MOVWF  66
+12A0:  BCF    0A.4
+12A1:  CALL   150
+12A2:  BSF    0A.4
+....................   writeReg(0x48, 0x00); 
+12A3:  MOVLW  48
+12A4:  MOVWF  65
+12A5:  CLRF   66
+12A6:  BCF    0A.4
+12A7:  CALL   150
+12A8:  BSF    0A.4
+....................   writeReg(0x30, 0x20); 
+12A9:  MOVLW  30
+12AA:  MOVWF  65
+12AB:  MOVLW  20
+12AC:  MOVWF  66
+12AD:  BCF    0A.4
+12AE:  CALL   150
+12AF:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x00); 
+12B0:  MOVLW  FF
+12B1:  MOVWF  65
+12B2:  CLRF   66
+12B3:  BCF    0A.4
+12B4:  CALL   150
+12B5:  BSF    0A.4
+....................   writeReg(0x30, 0x09); 
+12B6:  MOVLW  30
+12B7:  MOVWF  65
+12B8:  MOVLW  09
+12B9:  MOVWF  66
+12BA:  BCF    0A.4
+12BB:  CALL   150
+12BC:  BSF    0A.4
+....................   writeReg(0x54, 0x00); 
+12BD:  MOVLW  54
+12BE:  MOVWF  65
+12BF:  CLRF   66
+12C0:  BCF    0A.4
+12C1:  CALL   150
+12C2:  BSF    0A.4
+....................   writeReg(0x31, 0x04); 
+12C3:  MOVLW  31
+12C4:  MOVWF  65
+12C5:  MOVLW  04
+12C6:  MOVWF  66
+12C7:  BCF    0A.4
+12C8:  CALL   150
+12C9:  BSF    0A.4
+....................   writeReg(0x32, 0x03); 
+12CA:  MOVLW  32
+12CB:  MOVWF  65
+12CC:  MOVLW  03
+12CD:  MOVWF  66
+12CE:  BCF    0A.4
+12CF:  CALL   150
+12D0:  BSF    0A.4
+....................   writeReg(0x40, 0x83); 
+12D1:  MOVLW  40
+12D2:  MOVWF  65
+12D3:  MOVLW  83
+12D4:  MOVWF  66
+12D5:  BCF    0A.4
+12D6:  CALL   150
+12D7:  BSF    0A.4
+....................   writeReg(0x46, 0x25); 
+12D8:  MOVLW  46
+12D9:  MOVWF  65
+12DA:  MOVLW  25
+12DB:  MOVWF  66
+12DC:  BCF    0A.4
+12DD:  CALL   150
+12DE:  BSF    0A.4
+....................   writeReg(0x60, 0x00); 
+12DF:  MOVLW  60
+12E0:  MOVWF  65
+12E1:  CLRF   66
+12E2:  BCF    0A.4
+12E3:  CALL   150
+12E4:  BSF    0A.4
+....................   writeReg(0x27, 0x00); 
+12E5:  MOVLW  27
+12E6:  MOVWF  65
+12E7:  CLRF   66
+12E8:  BCF    0A.4
+12E9:  CALL   150
+12EA:  BSF    0A.4
+....................   writeReg(0x50, 0x06); 
+12EB:  MOVLW  50
+12EC:  MOVWF  65
+12ED:  MOVLW  06
+12EE:  MOVWF  66
+12EF:  BCF    0A.4
+12F0:  CALL   150
+12F1:  BSF    0A.4
+....................   writeReg(0x51, 0x00); 
+12F2:  MOVLW  51
+12F3:  MOVWF  65
+12F4:  CLRF   66
+12F5:  BCF    0A.4
+12F6:  CALL   150
+12F7:  BSF    0A.4
+....................   writeReg(0x52, 0x96); 
+12F8:  MOVLW  52
+12F9:  MOVWF  65
+12FA:  MOVLW  96
+12FB:  MOVWF  66
+12FC:  BCF    0A.4
+12FD:  CALL   150
+12FE:  BSF    0A.4
+....................   writeReg(0x56, 0x08); 
+12FF:  MOVLW  56
+1300:  MOVWF  65
+1301:  MOVLW  08
+1302:  MOVWF  66
+1303:  BCF    0A.4
+1304:  CALL   150
+1305:  BSF    0A.4
+....................   writeReg(0x57, 0x30); 
+1306:  MOVLW  57
+1307:  MOVWF  65
+1308:  MOVLW  30
+1309:  MOVWF  66
+130A:  BCF    0A.4
+130B:  CALL   150
+130C:  BSF    0A.4
+....................   writeReg(0x61, 0x00); 
+130D:  MOVLW  61
+130E:  MOVWF  65
+130F:  CLRF   66
+1310:  BCF    0A.4
+1311:  CALL   150
+1312:  BSF    0A.4
+....................   writeReg(0x62, 0x00); 
+1313:  MOVLW  62
+1314:  MOVWF  65
+1315:  CLRF   66
+1316:  BCF    0A.4
+1317:  CALL   150
+1318:  BSF    0A.4
+....................   writeReg(0x64, 0x00); 
+1319:  MOVLW  64
+131A:  MOVWF  65
+131B:  CLRF   66
+131C:  BCF    0A.4
+131D:  CALL   150
+131E:  BSF    0A.4
+....................   writeReg(0x65, 0x00); 
+131F:  MOVLW  65
+1320:  MOVWF  65
+1321:  CLRF   66
+1322:  BCF    0A.4
+1323:  CALL   150
+1324:  BSF    0A.4
+....................   writeReg(0x66, 0xA0); 
+1325:  MOVLW  66
+1326:  MOVWF  65
+1327:  MOVLW  A0
+1328:  MOVWF  66
+1329:  BCF    0A.4
+132A:  CALL   150
+132B:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x01); 
+132C:  MOVLW  FF
+132D:  MOVWF  65
+132E:  MOVLW  01
+132F:  MOVWF  66
+1330:  BCF    0A.4
+1331:  CALL   150
+1332:  BSF    0A.4
+....................   writeReg(0x22, 0x32); 
+1333:  MOVLW  22
+1334:  MOVWF  65
+1335:  MOVLW  32
+1336:  MOVWF  66
+1337:  BCF    0A.4
+1338:  CALL   150
+1339:  BSF    0A.4
+....................   writeReg(0x47, 0x14); 
+133A:  MOVLW  47
+133B:  MOVWF  65
+133C:  MOVLW  14
+133D:  MOVWF  66
+133E:  BCF    0A.4
+133F:  CALL   150
+1340:  BSF    0A.4
+....................   writeReg(0x49, 0xFF); 
+1341:  MOVLW  49
+1342:  MOVWF  65
+1343:  MOVLW  FF
+1344:  MOVWF  66
+1345:  BCF    0A.4
+1346:  CALL   150
+1347:  BSF    0A.4
+....................   writeReg(0x4A, 0x00); 
+1348:  MOVLW  4A
+1349:  MOVWF  65
+134A:  CLRF   66
+134B:  BCF    0A.4
+134C:  CALL   150
+134D:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x00); 
+134E:  MOVLW  FF
+134F:  MOVWF  65
+1350:  CLRF   66
+1351:  BCF    0A.4
+1352:  CALL   150
+1353:  BSF    0A.4
+....................   writeReg(0x7A, 0x0A); 
+1354:  MOVLW  7A
+1355:  MOVWF  65
+1356:  MOVLW  0A
+1357:  MOVWF  66
+1358:  BCF    0A.4
+1359:  CALL   150
+135A:  BSF    0A.4
+....................   writeReg(0x7B, 0x00); 
+135B:  MOVLW  7B
+135C:  MOVWF  65
+135D:  CLRF   66
+135E:  BCF    0A.4
+135F:  CALL   150
+1360:  BSF    0A.4
+....................   writeReg(0x78, 0x21); 
+1361:  MOVLW  78
+1362:  MOVWF  65
+1363:  MOVLW  21
+1364:  MOVWF  66
+1365:  BCF    0A.4
+1366:  CALL   150
+1367:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x01); 
+1368:  MOVLW  FF
+1369:  MOVWF  65
+136A:  MOVLW  01
+136B:  MOVWF  66
+136C:  BCF    0A.4
+136D:  CALL   150
+136E:  BSF    0A.4
+....................   writeReg(0x23, 0x34); 
+136F:  MOVLW  23
+1370:  MOVWF  65
+1371:  MOVLW  34
+1372:  MOVWF  66
+1373:  BCF    0A.4
+1374:  CALL   150
+1375:  BSF    0A.4
+....................   writeReg(0x42, 0x00); 
+1376:  MOVLW  42
+1377:  MOVWF  65
+1378:  CLRF   66
+1379:  BCF    0A.4
+137A:  CALL   150
+137B:  BSF    0A.4
+....................   writeReg(0x44, 0xFF); 
+137C:  MOVLW  44
+137D:  MOVWF  65
+137E:  MOVLW  FF
+137F:  MOVWF  66
+1380:  BCF    0A.4
+1381:  CALL   150
+1382:  BSF    0A.4
+....................   writeReg(0x45, 0x26); 
+1383:  MOVLW  45
+1384:  MOVWF  65
+1385:  MOVLW  26
+1386:  MOVWF  66
+1387:  BCF    0A.4
+1388:  CALL   150
+1389:  BSF    0A.4
+....................   writeReg(0x46, 0x05); 
+138A:  MOVLW  46
+138B:  MOVWF  65
+138C:  MOVLW  05
+138D:  MOVWF  66
+138E:  BCF    0A.4
+138F:  CALL   150
+1390:  BSF    0A.4
+....................   writeReg(0x40, 0x40); 
+1391:  MOVLW  40
+1392:  MOVWF  65
+1393:  MOVWF  66
+1394:  BCF    0A.4
+1395:  CALL   150
+1396:  BSF    0A.4
+....................   writeReg(0x0E, 0x06); 
+1397:  MOVLW  0E
+1398:  MOVWF  65
+1399:  MOVLW  06
+139A:  MOVWF  66
+139B:  BCF    0A.4
+139C:  CALL   150
+139D:  BSF    0A.4
+....................   writeReg(0x20, 0x1A); 
+139E:  MOVLW  20
+139F:  MOVWF  65
+13A0:  MOVLW  1A
+13A1:  MOVWF  66
+13A2:  BCF    0A.4
+13A3:  CALL   150
+13A4:  BSF    0A.4
+....................   writeReg(0x43, 0x40); 
+13A5:  MOVLW  43
+13A6:  MOVWF  65
+13A7:  MOVLW  40
+13A8:  MOVWF  66
+13A9:  BCF    0A.4
+13AA:  CALL   150
+13AB:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x00); 
+13AC:  MOVLW  FF
+13AD:  MOVWF  65
+13AE:  CLRF   66
+13AF:  BCF    0A.4
+13B0:  CALL   150
+13B1:  BSF    0A.4
+....................   writeReg(0x34, 0x03); 
+13B2:  MOVLW  34
+13B3:  MOVWF  65
+13B4:  MOVLW  03
+13B5:  MOVWF  66
+13B6:  BCF    0A.4
+13B7:  CALL   150
+13B8:  BSF    0A.4
+....................   writeReg(0x35, 0x44); 
+13B9:  MOVLW  35
+13BA:  MOVWF  65
+13BB:  MOVLW  44
+13BC:  MOVWF  66
+13BD:  BCF    0A.4
+13BE:  CALL   150
+13BF:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x01); 
+13C0:  MOVLW  FF
+13C1:  MOVWF  65
+13C2:  MOVLW  01
+13C3:  MOVWF  66
+13C4:  BCF    0A.4
+13C5:  CALL   150
+13C6:  BSF    0A.4
+....................   writeReg(0x31, 0x04); 
+13C7:  MOVLW  31
+13C8:  MOVWF  65
+13C9:  MOVLW  04
+13CA:  MOVWF  66
+13CB:  BCF    0A.4
+13CC:  CALL   150
+13CD:  BSF    0A.4
+....................   writeReg(0x4B, 0x09); 
+13CE:  MOVLW  4B
+13CF:  MOVWF  65
+13D0:  MOVLW  09
+13D1:  MOVWF  66
+13D2:  BCF    0A.4
+13D3:  CALL   150
+13D4:  BSF    0A.4
+....................   writeReg(0x4C, 0x05); 
+13D5:  MOVLW  4C
+13D6:  MOVWF  65
+13D7:  MOVLW  05
+13D8:  MOVWF  66
+13D9:  BCF    0A.4
+13DA:  CALL   150
+13DB:  BSF    0A.4
+....................   writeReg(0x4D, 0x04); 
+13DC:  MOVLW  4D
+13DD:  MOVWF  65
+13DE:  MOVLW  04
+13DF:  MOVWF  66
+13E0:  BCF    0A.4
+13E1:  CALL   150
+13E2:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x00); 
+13E3:  MOVLW  FF
+13E4:  MOVWF  65
+13E5:  CLRF   66
+13E6:  BCF    0A.4
+13E7:  CALL   150
+13E8:  BSF    0A.4
+....................   writeReg(0x44, 0x00); 
+13E9:  MOVLW  44
+13EA:  MOVWF  65
+13EB:  CLRF   66
+13EC:  BCF    0A.4
+13ED:  CALL   150
+13EE:  BSF    0A.4
+....................   writeReg(0x45, 0x20); 
+13EF:  MOVLW  45
+13F0:  MOVWF  65
+13F1:  MOVLW  20
+13F2:  MOVWF  66
+13F3:  BCF    0A.4
+13F4:  CALL   150
+13F5:  BSF    0A.4
+....................   writeReg(0x47, 0x08); 
+13F6:  MOVLW  47
+13F7:  MOVWF  65
+13F8:  MOVLW  08
+13F9:  MOVWF  66
+13FA:  BCF    0A.4
+13FB:  CALL   150
+13FC:  BSF    0A.4
+....................   writeReg(0x48, 0x28); 
+13FD:  MOVLW  48
+13FE:  MOVWF  65
+13FF:  MOVLW  28
+1400:  MOVWF  66
+1401:  BCF    0A.4
+1402:  CALL   150
+1403:  BSF    0A.4
+....................   writeReg(0x67, 0x00); 
+1404:  MOVLW  67
+1405:  MOVWF  65
+1406:  CLRF   66
+1407:  BCF    0A.4
+1408:  CALL   150
+1409:  BSF    0A.4
+....................   writeReg(0x70, 0x04); 
+140A:  MOVLW  70
+140B:  MOVWF  65
+140C:  MOVLW  04
+140D:  MOVWF  66
+140E:  BCF    0A.4
+140F:  CALL   150
+1410:  BSF    0A.4
+....................   writeReg(0x71, 0x01); 
+1411:  MOVLW  71
+1412:  MOVWF  65
+1413:  MOVLW  01
+1414:  MOVWF  66
+1415:  BCF    0A.4
+1416:  CALL   150
+1417:  BSF    0A.4
+....................   writeReg(0x72, 0xFE); 
+1418:  MOVLW  72
+1419:  MOVWF  65
+141A:  MOVLW  FE
+141B:  MOVWF  66
+141C:  BCF    0A.4
+141D:  CALL   150
+141E:  BSF    0A.4
+....................   writeReg(0x76, 0x00); 
+141F:  MOVLW  76
+1420:  MOVWF  65
+1421:  CLRF   66
+1422:  BCF    0A.4
+1423:  CALL   150
+1424:  BSF    0A.4
+....................   writeReg(0x77, 0x00); 
+1425:  MOVLW  77
+1426:  MOVWF  65
+1427:  CLRF   66
+1428:  BCF    0A.4
+1429:  CALL   150
+142A:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x01); 
+142B:  MOVLW  FF
+142C:  MOVWF  65
+142D:  MOVLW  01
+142E:  MOVWF  66
+142F:  BCF    0A.4
+1430:  CALL   150
+1431:  BSF    0A.4
+....................   writeReg(0x0D, 0x01); 
+1432:  MOVLW  0D
+1433:  MOVWF  65
+1434:  MOVLW  01
+1435:  MOVWF  66
+1436:  BCF    0A.4
+1437:  CALL   150
+1438:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x00); 
+1439:  MOVLW  FF
+143A:  MOVWF  65
+143B:  CLRF   66
+143C:  BCF    0A.4
+143D:  CALL   150
+143E:  BSF    0A.4
+....................   writeReg(0x80, 0x01); 
+143F:  MOVLW  80
+1440:  MOVWF  65
+1441:  MOVLW  01
+1442:  MOVWF  66
+1443:  BCF    0A.4
+1444:  CALL   150
+1445:  BSF    0A.4
+....................   writeReg(0x01, 0xF8); 
+1446:  MOVLW  01
+1447:  MOVWF  65
+1448:  MOVLW  F8
+1449:  MOVWF  66
+144A:  BCF    0A.4
+144B:  CALL   150
+144C:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x01); 
+144D:  MOVLW  FF
+144E:  MOVWF  65
+144F:  MOVLW  01
+1450:  MOVWF  66
+1451:  BCF    0A.4
+1452:  CALL   150
+1453:  BSF    0A.4
+....................   writeReg(0x8E, 0x01); 
+1454:  MOVLW  8E
+1455:  MOVWF  65
+1456:  MOVLW  01
+1457:  MOVWF  66
+1458:  BCF    0A.4
+1459:  CALL   150
+145A:  BSF    0A.4
+....................   writeReg(0x00, 0x01); 
+145B:  CLRF   65
+145C:  MOVLW  01
+145D:  MOVWF  66
+145E:  BCF    0A.4
+145F:  CALL   150
+1460:  BSF    0A.4
+....................   writeReg(0xFF, 0x00); 
+1461:  MOVLW  FF
+1462:  MOVWF  65
+1463:  CLRF   66
+1464:  BCF    0A.4
+1465:  CALL   150
+1466:  BSF    0A.4
+....................   writeReg(0x80, 0x00); 
+1467:  MOVLW  80
+1468:  MOVWF  65
+1469:  CLRF   66
+146A:  BCF    0A.4
+146B:  CALL   150
+146C:  BSF    0A.4
+....................    
+....................   return init2(); 
+146D:  BCF    0A.4
+146E:  BSF    0A.3
+146F:  GOTO   152
+1470:  BSF    0A.4
+1471:  BCF    0A.3
+1472:  MOVF   78,W
+....................  
+....................  
+.................... } 
+....................  
+....................  
+.................... #separate boolean init2() { 
+....................   // -- VL53L0X_load_tuning_settings() end 
+....................  
+....................   // "Set interrupt config to new sample ready" 
+....................   // -- VL53L0X_SetGpioConfig() begin 
+....................  
+....................   writeReg(SYSTEM_INTERRUPT_CONFIG_GPIO, 0x04); 
+*
+0952:  MOVLW  0A
+0953:  MOVWF  65
+0954:  MOVLW  04
+0955:  MOVWF  66
+0956:  BCF    0A.3
+0957:  CALL   150
+0958:  BSF    0A.3
+....................   writeReg(GPIO_HV_MUX_ACTIVE_HIGH, readReg(GPIO_HV_MUX_ACTIVE_HIGH) & ~0x10); // active low 
+0959:  MOVLW  84
+095A:  BSF    03.5
+095B:  MOVWF  47
+095C:  BCF    0A.3
+095D:  BCF    03.5
+095E:  CALL   12A
+095F:  BSF    0A.3
+0960:  MOVF   78,W
+0961:  ANDLW  EF
+0962:  MOVWF  4E
+0963:  MOVLW  84
+0964:  MOVWF  65
+0965:  MOVF   4E,W
+0966:  MOVWF  66
+0967:  BCF    0A.3
+0968:  CALL   150
+0969:  BSF    0A.3
+....................   writeReg(SYSTEM_INTERRUPT_CLEAR, 0x01); 
+096A:  MOVLW  0B
+096B:  MOVWF  65
+096C:  MOVLW  01
+096D:  MOVWF  66
+096E:  BCF    0A.3
+096F:  CALL   150
+0970:  BSF    0A.3
+....................  
+....................   // -- VL53L0X_SetGpioConfig() end 
+....................  
+....................   measurement_timing_budget_us = getMeasurementTimingBudget(); 
+*
+0A59:  MOVF   7A,W
+0A5A:  MOVWF  35
+0A5B:  MOVF   79,W
+0A5C:  MOVWF  34
+0A5D:  MOVF   78,W
+0A5E:  MOVWF  33
+0A5F:  MOVF   77,W
+0A60:  MOVWF  32
+....................  
+....................   // "Disable MSRC and TCC by default" 
+....................   // MSRC = Minimum Signal Rate Check 
+....................   // TCC = Target CentreCheck 
+....................   // -- VL53L0X_SetSequenceStepEnable() begin 
+....................  
+....................   writeReg(SYSTEM_SEQUENCE_CONFIG, 0xE8); 
+0A61:  MOVLW  01
+0A62:  MOVWF  65
+0A63:  MOVLW  E8
+0A64:  MOVWF  66
+0A65:  BCF    0A.3
+0A66:  CALL   150
+0A67:  BSF    0A.3
+....................  
+....................   // -- VL53L0X_SetSequenceStepEnable() end 
+....................  
+....................   // "Recalculate timing budget" 
+....................   setMeasurementTimingBudget(measurement_timing_budget_us); 
+0A68:  MOVF   35,W
+0A69:  MOVWF  66
+0A6A:  MOVF   34,W
+0A6B:  MOVWF  65
+0A6C:  MOVF   33,W
+0A6D:  MOVWF  64
+0A6E:  MOVF   32,W
+0A6F:  MOVWF  63
+0A70:  CALL   000
+....................  
+....................   // VL53L0X_StaticInit() end 
+....................  
+....................   // VL53L0X_PerformRefCalibration() begin (VL53L0X_perform_ref_calibration()) 
+....................  
+....................   // -- VL53L0X_perform_vhv_calibration() begin 
+....................  
+....................   writeReg(SYSTEM_SEQUENCE_CONFIG, 0x01); 
+0A71:  MOVLW  01
+0A72:  MOVWF  65
+0A73:  MOVWF  66
+0A74:  BCF    0A.3
+0A75:  CALL   150
+0A76:  BSF    0A.3
+....................   if (!performSingleRefCalibration(0x40)) { return false; } 
+0A77:  MOVLW  40
+0A78:  MOVWF  63
+0A79:  BCF    0A.3
+0A7A:  CALL   751
+0A7B:  BSF    0A.3
+0A7C:  MOVF   78,F
+0A7D:  BTFSS  03.2
+0A7E:  GOTO   282
+0A7F:  MOVLW  00
+0A80:  MOVWF  78
+0A81:  GOTO   29C
+....................  
+....................   // -- VL53L0X_perform_vhv_calibration() end 
+....................  
+....................   // -- VL53L0X_perform_phase_calibration() begin 
+....................  
+....................   writeReg(SYSTEM_SEQUENCE_CONFIG, 0x02); 
+0A82:  MOVLW  01
+0A83:  MOVWF  65
+0A84:  MOVLW  02
+0A85:  MOVWF  66
+0A86:  BCF    0A.3
+0A87:  CALL   150
+0A88:  BSF    0A.3
+....................   if (!performSingleRefCalibration(0x00)) { return false; } 
+0A89:  CLRF   63
+0A8A:  BCF    0A.3
+0A8B:  CALL   751
+0A8C:  BSF    0A.3
+0A8D:  MOVF   78,F
+0A8E:  BTFSS  03.2
+0A8F:  GOTO   293
+0A90:  MOVLW  00
+0A91:  MOVWF  78
+0A92:  GOTO   29C
+....................  
+....................   // -- VL53L0X_perform_phase_calibration() end 
+....................  
+....................   // "restore the previous Sequence Config" 
+....................   writeReg(SYSTEM_SEQUENCE_CONFIG, 0xE8); 
+0A93:  MOVLW  01
+0A94:  MOVWF  65
+0A95:  MOVLW  E8
+0A96:  MOVWF  66
+0A97:  BCF    0A.3
+0A98:  CALL   150
+0A99:  BSF    0A.3
+....................  
+....................   // VL53L0X_PerformRefCalibration() end 
+....................  
+....................   return true; 
+0A9A:  MOVLW  01
+0A9B:  MOVWF  78
+0A9C:  BCF    0A.3
+0A9D:  BSF    0A.4
+0A9E:  GOTO   470 (RETURN)
+.................... } 
+....................  
+.................... // Write an 8-bit register 
+.................... void writeReg(int8 reg, int8 value) 
+.................... { 
+.................... //!  Wire.beginTransmission(address); 
+.................... //!  Wire.write(reg); 
+.................... //!  Wire.write(value); 
+.................... //!  last_status = Wire.endTransmission(); 
+....................  
+.................... // IN the Arduino, last_status has the following values 
+.................... //!0:success 
+.................... //!1:data too long to fit in transmit buffer 
+.................... //!2:received NACK on transmit of address 
+.................... //!3:received NACK on transmit of data 
+.................... //!4:other error 
+....................  
+.................... // In our current port, last_status will only depend on the 
+.................... // success or failure of the last transmitted byte 
+.................... // 0 = success, got an ack 
+.................... // 1 =  no ack (NACK) 
+.................... // 2 = collision 
+....................  
+.................... i2c_start(); 
+*
+0150:  BSF    03.5
+0151:  BSF    11.0
+0152:  BTFSC  11.0
+0153:  GOTO   152
+.................... i2c_write(address); 
+0154:  BCF    03.5
+0155:  MOVF   2B,W
+0156:  BSF    03.5
+0157:  MOVWF  4A
+0158:  BCF    03.5
+0159:  CALL   108
+.................... i2c_write(reg); 
+015A:  MOVF   65,W
+015B:  BSF    03.5
+015C:  MOVWF  4A
+015D:  BCF    03.5
+015E:  CALL   108
+.................... last_status = i2c_write(value); 
+015F:  MOVF   66,W
+0160:  BSF    03.5
+0161:  MOVWF  4A
+0162:  BCF    03.5
+0163:  CALL   108
+0164:  MOVF   78,W
+0165:  MOVWF  36
+.................... i2c_stop(); 
+0166:  BSF    03.5
+0167:  BSF    11.2
+0168:  BTFSC  11.2
+0169:  GOTO   168
+016A:  BCF    03.5
+016B:  RETURN
+....................  
+.................... } 
+....................  
+.................... // Write a 16-bit register 
+.................... void writeReg16Bit(int8 reg, int16 value) 
+.................... { 
+.................... //!  Wire.beginTransmission(address); 
+.................... //!  Wire.write(reg); 
+.................... //!  Wire.write((value >> 8) & 0xFF); // value high byte 
+.................... //!  Wire.write( value       & 0xFF); // value low byte 
+.................... //!  last_status = Wire.endTransmission(); 
+.................... i2c_start(); 
+*
+01CA:  BSF    03.5
+01CB:  BSF    11.0
+01CC:  BTFSC  11.0
+01CD:  GOTO   1CC
+.................... i2c_write(address); 
+01CE:  BCF    03.5
+01CF:  MOVF   2B,W
+01D0:  BSF    03.5
+01D1:  MOVWF  4A
+01D2:  BCF    03.5
+01D3:  CALL   108
+.................... i2c_write(reg); 
+01D4:  BSF    03.5
+01D5:  MOVF   42,W
+01D6:  MOVWF  4A
+01D7:  BCF    03.5
+01D8:  CALL   108
+.................... i2c_write((value >> 8) & 0xFF); 
+01D9:  BSF    03.5
+01DA:  MOVF   44,W
+01DB:  MOVWF  45
+01DC:  CLRF   46
+01DD:  CLRF   46
+01DE:  MOVF   44,W
+01DF:  MOVWF  4A
+01E0:  BCF    03.5
+01E1:  CALL   108
+.................... last_status = i2c_write(value & 0xFF); 
+01E2:  BSF    03.5
+01E3:  MOVF   43,W
+01E4:  MOVWF  45
+01E5:  CLRF   46
+01E6:  MOVF   43,W
+01E7:  MOVWF  4A
+01E8:  BCF    03.5
+01E9:  CALL   108
+01EA:  MOVF   78,W
+01EB:  MOVWF  36
+.................... i2c_stop(); 
+01EC:  BSF    03.5
+01ED:  BSF    11.2
+01EE:  BTFSC  11.2
+01EF:  GOTO   1EE
+01F0:  BCF    03.5
+01F1:  RETURN
+....................  
+.................... } 
+....................  
+.................... // Write a 32-bit register 
+.................... void writeReg32Bit(int8 reg, int32 value) 
+.................... { 
+.................... //!  Wire.beginTransmission(address); 
+.................... //!  Wire.write(reg); 
+.................... //!  Wire.write((value >> 24) & 0xFF); // value highest byte 
+.................... //!  Wire.write((value >> 16) & 0xFF); 
+.................... //!  Wire.write((value >>  8) & 0xFF); 
+.................... //!  Wire.write( value        & 0xFF); // value lowest byte 
+.................... //!  last_status = Wire.endTransmission(); 
+....................  
+.................... i2c_start(); 
+.................... i2c_write(address); 
+.................... i2c_write(reg); 
+.................... i2c_write((value >> 24) & 0xFF); 
+.................... i2c_write((value >> 16) & 0xFF); 
+.................... i2c_write((value >>  8) & 0xFF); 
+.................... last_status = i2c_write(value & 0xFF); 
+.................... i2c_stop(); 
+....................  
+.................... } 
+....................  
+.................... // Read an 8-bit register 
+.................... int8 readReg(int8 reg) 
+.................... { 
+....................   int8 value; 
+....................  
+.................... //!  Wire.beginTransmission(address); 
+.................... //!  Wire.write(reg); 
+.................... //!  last_status = Wire.endTransmission(); 
+.................... //! 
+.................... //!  Wire.requestFrom(address, (int8)1); 
+.................... //!  value = Wire.read(); 
+.................... //! 
+....................  
+....................   i2c_start(); 
+*
+012A:  BSF    03.5
+012B:  BSF    11.0
+012C:  BTFSC  11.0
+012D:  GOTO   12C
+....................   i2c_write(address); 
+012E:  BCF    03.5
+012F:  MOVF   2B,W
+0130:  BSF    03.5
+0131:  MOVWF  4A
+0132:  BCF    03.5
+0133:  CALL   108
+....................   last_status = i2c_write(reg); 
+0134:  BSF    03.5
+0135:  MOVF   47,W
+0136:  MOVWF  4A
+0137:  BCF    03.5
+0138:  CALL   108
+0139:  MOVF   78,W
+013A:  MOVWF  36
+....................    
+....................   i2c_start(); 
+013B:  BSF    03.5
+013C:  BSF    11.1
+013D:  BTFSC  11.1
+013E:  GOTO   13D
+....................   i2c_write(address | 1); 
+013F:  BCF    03.5
+0140:  MOVF   2B,W
+0141:  IORLW  01
+0142:  BSF    03.5
+0143:  MOVWF  49
+0144:  MOVWF  4A
+0145:  BCF    03.5
+0146:  CALL   108
+....................   value = i2c_read(0); 
+0147:  CLRF   77
+0148:  CALL   11A
+0149:  MOVF   78,W
+014A:  BSF    03.5
+014B:  MOVWF  48
+....................    
+....................   return value; 
+014C:  MOVF   48,W
+014D:  MOVWF  78
+014E:  BCF    03.5
+014F:  RETURN
+....................  
+.................... } 
+....................  
+.................... // Read a 16-bit register 
+.................... int16 readReg16Bit(int8 reg) 
+.................... { 
+....................   int16 value; 
+....................  
+.................... //!  Wire.beginTransmission(address); 
+.................... //!  Wire.write(reg); 
+.................... //!  last_status = Wire.endTransmission(); 
+.................... //! 
+.................... //!  Wire.requestFrom(address, (int8)2); 
+.................... //!  value  = (int16)Wire.read() << 8; // value high byte 
+.................... //!  value |=           Wire.read();      // value low byte 
+....................  
+....................   i2c_start(); 
+*
+048E:  BSF    03.5
+048F:  BSF    11.1
+0490:  BTFSC  11.1
+0491:  GOTO   490
+....................   i2c_write(address); 
+0492:  BCF    03.5
+0493:  MOVF   2B,W
+0494:  BSF    03.5
+0495:  MOVWF  4A
+0496:  BCF    03.5
+0497:  CALL   108
+....................   last_status = i2c_write(reg); 
+0498:  BSF    03.5
+0499:  MOVF   46,W
+049A:  MOVWF  4A
+049B:  BCF    03.5
+049C:  CALL   108
+049D:  MOVF   78,W
+049E:  MOVWF  36
+....................    
+....................   i2c_start(); 
+049F:  BSF    03.5
+04A0:  BSF    11.1
+04A1:  BTFSC  11.1
+04A2:  GOTO   4A1
+....................   i2c_write(address | 1); 
+04A3:  BCF    03.5
+04A4:  MOVF   2B,W
+04A5:  IORLW  01
+04A6:  BSF    03.5
+04A7:  MOVWF  49
+04A8:  MOVWF  4A
+04A9:  BCF    03.5
+04AA:  CALL   108
+....................   value = (int16)i2c_read() << 8; 
+04AB:  MOVLW  01
+04AC:  MOVWF  77
+04AD:  CALL   11A
+04AE:  MOVF   78,W
+04AF:  BSF    03.5
+04B0:  CLRF   4A
+04B1:  MOVWF  49
+04B2:  MOVWF  48
+04B3:  CLRF   47
+....................   value |= i2c_read(0); 
+04B4:  CLRF   77
+04B5:  BCF    03.5
+04B6:  CALL   11A
+04B7:  MOVF   78,W
+04B8:  BSF    03.5
+04B9:  IORWF  47,F
+....................  
+....................   return value; 
+04BA:  MOVF   47,W
+04BB:  MOVWF  78
+04BC:  MOVF   48,W
+04BD:  MOVWF  79
+04BE:  BCF    03.5
+04BF:  RETURN
+.................... } 
+....................  
+.................... // Read a 32-bit register 
+.................... int32 readReg32Bit(int8 reg) 
+.................... { 
+....................   int32 value; 
+....................  
+.................... //!  Wire.beginTransmission(address); 
+.................... //!  Wire.write(reg); 
+.................... //!  last_status = Wire.endTransmission(); 
+.................... //! 
+.................... //!  Wire.requestFrom(address, (int8)4); 
+.................... //!  value  = (int32)Wire.read() << 24; // value highest byte 
+.................... //!  value |= (int32)Wire.read() << 16; 
+.................... //!  value |= (int16)Wire.read() <<  8; 
+.................... //!  value |=           Wire.read();       // value lowest byte 
+....................  
+....................   i2c_start(); 
+....................   i2c_write(address); 
+....................   last_status = i2c_write(reg); 
+....................    
+....................   i2c_start(); 
+....................   i2c_write(address | 1); 
+....................   value =  (int32)i2c_read() << 24; 
+....................   value |= (int32)i2c_read() << 16; 
+....................   value |= (int32)i2c_read() << 8; 
+....................   value |= i2c_read(0); 
+....................  
+....................  
+....................   return value; 
+.................... } 
+....................  
+.................... // Write an arbitrary number of bytes from the given array to the sensor, 
+.................... // starting at the given register 
+.................... void writeMulti(int8 reg, int8 * src, int8 count) 
+.................... { 
+.................... //!  Wire.beginTransmission(address); 
+.................... //!  Wire.write(reg); 
+.................... //! 
+.................... //!  while (count-- > 0) 
+.................... //!  { 
+.................... //!    Wire.write(*(src++)); 
+.................... //!  } 
+.................... //! 
+.................... //!  last_status = Wire.endTransmission(); 
+....................  
+....................    i2c_start(); 
+*
+122B:  BSF    03.5
+122C:  BSF    11.1
+122D:  BTFSC  11.1
+122E:  GOTO   22D
+....................    i2c_write(address); 
+122F:  BCF    03.5
+1230:  MOVF   2B,W
+1231:  BSF    03.5
+1232:  MOVWF  4A
+1233:  BCF    0A.4
+1234:  BCF    03.5
+1235:  CALL   108
+1236:  BSF    0A.4
+....................    i2c_write(reg); 
+1237:  MOVF   4E,W
+1238:  BSF    03.5
+1239:  MOVWF  4A
+123A:  BCF    0A.4
+123B:  BCF    03.5
+123C:  CALL   108
+123D:  BSF    0A.4
+....................     
+....................    while (count-- > 0) { 
+123E:  MOVF   51,W
+123F:  DECF   51,F
+1240:  XORLW  00
+1241:  BTFSC  03.2
+1242:  GOTO   258
+....................       last_status = i2c_write(*src++); 
+1243:  MOVF   50,W
+1244:  MOVWF  7A
+1245:  MOVF   4F,W
+1246:  INCF   4F,F
+1247:  BTFSC  03.2
+1248:  INCF   50,F
+1249:  MOVWF  04
+124A:  BCF    03.7
+124B:  BTFSC  7A.0
+124C:  BSF    03.7
+124D:  MOVF   00,W
+124E:  MOVWF  52
+124F:  BSF    03.5
+1250:  MOVWF  4A
+1251:  BCF    0A.4
+1252:  BCF    03.5
+1253:  CALL   108
+1254:  BSF    0A.4
+1255:  MOVF   78,W
+1256:  MOVWF  36
+1257:  GOTO   23E
+....................    } 
+....................     
+....................    i2c_stop(); 
+1258:  BSF    03.5
+1259:  BSF    11.2
+125A:  BTFSC  11.2
+125B:  GOTO   25A
+....................  
+.................... } 
+....................  
+.................... // Read an arbitrary number of bytes from the sensor, starting at the given 
+.................... // register, into the given array 
+.................... void readMulti(int8 reg, int8 * dst, int8 count) 
+.................... { 
+.................... //!  Wire.beginTransmission(address); 
+.................... //!  Wire.write(reg); 
+.................... //!  last_status = Wire.endTransmission(); 
+.................... //! 
+.................... //!  Wire.requestFrom(address, count); 
+.................... //! 
+.................... //!  while (count-- > 0) 
+.................... //!  { 
+.................... //!    *(dst++) = Wire.read(); 
+.................... //!  } 
+....................  
+....................    i2c_start(); 
+*
+1166:  BSF    03.5
+1167:  BSF    11.0
+1168:  BTFSC  11.0
+1169:  GOTO   168
+....................    i2c_write(address); 
+116A:  BCF    03.5
+116B:  MOVF   2B,W
+116C:  BSF    03.5
+116D:  MOVWF  4A
+116E:  BCF    0A.4
+116F:  BCF    03.5
+1170:  CALL   108
+1171:  BSF    0A.4
+....................    last_status = i2c_write(reg); 
+1172:  MOVF   4E,W
+1173:  BSF    03.5
+1174:  MOVWF  4A
+1175:  BCF    0A.4
+1176:  BCF    03.5
+1177:  CALL   108
+1178:  BSF    0A.4
+1179:  MOVF   78,W
+117A:  MOVWF  36
+....................     
+....................    i2c_start(); 
+117B:  BSF    03.5
+117C:  BSF    11.1
+117D:  BTFSC  11.1
+117E:  GOTO   17D
+....................    i2c_write(address|1); 
+117F:  BCF    03.5
+1180:  MOVF   2B,W
+1181:  IORLW  01
+1182:  MOVWF  52
+1183:  BSF    03.5
+1184:  MOVWF  4A
+1185:  BCF    0A.4
+1186:  BCF    03.5
+1187:  CALL   108
+1188:  BSF    0A.4
+....................    while (count-- > 1) { 
+1189:  MOVF   51,W
+118A:  DECF   51,F
+118B:  SUBLW  01
+118C:  BTFSC  03.0
+118D:  GOTO   1A0
+....................       *(dst++) = i2c_read(); 
+118E:  MOVF   50,W
+118F:  MOVWF  7A
+1190:  MOVF   4F,W
+1191:  INCF   4F,F
+1192:  BTFSC  03.2
+1193:  INCF   50,F
+1194:  MOVWF  04
+1195:  BCF    03.7
+1196:  BTFSC  7A.0
+1197:  BSF    03.7
+1198:  MOVLW  01
+1199:  MOVWF  77
+119A:  BCF    0A.4
+119B:  CALL   11A
+119C:  BSF    0A.4
+119D:  MOVF   78,W
+119E:  MOVWF  00
+119F:  GOTO   189
+....................    } 
+....................    *(dst++) = i2c_read(0); 
+11A0:  MOVF   50,W
+11A1:  MOVWF  7A
+11A2:  MOVF   4F,W
+11A3:  INCF   4F,F
+11A4:  BTFSC  03.2
+11A5:  INCF   50,F
+11A6:  MOVWF  04
+11A7:  BCF    03.7
+11A8:  BTFSC  7A.0
+11A9:  BSF    03.7
+11AA:  CLRF   77
+11AB:  BCF    0A.4
+11AC:  CALL   11A
+11AD:  BSF    0A.4
+11AE:  MOVF   78,W
+11AF:  MOVWF  00
+....................  
+....................    i2c_stop(); 
+11B0:  BSF    03.5
+11B1:  BSF    11.2
+11B2:  BTFSC  11.2
+11B3:  GOTO   1B2
+....................  
+....................  
+.................... } 
+....................  
+.................... // Set the return signal rate limit check value in units of MCPS (mega counts 
+.................... // per second). "This represents the amplitude of the signal reflected from the 
+.................... // target and detected by the device"; setting this limit presumably determines 
+.................... // the minimum measurement necessary for the sensor to report a valid reading. 
+.................... // Setting a lower limit increases the potential range of the sensor but also 
+.................... // seems to increase the likelihood of getting an inaccurate reading because of 
+.................... // unwanted reflections from objects other than the intended target. 
+.................... // Defaults to 0.25 MCPS as initialized by the ST API and this library. 
+.................... boolean setSignalRateLimit(float limit_Mcps) 
+.................... { 
+....................   if (limit_Mcps < 0 || limit_Mcps > 511.99) { return false; } 
+*
+01F2:  MOVF   51,W
+01F3:  MOVWF  55
+01F4:  MOVF   50,W
+01F5:  MOVWF  54
+01F6:  MOVF   4F,W
+01F7:  MOVWF  53
+01F8:  MOVF   4E,W
+01F9:  MOVWF  52
+01FA:  CLRF   59
+01FB:  CLRF   58
+01FC:  CLRF   57
+01FD:  CLRF   56
+01FE:  CALL   16C
+01FF:  BTFSC  03.0
+0200:  GOTO   214
+0201:  MOVLW  B8
+0202:  MOVWF  55
+0203:  MOVLW  FE
+0204:  MOVWF  54
+0205:  MOVLW  7F
+0206:  MOVWF  53
+0207:  MOVLW  87
+0208:  MOVWF  52
+0209:  MOVF   51,W
+020A:  MOVWF  59
+020B:  MOVF   50,W
+020C:  MOVWF  58
+020D:  MOVF   4F,W
+020E:  MOVWF  57
+020F:  MOVF   4E,W
+0210:  MOVWF  56
+0211:  CALL   16C
+0212:  BTFSS  03.0
+0213:  GOTO   217
+0214:  MOVLW  00
+0215:  MOVWF  78
+0216:  GOTO   2B4
+....................  
+....................   // Q9.7 fixed point format (9 integer bits, 7 fractional bits) 
+....................   writeReg16Bit(FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT, limit_Mcps * (1 << 7)); 
+0217:  MOVF   51,W
+0218:  MOVWF  55
+0219:  MOVF   50,W
+021A:  MOVWF  54
+021B:  MOVF   4F,W
+021C:  MOVWF  53
+021D:  MOVF   4E,W
+021E:  MOVWF  52
+021F:  CLRF   59
+0220:  CLRF   58
+0221:  CLRF   57
+0222:  MOVLW  86
+0223:  MOVWF  56
+*
+0298:  MOVF   7A,W
+0299:  MOVWF  55
+029A:  MOVF   79,W
+029B:  MOVWF  54
+029C:  MOVF   78,W
+029D:  MOVWF  53
+029E:  MOVF   77,W
+029F:  MOVWF  52
+02A0:  CALL   1AB
+02A1:  MOVF   79,W
+02A2:  MOVWF  53
+02A3:  MOVF   78,W
+02A4:  MOVWF  52
+02A5:  MOVLW  44
+02A6:  BSF    03.5
+02A7:  MOVWF  42
+02A8:  BCF    03.5
+02A9:  MOVF   79,W
+02AA:  BSF    03.5
+02AB:  MOVWF  44
+02AC:  BCF    03.5
+02AD:  MOVF   78,W
+02AE:  BSF    03.5
+02AF:  MOVWF  43
+02B0:  BCF    03.5
+02B1:  CALL   1CA
+....................   return true; 
+02B2:  MOVLW  01
+02B3:  MOVWF  78
+02B4:  RETURN
+.................... } 
+....................  
+.................... // Get the return signal rate limit check value in MCPS 
+.................... float getSignalRateLimit(void) 
+.................... { 
+....................   return (float)readReg16Bit(FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT) / (1 << 7); 
+.................... } 
+....................  
+.................... // Set the measurement timing budget in microseconds, which is the time allowed 
+.................... // for one measurement; the ST API and this library take care of splitting the 
+.................... // timing budget among the sub-steps in the ranging sequence. A longer timing 
+.................... // budget allows for more accurate measurements. Increasing the budget by a 
+.................... // factor of N decreases the range measurement standard deviation by a factor of 
+.................... // sqrt(N). Defaults to about 33 milliseconds; the minimum is 20 ms. 
+.................... // based on VL53L0X_set_measurement_timing_budget_micro_seconds() 
+.................... boolean setMeasurementTimingBudget(int32 budget_us) 
+.................... { 
+....................   SequenceStepEnables enables; 
+....................   SequenceStepTimeouts timeouts; 
+....................  
+....................   int16 const StartOverhead      = 1320; // note that this is different than the value in get_ 
+....................   int16 const EndOverhead        = 960; 
+....................   int16 const MsrcOverhead       = 660; 
+....................   int16 const TccOverhead        = 590; 
+....................   int16 const DssOverhead        = 690; 
+....................   int16 const PreRangeOverhead   = 660; 
+....................   int16 const FinalRangeOverhead = 550; 
+....................  
+....................   int32 const MinTimingBudget = 20000; 
+....................  
+....................   if (budget_us < MinTimingBudget) { return false; } 
+*
+0800:  MOVF   66,F
+0801:  BTFSS  03.2
+0802:  GOTO   013
+0803:  MOVF   65,F
+0804:  BTFSS  03.2
+0805:  GOTO   013
+0806:  MOVF   64,W
+0807:  SUBLW  4E
+0808:  BTFSS  03.0
+0809:  GOTO   013
+080A:  BTFSS  03.2
+080B:  GOTO   010
+080C:  MOVF   63,W
+080D:  SUBLW  1F
+080E:  BTFSS  03.0
+080F:  GOTO   013
+0810:  MOVLW  00
+0811:  MOVWF  78
+0812:  GOTO   151
+....................  
+....................   int32 used_budget_us = StartOverhead + EndOverhead; 
+0813:  CLRF   6B
+0814:  CLRF   6A
+0815:  MOVLW  08
+0816:  MOVWF  69
+0817:  MOVLW  E8
+0818:  MOVWF  68
+....................  
+....................   getSequenceStepEnables(&enables); 
+0819:  BSF    03.5
+081A:  CLRF   41
+081B:  MOVLW  67
+081C:  MOVWF  40
+081D:  BCF    0A.3
+081E:  BCF    03.5
+081F:  CALL   2B5
+0820:  BSF    0A.3
+....................   getSequenceStepTimeouts(&enables, &timeouts); 
+0821:  BSF    03.5
+0822:  CLRF   41
+0823:  MOVLW  67
+0824:  MOVWF  40
+0825:  CLRF   43
+0826:  MOVLW  A0
+0827:  MOVWF  42
+0828:  BCF    0A.3
+0829:  BCF    03.5
+082A:  CALL   4DC
+082B:  BSF    0A.3
+....................  
+....................   if (enables.tcc) 
+082C:  BTFSS  67.0
+082D:  GOTO   053
+....................   { 
+....................     used_budget_us += (timeouts.msrc_dss_tcc_us + TccOverhead); 
+082E:  MOVLW  4E
+082F:  BSF    03.5
+0830:  ADDWF  2A,W
+0831:  MOVWF  77
+0832:  MOVF   2B,W
+0833:  MOVWF  78
+0834:  MOVLW  02
+0835:  BTFSC  03.0
+0836:  MOVLW  03
+0837:  ADDWF  78,F
+0838:  MOVF   2C,W
+0839:  MOVWF  79
+083A:  MOVLW  00
+083B:  BTFSC  03.0
+083C:  MOVLW  01
+083D:  ADDWF  79,F
+083E:  MOVF   2D,W
+083F:  MOVWF  7A
+0840:  MOVLW  00
+0841:  BTFSC  03.0
+0842:  MOVLW  01
+0843:  ADDWF  7A,F
+0844:  MOVF   77,W
+0845:  BCF    03.5
+0846:  ADDWF  68,F
+0847:  MOVF   78,W
+0848:  BTFSC  03.0
+0849:  INCFSZ 78,W
+084A:  ADDWF  69,F
+084B:  MOVF   79,W
+084C:  BTFSC  03.0
+084D:  INCFSZ 79,W
+084E:  ADDWF  6A,F
+084F:  MOVF   7A,W
+0850:  BTFSC  03.0
+0851:  INCFSZ 7A,W
+0852:  ADDWF  6B,F
+....................   } 
+....................  
+....................   if (enables.dss) 
+0853:  BTFSS  67.2
+0854:  GOTO   080
+....................   { 
+....................     used_budget_us += 2 * (timeouts.msrc_dss_tcc_us + DssOverhead); 
+0855:  MOVLW  B2
+0856:  BSF    03.5
+0857:  ADDWF  2A,W
+0858:  MOVWF  77
+0859:  MOVF   2B,W
+085A:  MOVWF  78
+085B:  MOVLW  02
+085C:  BTFSC  03.0
+085D:  MOVLW  03
+085E:  ADDWF  78,F
+085F:  MOVF   2C,W
+0860:  MOVWF  79
+0861:  MOVLW  00
+0862:  BTFSC  03.0
+0863:  MOVLW  01
+0864:  ADDWF  79,F
+0865:  MOVF   2D,W
+0866:  MOVWF  7A
+0867:  MOVLW  00
+0868:  BTFSC  03.0
+0869:  MOVLW  01
+086A:  ADDWF  7A,F
+086B:  BCF    03.0
+086C:  RLF    77,F
+086D:  RLF    78,F
+086E:  RLF    79,F
+086F:  RLF    7A,F
+0870:  MOVF   77,W
+0871:  BCF    03.5
+0872:  ADDWF  68,F
+0873:  MOVF   78,W
+0874:  BTFSC  03.0
+0875:  INCFSZ 78,W
+0876:  ADDWF  69,F
+0877:  MOVF   79,W
+0878:  BTFSC  03.0
+0879:  INCFSZ 79,W
+087A:  ADDWF  6A,F
+087B:  MOVF   7A,W
+087C:  BTFSC  03.0
+087D:  INCFSZ 7A,W
+087E:  ADDWF  6B,F
+....................   } 
+087F:  GOTO   0A7
+....................   else if (enables.msrc) 
+0880:  BTFSS  67.1
+0881:  GOTO   0A7
+....................   { 
+....................     used_budget_us += (timeouts.msrc_dss_tcc_us + MsrcOverhead); 
+0882:  MOVLW  94
+0883:  BSF    03.5
+0884:  ADDWF  2A,W
+0885:  MOVWF  77
+0886:  MOVF   2B,W
+0887:  MOVWF  78
+0888:  MOVLW  02
+0889:  BTFSC  03.0
+088A:  MOVLW  03
+088B:  ADDWF  78,F
+088C:  MOVF   2C,W
+088D:  MOVWF  79
+088E:  MOVLW  00
+088F:  BTFSC  03.0
+0890:  MOVLW  01
+0891:  ADDWF  79,F
+0892:  MOVF   2D,W
+0893:  MOVWF  7A
+0894:  MOVLW  00
+0895:  BTFSC  03.0
+0896:  MOVLW  01
+0897:  ADDWF  7A,F
+0898:  MOVF   77,W
+0899:  BCF    03.5
+089A:  ADDWF  68,F
+089B:  MOVF   78,W
+089C:  BTFSC  03.0
+089D:  INCFSZ 78,W
+089E:  ADDWF  69,F
+089F:  MOVF   79,W
+08A0:  BTFSC  03.0
+08A1:  INCFSZ 79,W
+08A2:  ADDWF  6A,F
+08A3:  MOVF   7A,W
+08A4:  BTFSC  03.0
+08A5:  INCFSZ 7A,W
+08A6:  ADDWF  6B,F
+....................   } 
+....................  
+....................   if (enables.pre_range) 
+08A7:  BTFSS  67.3
+08A8:  GOTO   0CE
+....................   { 
+....................     used_budget_us += (timeouts.pre_range_us + PreRangeOverhead); 
+08A9:  MOVLW  94
+08AA:  BSF    03.5
+08AB:  ADDWF  2E,W
+08AC:  MOVWF  77
+08AD:  MOVF   2F,W
+08AE:  MOVWF  78
+08AF:  MOVLW  02
+08B0:  BTFSC  03.0
+08B1:  MOVLW  03
+08B2:  ADDWF  78,F
+08B3:  MOVF   30,W
+08B4:  MOVWF  79
+08B5:  MOVLW  00
+08B6:  BTFSC  03.0
+08B7:  MOVLW  01
+08B8:  ADDWF  79,F
+08B9:  MOVF   31,W
+08BA:  MOVWF  7A
+08BB:  MOVLW  00
+08BC:  BTFSC  03.0
+08BD:  MOVLW  01
+08BE:  ADDWF  7A,F
+08BF:  MOVF   77,W
+08C0:  BCF    03.5
+08C1:  ADDWF  68,F
+08C2:  MOVF   78,W
+08C3:  BTFSC  03.0
+08C4:  INCFSZ 78,W
+08C5:  ADDWF  69,F
+08C6:  MOVF   79,W
+08C7:  BTFSC  03.0
+08C8:  INCFSZ 79,W
+08C9:  ADDWF  6A,F
+08CA:  MOVF   7A,W
+08CB:  BTFSC  03.0
+08CC:  INCFSZ 7A,W
+08CD:  ADDWF  6B,F
+....................   } 
+....................  
+....................   if (enables.final_range) 
+08CE:  BTFSS  67.4
+08CF:  GOTO   14F
+....................   { 
+....................     used_budget_us += FinalRangeOverhead; 
+08D0:  MOVLW  26
+08D1:  ADDWF  68,F
+08D2:  MOVLW  02
+08D3:  BTFSC  03.0
+08D4:  MOVLW  03
+08D5:  ADDWF  69,F
+08D6:  MOVLW  00
+08D7:  BTFSC  03.0
+08D8:  MOVLW  01
+08D9:  ADDWF  6A,F
+08DA:  MOVLW  00
+08DB:  BTFSC  03.0
+08DC:  MOVLW  01
+08DD:  ADDWF  6B,F
+....................  
+....................     // "Note that the final range timeout is determined by the timing 
+....................     // budget and the sum of all other timeouts within the sequence. 
+....................     // If there is no room for the final range timeout, then an error 
+....................     // will be set. Otherwise the remaining time will be applied to 
+....................     // the final range." 
+....................  
+....................     if (used_budget_us > budget_us) 
+08DE:  MOVF   66,W
+08DF:  SUBWF  6B,W
+08E0:  BTFSS  03.0
+08E1:  GOTO   0F7
+08E2:  BTFSS  03.2
+08E3:  GOTO   0F4
+08E4:  MOVF   65,W
+08E5:  SUBWF  6A,W
+08E6:  BTFSS  03.0
+08E7:  GOTO   0F7
+08E8:  BTFSS  03.2
+08E9:  GOTO   0F4
+08EA:  MOVF   64,W
+08EB:  SUBWF  69,W
+08EC:  BTFSS  03.0
+08ED:  GOTO   0F7
+08EE:  BTFSS  03.2
+08EF:  GOTO   0F4
+08F0:  MOVF   68,W
+08F1:  SUBWF  63,W
+08F2:  BTFSC  03.0
+08F3:  GOTO   0F7
+....................     { 
+....................       // "Requested timeout too big." 
+....................       return false; 
+08F4:  MOVLW  00
+08F5:  MOVWF  78
+08F6:  GOTO   151
+....................     } 
+....................  
+....................     int32 final_range_timeout_us = budget_us - used_budget_us; 
+....................  
+....................     // set_sequence_step_timeout() begin 
+....................     // (SequenceStepId == VL53L0X_SEQUENCESTEP_FINAL_RANGE) 
+....................  
+....................     // "For the final range timeout, the pre-range timeout 
+....................     //  must be added. To do this both final and pre-range 
+....................     //  timeouts must be expressed in macro periods MClks 
+....................     //  because they have different vcsel periods." 
+....................  
+....................     int16 final_range_timeout_mclks = 
+....................       timeoutMicrosecondsToMclks(final_range_timeout_us, 
+....................                                  timeouts.final_range_vcsel_period_pclks); 
+08F7:  MOVF   68,W
+08F8:  SUBWF  63,W
+08F9:  MOVWF  6C
+08FA:  MOVF   64,W
+08FB:  MOVWF  6D
+08FC:  MOVF   69,W
+08FD:  BTFSS  03.0
+08FE:  INCFSZ 69,W
+08FF:  SUBWF  6D,F
+0900:  MOVF   65,W
+0901:  MOVWF  6E
+0902:  MOVF   6A,W
+0903:  BTFSS  03.0
+0904:  INCFSZ 6A,W
+0905:  SUBWF  6E,F
+0906:  MOVF   66,W
+0907:  MOVWF  6F
+0908:  MOVF   6B,W
+0909:  BTFSS  03.0
+090A:  INCFSZ 6B,W
+090B:  SUBWF  6F,F
+090C:  MOVF   6F,W
+090D:  BSF    03.5
+090E:  MOVWF  43
+090F:  BCF    03.5
+0910:  MOVF   6E,W
+0911:  BSF    03.5
+0912:  MOVWF  42
+0913:  BCF    03.5
+0914:  MOVF   6D,W
+0915:  BSF    03.5
+0916:  MOVWF  41
+0917:  BCF    03.5
+0918:  MOVF   6C,W
+0919:  BSF    03.5
+091A:  MOVWF  40
+091B:  MOVF   22,W
+091C:  MOVWF  44
+091D:  BCF    0A.3
+091E:  BCF    03.5
+091F:  CALL   66B
+0920:  BSF    0A.3
+0921:  MOVF   78,W
+0922:  MOVWF  71
+0923:  MOVF   77,W
+0924:  MOVWF  70
+....................  
+....................     if (enables.pre_range) 
+0925:  BTFSS  67.3
+0926:  GOTO   12F
+....................     { 
+....................       final_range_timeout_mclks += timeouts.pre_range_mclks; 
+0927:  BSF    03.5
+0928:  MOVF   26,W
+0929:  ADDWF  70,F
+092A:  MOVF   27,W
+092B:  BTFSC  03.0
+092C:  INCFSZ 27,W
+092D:  ADDWF  71,F
+092E:  BCF    03.5
+....................     } 
+....................  
+....................     writeReg16Bit(FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI, 
+....................       encodeTimeout(final_range_timeout_mclks)); 
+092F:  MOVF   71,W
+0930:  BSF    03.5
+0931:  MOVWF  41
+0932:  MOVF   70,W
+0933:  MOVWF  40
+0934:  BCF    0A.3
+0935:  BCF    03.5
+0936:  CALL   705
+0937:  BSF    0A.3
+0938:  MOVF   79,W
+0939:  MOVWF  73
+093A:  MOVF   78,W
+093B:  MOVWF  72
+093C:  MOVLW  71
+093D:  BSF    03.5
+093E:  MOVWF  42
+093F:  MOVF   73,W
+0940:  MOVWF  44
+0941:  MOVF   72,W
+0942:  MOVWF  43
+0943:  BCF    0A.3
+0944:  BCF    03.5
+0945:  CALL   1CA
+0946:  BSF    0A.3
+....................  
+....................     // set_sequence_step_timeout() end 
+....................  
+....................     measurement_timing_budget_us = budget_us; // store for internal reuse 
+0947:  MOVF   66,W
+0948:  MOVWF  35
+0949:  MOVF   65,W
+094A:  MOVWF  34
+094B:  MOVF   64,W
+094C:  MOVWF  33
+094D:  MOVF   63,W
+094E:  MOVWF  32
+....................   } 
+....................   return true; 
+094F:  MOVLW  01
+0950:  MOVWF  78
+0951:  RETURN
+.................... } 
+....................  
+.................... // Get the measurement timing budget in microseconds 
+.................... // based on VL53L0X_get_measurement_timing_budget_micro_seconds() 
+.................... // in us 
+.................... int32 getMeasurementTimingBudget(void) 
+*
+0971:  CLRF   68
+0972:  CLRF   67
+0973:  MOVLW  0B
+0974:  MOVWF  66
+0975:  MOVLW  36
+0976:  MOVWF  65
+.................... { 
+....................   SequenceStepEnables enables; 
+....................   SequenceStepTimeouts timeouts; 
+....................  
+....................   int16 const StartOverhead     = 1910; // note that this is different than the value in set_ 
+....................   int16 const EndOverhead        = 960; 
+....................   int16 const MsrcOverhead       = 660; 
+....................   int16 const TccOverhead        = 590; 
+....................   int16 const DssOverhead        = 690; 
+....................   int16 const PreRangeOverhead   = 660; 
+....................   int16 const FinalRangeOverhead = 550; 
+....................  
+....................   // "Start and end overhead times always present" 
+....................   int32 budget_us = StartOverhead + EndOverhead; 
+....................  
+....................   getSequenceStepEnables(&enables); 
+0977:  BSF    03.5
+0978:  CLRF   41
+0979:  MOVLW  4E
+097A:  MOVWF  40
+097B:  BCF    0A.3
+097C:  BCF    03.5
+097D:  CALL   2B5
+097E:  BSF    0A.3
+....................   getSequenceStepTimeouts(&enables, &timeouts); 
+097F:  BSF    03.5
+0980:  CLRF   41
+0981:  MOVLW  4E
+0982:  MOVWF  40
+0983:  CLRF   43
+0984:  MOVLW  4F
+0985:  MOVWF  42
+0986:  BCF    0A.3
+0987:  BCF    03.5
+0988:  CALL   4DC
+0989:  BSF    0A.3
+....................  
+....................   if (enables.tcc) 
+098A:  BTFSS  4E.0
+098B:  GOTO   1AF
+....................   { 
+....................     budget_us += (timeouts.msrc_dss_tcc_us + TccOverhead); 
+098C:  MOVLW  4E
+098D:  ADDWF  59,W
+098E:  MOVWF  77
+098F:  MOVF   5A,W
+0990:  MOVWF  78
+0991:  MOVLW  02
+0992:  BTFSC  03.0
+0993:  MOVLW  03
+0994:  ADDWF  78,F
+0995:  MOVF   5B,W
+0996:  MOVWF  79
+0997:  MOVLW  00
+0998:  BTFSC  03.0
+0999:  MOVLW  01
+099A:  ADDWF  79,F
+099B:  MOVF   5C,W
+099C:  MOVWF  7A
+099D:  MOVLW  00
+099E:  BTFSC  03.0
+099F:  MOVLW  01
+09A0:  ADDWF  7A,F
+09A1:  MOVF   77,W
+09A2:  ADDWF  65,F
+09A3:  MOVF   78,W
+09A4:  BTFSC  03.0
+09A5:  INCFSZ 78,W
+09A6:  ADDWF  66,F
+09A7:  MOVF   79,W
+09A8:  BTFSC  03.0
+09A9:  INCFSZ 79,W
+09AA:  ADDWF  67,F
+09AB:  MOVF   7A,W
+09AC:  BTFSC  03.0
+09AD:  INCFSZ 7A,W
+09AE:  ADDWF  68,F
+....................   } 
+....................  
+....................   if (enables.dss) 
+09AF:  BTFSS  4E.2
+09B0:  GOTO   1DA
+....................   { 
+....................     budget_us += 2 * (timeouts.msrc_dss_tcc_us + DssOverhead); 
+09B1:  MOVLW  B2
+09B2:  ADDWF  59,W
+09B3:  MOVWF  77
+09B4:  MOVF   5A,W
+09B5:  MOVWF  78
+09B6:  MOVLW  02
+09B7:  BTFSC  03.0
+09B8:  MOVLW  03
+09B9:  ADDWF  78,F
+09BA:  MOVF   5B,W
+09BB:  MOVWF  79
+09BC:  MOVLW  00
+09BD:  BTFSC  03.0
+09BE:  MOVLW  01
+09BF:  ADDWF  79,F
+09C0:  MOVF   5C,W
+09C1:  MOVWF  7A
+09C2:  MOVLW  00
+09C3:  BTFSC  03.0
+09C4:  MOVLW  01
+09C5:  ADDWF  7A,F
+09C6:  BCF    03.0
+09C7:  RLF    77,F
+09C8:  RLF    78,F
+09C9:  RLF    79,F
+09CA:  RLF    7A,F
+09CB:  MOVF   77,W
+09CC:  ADDWF  65,F
+09CD:  MOVF   78,W
+09CE:  BTFSC  03.0
+09CF:  INCFSZ 78,W
+09D0:  ADDWF  66,F
+09D1:  MOVF   79,W
+09D2:  BTFSC  03.0
+09D3:  INCFSZ 79,W
+09D4:  ADDWF  67,F
+09D5:  MOVF   7A,W
+09D6:  BTFSC  03.0
+09D7:  INCFSZ 7A,W
+09D8:  ADDWF  68,F
+....................   } 
+09D9:  GOTO   1FF
+....................   else if (enables.msrc) 
+09DA:  BTFSS  4E.1
+09DB:  GOTO   1FF
+....................   { 
+....................     budget_us += (timeouts.msrc_dss_tcc_us + MsrcOverhead); 
+09DC:  MOVLW  94
+09DD:  ADDWF  59,W
+09DE:  MOVWF  77
+09DF:  MOVF   5A,W
+09E0:  MOVWF  78
+09E1:  MOVLW  02
+09E2:  BTFSC  03.0
+09E3:  MOVLW  03
+09E4:  ADDWF  78,F
+09E5:  MOVF   5B,W
+09E6:  MOVWF  79
+09E7:  MOVLW  00
+09E8:  BTFSC  03.0
+09E9:  MOVLW  01
+09EA:  ADDWF  79,F
+09EB:  MOVF   5C,W
+09EC:  MOVWF  7A
+09ED:  MOVLW  00
+09EE:  BTFSC  03.0
+09EF:  MOVLW  01
+09F0:  ADDWF  7A,F
+09F1:  MOVF   77,W
+09F2:  ADDWF  65,F
+09F3:  MOVF   78,W
+09F4:  BTFSC  03.0
+09F5:  INCFSZ 78,W
+09F6:  ADDWF  66,F
+09F7:  MOVF   79,W
+09F8:  BTFSC  03.0
+09F9:  INCFSZ 79,W
+09FA:  ADDWF  67,F
+09FB:  MOVF   7A,W
+09FC:  BTFSC  03.0
+09FD:  INCFSZ 7A,W
+09FE:  ADDWF  68,F
+....................   } 
+....................  
+....................   if (enables.pre_range) 
+09FF:  BTFSS  4E.3
+0A00:  GOTO   224
+....................   { 
+....................     budget_us += (timeouts.pre_range_us + PreRangeOverhead); 
+0A01:  MOVLW  94
+0A02:  ADDWF  5D,W
+0A03:  MOVWF  77
+0A04:  MOVF   5E,W
+0A05:  MOVWF  78
+0A06:  MOVLW  02
+0A07:  BTFSC  03.0
+0A08:  MOVLW  03
+0A09:  ADDWF  78,F
+0A0A:  MOVF   5F,W
+0A0B:  MOVWF  79
+0A0C:  MOVLW  00
+0A0D:  BTFSC  03.0
+0A0E:  MOVLW  01
+0A0F:  ADDWF  79,F
+0A10:  MOVF   60,W
+0A11:  MOVWF  7A
+0A12:  MOVLW  00
+0A13:  BTFSC  03.0
+0A14:  MOVLW  01
+0A15:  ADDWF  7A,F
+0A16:  MOVF   77,W
+0A17:  ADDWF  65,F
+0A18:  MOVF   78,W
+0A19:  BTFSC  03.0
+0A1A:  INCFSZ 78,W
+0A1B:  ADDWF  66,F
+0A1C:  MOVF   79,W
+0A1D:  BTFSC  03.0
+0A1E:  INCFSZ 79,W
+0A1F:  ADDWF  67,F
+0A20:  MOVF   7A,W
+0A21:  BTFSC  03.0
+0A22:  INCFSZ 7A,W
+0A23:  ADDWF  68,F
+....................   } 
+....................  
+....................   if (enables.final_range) 
+0A24:  BTFSS  4E.4
+0A25:  GOTO   249
+....................   { 
+....................     budget_us += (timeouts.final_range_us + FinalRangeOverhead); 
+0A26:  MOVLW  26
+0A27:  ADDWF  61,W
+0A28:  MOVWF  77
+0A29:  MOVF   62,W
+0A2A:  MOVWF  78
+0A2B:  MOVLW  02
+0A2C:  BTFSC  03.0
+0A2D:  MOVLW  03
+0A2E:  ADDWF  78,F
+0A2F:  MOVF   63,W
+0A30:  MOVWF  79
+0A31:  MOVLW  00
+0A32:  BTFSC  03.0
+0A33:  MOVLW  01
+0A34:  ADDWF  79,F
+0A35:  MOVF   64,W
+0A36:  MOVWF  7A
+0A37:  MOVLW  00
+0A38:  BTFSC  03.0
+0A39:  MOVLW  01
+0A3A:  ADDWF  7A,F
+0A3B:  MOVF   77,W
+0A3C:  ADDWF  65,F
+0A3D:  MOVF   78,W
+0A3E:  BTFSC  03.0
+0A3F:  INCFSZ 78,W
+0A40:  ADDWF  66,F
+0A41:  MOVF   79,W
+0A42:  BTFSC  03.0
+0A43:  INCFSZ 79,W
+0A44:  ADDWF  67,F
+0A45:  MOVF   7A,W
+0A46:  BTFSC  03.0
+0A47:  INCFSZ 7A,W
+0A48:  ADDWF  68,F
+....................   } 
+....................  
+....................   measurement_timing_budget_us = budget_us; // store for internal reuse 
+0A49:  MOVF   68,W
+0A4A:  MOVWF  35
+0A4B:  MOVF   67,W
+0A4C:  MOVWF  34
+0A4D:  MOVF   66,W
+0A4E:  MOVWF  33
+0A4F:  MOVF   65,W
+0A50:  MOVWF  32
+....................   return budget_us; 
+0A51:  MOVF   65,W
+0A52:  MOVWF  77
+0A53:  MOVF   66,W
+0A54:  MOVWF  78
+0A55:  MOVF   67,W
+0A56:  MOVWF  79
+0A57:  MOVF   68,W
+0A58:  MOVWF  7A
+.................... } 
+....................  
+.................... // Set the VCSEL (vertical cavity surface emitting laser) pulse period for the 
+.................... // given period type (pre-range or final range) to the given value in PCLKs. 
+.................... // Longer periods seem to increase the potential range of the sensor. 
+.................... // Valid values are (even numbers only): 
+.................... //  pre:  12 to 18 (initialized default: 14) 
+.................... //  final: 8 to 14 (initialized default: 10) 
+.................... // based on VL53L0X_set_vcsel_pulse_period() 
+.................... boolean setVcselPulsePeriod(vcselPeriodType type, int8 period_pclks) 
+*
+0A9F:  BCF    03.0
+0AA0:  RRF    43,W
+0AA1:  ADDLW  FF
+0AA2:  MOVWF  44
+.................... { 
+....................   int8 vcsel_period_reg = encodeVcselPeriod(period_pclks); 
+....................  
+....................   SequenceStepEnables enables; 
+....................   SequenceStepTimeouts timeouts; 
+....................  
+....................   getSequenceStepEnables(&enables); 
+0AA3:  BSF    03.5
+0AA4:  CLRF   41
+0AA5:  MOVLW  45
+0AA6:  MOVWF  40
+0AA7:  BCF    0A.3
+0AA8:  BCF    03.5
+0AA9:  CALL   2B5
+0AAA:  BSF    0A.3
+....................   getSequenceStepTimeouts(&enables, &timeouts); 
+0AAB:  BSF    03.5
+0AAC:  CLRF   41
+0AAD:  MOVLW  45
+0AAE:  MOVWF  40
+0AAF:  CLRF   43
+0AB0:  MOVLW  46
+0AB1:  MOVWF  42
+0AB2:  BCF    0A.3
+0AB3:  BCF    03.5
+0AB4:  CALL   4DC
+0AB5:  BSF    0A.3
+....................  
+....................   // "Apply specific settings for the requested clock period" 
+....................   // "Re-calculate and apply timeouts, in macro periods" 
+....................  
+....................   // "When the VCSEL period for the pre or final range is changed, 
+....................   // the corresponding timeout must be read from the device using 
+....................   // the current VCSEL period, then the new VCSEL period can be 
+....................   // applied. The timeout then must be written back to the device 
+....................   // using the new VCSEL period. 
+....................   // 
+....................   // For the MSRC timeout, the same applies - this timeout being 
+....................   // dependant on the pre-range vcsel period." 
+....................  
+....................  
+....................   if (type == VcselPeriodPreRange) 
+0AB6:  MOVF   42,F
+0AB7:  BTFSS  03.2
+0AB8:  GOTO   36C
+....................   { 
+....................     // "Set phase check limits" 
+....................     switch (period_pclks) 
+0AB9:  MOVF   43,W
+0ABA:  XORLW  0C
+0ABB:  BTFSC  03.2
+0ABC:  GOTO   2C7
+0ABD:  XORLW  02
+0ABE:  BTFSC  03.2
+0ABF:  GOTO   2CF
+0AC0:  XORLW  1E
+0AC1:  BTFSC  03.2
+0AC2:  GOTO   2D7
+0AC3:  XORLW  02
+0AC4:  BTFSC  03.2
+0AC5:  GOTO   2DF
+0AC6:  GOTO   2E7
+....................     { 
+....................       case 12: 
+....................         writeReg(PRE_RANGE_CONFIG_VALID_PHASE_HIGH, 0x18); 
+0AC7:  MOVLW  57
+0AC8:  MOVWF  65
+0AC9:  MOVLW  18
+0ACA:  MOVWF  66
+0ACB:  BCF    0A.3
+0ACC:  CALL   150
+0ACD:  BSF    0A.3
+....................         break; 
+0ACE:  GOTO   2EA
+....................  
+....................       case 14: 
+....................         writeReg(PRE_RANGE_CONFIG_VALID_PHASE_HIGH, 0x30); 
+0ACF:  MOVLW  57
+0AD0:  MOVWF  65
+0AD1:  MOVLW  30
+0AD2:  MOVWF  66
+0AD3:  BCF    0A.3
+0AD4:  CALL   150
+0AD5:  BSF    0A.3
+....................         break; 
+0AD6:  GOTO   2EA
+....................  
+....................       case 16: 
+....................         writeReg(PRE_RANGE_CONFIG_VALID_PHASE_HIGH, 0x40); 
+0AD7:  MOVLW  57
+0AD8:  MOVWF  65
+0AD9:  MOVLW  40
+0ADA:  MOVWF  66
+0ADB:  BCF    0A.3
+0ADC:  CALL   150
+0ADD:  BSF    0A.3
+....................         break; 
+0ADE:  GOTO   2EA
+....................  
+....................       case 18: 
+....................         writeReg(PRE_RANGE_CONFIG_VALID_PHASE_HIGH, 0x50); 
+0ADF:  MOVLW  57
+0AE0:  MOVWF  65
+0AE1:  MOVLW  50
+0AE2:  MOVWF  66
+0AE3:  BCF    0A.3
+0AE4:  CALL   150
+0AE5:  BSF    0A.3
+....................         break; 
+0AE6:  GOTO   2EA
+....................  
+....................       default: 
+....................         // invalid period 
+....................         return false; 
+0AE7:  MOVLW  00
+0AE8:  MOVWF  78
+0AE9:  GOTO   4B3
+....................     } 
+....................     writeReg(PRE_RANGE_CONFIG_VALID_PHASE_LOW, 0x08); 
+0AEA:  MOVLW  56
+0AEB:  MOVWF  65
+0AEC:  MOVLW  08
+0AED:  MOVWF  66
+0AEE:  BCF    0A.3
+0AEF:  CALL   150
+0AF0:  BSF    0A.3
+....................  
+....................     // apply new VCSEL period 
+....................     writeReg(PRE_RANGE_CONFIG_VCSEL_PERIOD, vcsel_period_reg); 
+0AF1:  MOVLW  50
+0AF2:  MOVWF  65
+0AF3:  MOVF   44,W
+0AF4:  MOVWF  66
+0AF5:  BCF    0A.3
+0AF6:  CALL   150
+0AF7:  BSF    0A.3
+....................  
+....................     // update timeouts 
+....................  
+....................     // set_sequence_step_timeout() begin 
+....................     // (SequenceStepId == VL53L0X_SEQUENCESTEP_PRE_RANGE) 
+....................  
+....................     int16 new_pre_range_timeout_mclks = 
+....................       timeoutMicrosecondsToMclks(timeouts.pre_range_us, period_pclks); 
+0AF8:  MOVF   57,W
+0AF9:  BSF    03.5
+0AFA:  MOVWF  43
+0AFB:  BCF    03.5
+0AFC:  MOVF   56,W
+0AFD:  BSF    03.5
+0AFE:  MOVWF  42
+0AFF:  BCF    03.5
+0B00:  MOVF   55,W
+0B01:  BSF    03.5
+0B02:  MOVWF  41
+0B03:  BCF    03.5
+0B04:  MOVF   54,W
+0B05:  BSF    03.5
+0B06:  MOVWF  40
+0B07:  BCF    03.5
+0B08:  MOVF   43,W
+0B09:  BSF    03.5
+0B0A:  MOVWF  44
+0B0B:  BCF    0A.3
+0B0C:  BCF    03.5
+0B0D:  CALL   66B
+0B0E:  BSF    0A.3
+0B0F:  MOVF   78,W
+0B10:  MOVWF  5D
+0B11:  MOVF   77,W
+0B12:  MOVWF  5C
+....................  
+....................     writeReg16Bit(PRE_RANGE_CONFIG_TIMEOUT_MACROP_HI, 
+....................       encodeTimeout(new_pre_range_timeout_mclks)); 
+0B13:  MOVF   5D,W
+0B14:  BSF    03.5
+0B15:  MOVWF  41
+0B16:  BCF    03.5
+0B17:  MOVF   5C,W
+0B18:  BSF    03.5
+0B19:  MOVWF  40
+0B1A:  BCF    0A.3
+0B1B:  BCF    03.5
+0B1C:  CALL   705
+0B1D:  BSF    0A.3
+0B1E:  MOVF   79,W
+0B1F:  MOVWF  64
+0B20:  MOVF   78,W
+0B21:  MOVWF  63
+0B22:  MOVLW  51
+0B23:  BSF    03.5
+0B24:  MOVWF  42
+0B25:  BCF    03.5
+0B26:  MOVF   79,W
+0B27:  BSF    03.5
+0B28:  MOVWF  44
+0B29:  BCF    03.5
+0B2A:  MOVF   78,W
+0B2B:  BSF    03.5
+0B2C:  MOVWF  43
+0B2D:  BCF    0A.3
+0B2E:  BCF    03.5
+0B2F:  CALL   1CA
+0B30:  BSF    0A.3
+....................  
+....................     // set_sequence_step_timeout() end 
+....................  
+....................     // set_sequence_step_timeout() begin 
+....................     // (SequenceStepId == VL53L0X_SEQUENCESTEP_MSRC) 
+....................  
+....................     int16 new_msrc_timeout_mclks = 
+....................       timeoutMicrosecondsToMclks(timeouts.msrc_dss_tcc_us, period_pclks); 
+0B31:  MOVF   53,W
+0B32:  BSF    03.5
+0B33:  MOVWF  43
+0B34:  BCF    03.5
+0B35:  MOVF   52,W
+0B36:  BSF    03.5
+0B37:  MOVWF  42
+0B38:  BCF    03.5
+0B39:  MOVF   51,W
+0B3A:  BSF    03.5
+0B3B:  MOVWF  41
+0B3C:  BCF    03.5
+0B3D:  MOVF   50,W
+0B3E:  BSF    03.5
+0B3F:  MOVWF  40
+0B40:  BCF    03.5
+0B41:  MOVF   43,W
+0B42:  BSF    03.5
+0B43:  MOVWF  44
+0B44:  BCF    0A.3
+0B45:  BCF    03.5
+0B46:  CALL   66B
+0B47:  BSF    0A.3
+0B48:  MOVF   78,W
+0B49:  MOVWF  5F
+0B4A:  MOVF   77,W
+0B4B:  MOVWF  5E
+....................  
+....................     writeReg(MSRC_CONFIG_TIMEOUT_MACROP, 
+....................       (new_msrc_timeout_mclks > 256) ? 255 : (new_msrc_timeout_mclks - 1)); 
+0B4C:  MOVF   5F,W
+0B4D:  SUBLW  00
+0B4E:  BTFSC  03.0
+0B4F:  GOTO   359
+0B50:  XORLW  FF
+0B51:  BTFSS  03.2
+0B52:  GOTO   357
+0B53:  MOVF   5E,W
+0B54:  SUBLW  00
+0B55:  BTFSC  03.0
+0B56:  GOTO   359
+0B57:  MOVLW  FF
+0B58:  GOTO   363
+0B59:  MOVLW  01
+0B5A:  SUBWF  5E,W
+0B5B:  MOVWF  77
+0B5C:  MOVF   5F,W
+0B5D:  MOVWF  7A
+0B5E:  MOVLW  00
+0B5F:  BTFSS  03.0
+0B60:  MOVLW  01
+0B61:  SUBWF  7A,F
+0B62:  MOVF   77,W
+0B63:  MOVWF  63
+0B64:  MOVLW  46
+0B65:  MOVWF  65
+0B66:  MOVF   63,W
+0B67:  MOVWF  66
+0B68:  BCF    0A.3
+0B69:  CALL   150
+0B6A:  BSF    0A.3
+....................  
+....................     // set_sequence_step_timeout() end 
+....................   } 
+0B6B:  GOTO   48D
+....................   else if (type == VcselPeriodFinalRange) 
+0B6C:  DECFSZ 42,W
+0B6D:  GOTO   48A
+....................   { 
+....................     switch (period_pclks) 
+0B6E:  MOVF   43,W
+0B6F:  XORLW  08
+0B70:  BTFSC  03.2
+0B71:  GOTO   37C
+0B72:  XORLW  02
+0B73:  BTFSC  03.2
+0B74:  GOTO   3AC
+0B75:  XORLW  06
+0B76:  BTFSC  03.2
+0B77:  GOTO   3DD
+0B78:  XORLW  02
+0B79:  BTFSC  03.2
+0B7A:  GOTO   40E
+0B7B:  GOTO   43E
+....................     { 
+....................       case 8: 
+....................         writeReg(FINAL_RANGE_CONFIG_VALID_PHASE_HIGH, 0x10); 
+0B7C:  MOVLW  48
+0B7D:  MOVWF  65
+0B7E:  MOVLW  10
+0B7F:  MOVWF  66
+0B80:  BCF    0A.3
+0B81:  CALL   150
+0B82:  BSF    0A.3
+....................         writeReg(FINAL_RANGE_CONFIG_VALID_PHASE_LOW,  0x08); 
+0B83:  MOVLW  47
+0B84:  MOVWF  65
+0B85:  MOVLW  08
+0B86:  MOVWF  66
+0B87:  BCF    0A.3
+0B88:  CALL   150
+0B89:  BSF    0A.3
+....................         writeReg(GLOBAL_CONFIG_VCSEL_WIDTH, 0x02); 
+0B8A:  MOVLW  32
+0B8B:  MOVWF  65
+0B8C:  MOVLW  02
+0B8D:  MOVWF  66
+0B8E:  BCF    0A.3
+0B8F:  CALL   150
+0B90:  BSF    0A.3
+....................         writeReg(ALGO_PHASECAL_CONFIG_TIMEOUT, 0x0C); 
+0B91:  MOVLW  30
+0B92:  MOVWF  65
+0B93:  MOVLW  0C
+0B94:  MOVWF  66
+0B95:  BCF    0A.3
+0B96:  CALL   150
+0B97:  BSF    0A.3
+....................         writeReg(0xFF, 0x01); 
+0B98:  MOVLW  FF
+0B99:  MOVWF  65
+0B9A:  MOVLW  01
+0B9B:  MOVWF  66
+0B9C:  BCF    0A.3
+0B9D:  CALL   150
+0B9E:  BSF    0A.3
+....................         writeReg(ALGO_PHASECAL_LIM, 0x30); 
+0B9F:  MOVLW  30
+0BA0:  MOVWF  65
+0BA1:  MOVWF  66
+0BA2:  BCF    0A.3
+0BA3:  CALL   150
+0BA4:  BSF    0A.3
+....................         writeReg(0xFF, 0x00); 
+0BA5:  MOVLW  FF
+0BA6:  MOVWF  65
+0BA7:  CLRF   66
+0BA8:  BCF    0A.3
+0BA9:  CALL   150
+0BAA:  BSF    0A.3
+....................         break; 
+0BAB:  GOTO   441
+....................  
+....................       case 10: 
+....................         writeReg(FINAL_RANGE_CONFIG_VALID_PHASE_HIGH, 0x28); 
+0BAC:  MOVLW  48
+0BAD:  MOVWF  65
+0BAE:  MOVLW  28
+0BAF:  MOVWF  66
+0BB0:  BCF    0A.3
+0BB1:  CALL   150
+0BB2:  BSF    0A.3
+....................         writeReg(FINAL_RANGE_CONFIG_VALID_PHASE_LOW,  0x08); 
+0BB3:  MOVLW  47
+0BB4:  MOVWF  65
+0BB5:  MOVLW  08
+0BB6:  MOVWF  66
+0BB7:  BCF    0A.3
+0BB8:  CALL   150
+0BB9:  BSF    0A.3
+....................         writeReg(GLOBAL_CONFIG_VCSEL_WIDTH, 0x03); 
+0BBA:  MOVLW  32
+0BBB:  MOVWF  65
+0BBC:  MOVLW  03
+0BBD:  MOVWF  66
+0BBE:  BCF    0A.3
+0BBF:  CALL   150
+0BC0:  BSF    0A.3
+....................         writeReg(ALGO_PHASECAL_CONFIG_TIMEOUT, 0x09); 
+0BC1:  MOVLW  30
+0BC2:  MOVWF  65
+0BC3:  MOVLW  09
+0BC4:  MOVWF  66
+0BC5:  BCF    0A.3
+0BC6:  CALL   150
+0BC7:  BSF    0A.3
+....................         writeReg(0xFF, 0x01); 
+0BC8:  MOVLW  FF
+0BC9:  MOVWF  65
+0BCA:  MOVLW  01
+0BCB:  MOVWF  66
+0BCC:  BCF    0A.3
+0BCD:  CALL   150
+0BCE:  BSF    0A.3
+....................         writeReg(ALGO_PHASECAL_LIM, 0x20); 
+0BCF:  MOVLW  30
+0BD0:  MOVWF  65
+0BD1:  MOVLW  20
+0BD2:  MOVWF  66
+0BD3:  BCF    0A.3
+0BD4:  CALL   150
+0BD5:  BSF    0A.3
+....................         writeReg(0xFF, 0x00); 
+0BD6:  MOVLW  FF
+0BD7:  MOVWF  65
+0BD8:  CLRF   66
+0BD9:  BCF    0A.3
+0BDA:  CALL   150
+0BDB:  BSF    0A.3
+....................         break; 
+0BDC:  GOTO   441
+....................  
+....................       case 12: 
+....................         writeReg(FINAL_RANGE_CONFIG_VALID_PHASE_HIGH, 0x38); 
+0BDD:  MOVLW  48
+0BDE:  MOVWF  65
+0BDF:  MOVLW  38
+0BE0:  MOVWF  66
+0BE1:  BCF    0A.3
+0BE2:  CALL   150
+0BE3:  BSF    0A.3
+....................         writeReg(FINAL_RANGE_CONFIG_VALID_PHASE_LOW,  0x08); 
+0BE4:  MOVLW  47
+0BE5:  MOVWF  65
+0BE6:  MOVLW  08
+0BE7:  MOVWF  66
+0BE8:  BCF    0A.3
+0BE9:  CALL   150
+0BEA:  BSF    0A.3
+....................         writeReg(GLOBAL_CONFIG_VCSEL_WIDTH, 0x03); 
+0BEB:  MOVLW  32
+0BEC:  MOVWF  65
+0BED:  MOVLW  03
+0BEE:  MOVWF  66
+0BEF:  BCF    0A.3
+0BF0:  CALL   150
+0BF1:  BSF    0A.3
+....................         writeReg(ALGO_PHASECAL_CONFIG_TIMEOUT, 0x08); 
+0BF2:  MOVLW  30
+0BF3:  MOVWF  65
+0BF4:  MOVLW  08
+0BF5:  MOVWF  66
+0BF6:  BCF    0A.3
+0BF7:  CALL   150
+0BF8:  BSF    0A.3
+....................         writeReg(0xFF, 0x01); 
+0BF9:  MOVLW  FF
+0BFA:  MOVWF  65
+0BFB:  MOVLW  01
+0BFC:  MOVWF  66
+0BFD:  BCF    0A.3
+0BFE:  CALL   150
+0BFF:  BSF    0A.3
+....................         writeReg(ALGO_PHASECAL_LIM, 0x20); 
+0C00:  MOVLW  30
+0C01:  MOVWF  65
+0C02:  MOVLW  20
+0C03:  MOVWF  66
+0C04:  BCF    0A.3
+0C05:  CALL   150
+0C06:  BSF    0A.3
+....................         writeReg(0xFF, 0x00); 
+0C07:  MOVLW  FF
+0C08:  MOVWF  65
+0C09:  CLRF   66
+0C0A:  BCF    0A.3
+0C0B:  CALL   150
+0C0C:  BSF    0A.3
+....................         break; 
+0C0D:  GOTO   441
+....................  
+....................       case 14: 
+....................         writeReg(FINAL_RANGE_CONFIG_VALID_PHASE_HIGH, 0x48); 
+0C0E:  MOVLW  48
+0C0F:  MOVWF  65
+0C10:  MOVWF  66
+0C11:  BCF    0A.3
+0C12:  CALL   150
+0C13:  BSF    0A.3
+....................         writeReg(FINAL_RANGE_CONFIG_VALID_PHASE_LOW,  0x08); 
+0C14:  MOVLW  47
+0C15:  MOVWF  65
+0C16:  MOVLW  08
+0C17:  MOVWF  66
+0C18:  BCF    0A.3
+0C19:  CALL   150
+0C1A:  BSF    0A.3
+....................         writeReg(GLOBAL_CONFIG_VCSEL_WIDTH, 0x03); 
+0C1B:  MOVLW  32
+0C1C:  MOVWF  65
+0C1D:  MOVLW  03
+0C1E:  MOVWF  66
+0C1F:  BCF    0A.3
+0C20:  CALL   150
+0C21:  BSF    0A.3
+....................         writeReg(ALGO_PHASECAL_CONFIG_TIMEOUT, 0x07); 
+0C22:  MOVLW  30
+0C23:  MOVWF  65
+0C24:  MOVLW  07
+0C25:  MOVWF  66
+0C26:  BCF    0A.3
+0C27:  CALL   150
+0C28:  BSF    0A.3
+....................         writeReg(0xFF, 0x01); 
+0C29:  MOVLW  FF
+0C2A:  MOVWF  65
+0C2B:  MOVLW  01
+0C2C:  MOVWF  66
+0C2D:  BCF    0A.3
+0C2E:  CALL   150
+0C2F:  BSF    0A.3
+....................         writeReg(ALGO_PHASECAL_LIM, 0x20); 
+0C30:  MOVLW  30
+0C31:  MOVWF  65
+0C32:  MOVLW  20
+0C33:  MOVWF  66
+0C34:  BCF    0A.3
+0C35:  CALL   150
+0C36:  BSF    0A.3
+....................         writeReg(0xFF, 0x00); 
+0C37:  MOVLW  FF
+0C38:  MOVWF  65
+0C39:  CLRF   66
+0C3A:  BCF    0A.3
+0C3B:  CALL   150
+0C3C:  BSF    0A.3
+....................         break; 
+0C3D:  GOTO   441
+....................  
+....................       default: 
+....................         // invalid period 
+....................         return false; 
+0C3E:  MOVLW  00
+0C3F:  MOVWF  78
+0C40:  GOTO   4B3
+....................     } 
+....................  
+....................     // apply new VCSEL period 
+....................     writeReg(FINAL_RANGE_CONFIG_VCSEL_PERIOD, vcsel_period_reg); 
+0C41:  MOVLW  70
+0C42:  MOVWF  65
+0C43:  MOVF   44,W
+0C44:  MOVWF  66
+0C45:  BCF    0A.3
+0C46:  CALL   150
+0C47:  BSF    0A.3
+....................  
+....................     // update timeouts 
+....................  
+....................     // set_sequence_step_timeout() begin 
+....................     // (SequenceStepId == VL53L0X_SEQUENCESTEP_FINAL_RANGE) 
+....................  
+....................     // "For the final range timeout, the pre-range timeout 
+....................     //  must be added. To do this both final and pre-range 
+....................     //  timeouts must be expressed in macro periods MClks 
+....................     //  because they have different vcsel periods." 
+....................  
+....................     int16 new_final_range_timeout_mclks = 
+....................       timeoutMicrosecondsToMclks(timeouts.final_range_us, period_pclks); 
+0C48:  MOVF   5B,W
+0C49:  BSF    03.5
+0C4A:  MOVWF  43
+0C4B:  BCF    03.5
+0C4C:  MOVF   5A,W
+0C4D:  BSF    03.5
+0C4E:  MOVWF  42
+0C4F:  BCF    03.5
+0C50:  MOVF   59,W
+0C51:  BSF    03.5
+0C52:  MOVWF  41
+0C53:  BCF    03.5
+0C54:  MOVF   58,W
+0C55:  BSF    03.5
+0C56:  MOVWF  40
+0C57:  BCF    03.5
+0C58:  MOVF   43,W
+0C59:  BSF    03.5
+0C5A:  MOVWF  44
+0C5B:  BCF    0A.3
+0C5C:  BCF    03.5
+0C5D:  CALL   66B
+0C5E:  BSF    0A.3
+0C5F:  MOVF   78,W
+0C60:  MOVWF  61
+0C61:  MOVF   77,W
+0C62:  MOVWF  60
+....................  
+....................     if (enables.pre_range) 
+0C63:  BTFSS  45.3
+0C64:  GOTO   46B
+....................     { 
+....................       new_final_range_timeout_mclks += timeouts.pre_range_mclks; 
+0C65:  MOVF   4C,W
+0C66:  ADDWF  60,F
+0C67:  MOVF   4D,W
+0C68:  BTFSC  03.0
+0C69:  INCFSZ 4D,W
+0C6A:  ADDWF  61,F
+....................     } 
+....................  
+....................     writeReg16Bit(FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI, 
+....................       encodeTimeout(new_final_range_timeout_mclks)); 
+0C6B:  MOVF   61,W
+0C6C:  BSF    03.5
+0C6D:  MOVWF  41
+0C6E:  BCF    03.5
+0C6F:  MOVF   60,W
+0C70:  BSF    03.5
+0C71:  MOVWF  40
+0C72:  BCF    0A.3
+0C73:  BCF    03.5
+0C74:  CALL   705
+0C75:  BSF    0A.3
+0C76:  MOVF   79,W
+0C77:  MOVWF  64
+0C78:  MOVF   78,W
+0C79:  MOVWF  63
+0C7A:  MOVLW  71
+0C7B:  BSF    03.5
+0C7C:  MOVWF  42
+0C7D:  BCF    03.5
+0C7E:  MOVF   79,W
+0C7F:  BSF    03.5
+0C80:  MOVWF  44
+0C81:  BCF    03.5
+0C82:  MOVF   78,W
+0C83:  BSF    03.5
+0C84:  MOVWF  43
+0C85:  BCF    0A.3
+0C86:  BCF    03.5
+0C87:  CALL   1CA
+0C88:  BSF    0A.3
+....................  
+....................     // set_sequence_step_timeout end 
+....................   } 
+0C89:  GOTO   48D
+....................   else  
+....................   { 
+....................     // invalid type 
+....................     return false; 
+0C8A:  MOVLW  00
+0C8B:  MOVWF  78
+0C8C:  GOTO   4B3
+....................   } 
+....................  
+....................   // "Finally, the timing budget must be re-applied" 
+....................  
+....................   setMeasurementTimingBudget(measurement_timing_budget_us); 
+0C8D:  MOVF   35,W
+0C8E:  MOVWF  66
+0C8F:  MOVF   34,W
+0C90:  MOVWF  65
+0C91:  MOVF   33,W
+0C92:  MOVWF  64
+0C93:  MOVF   32,W
+0C94:  MOVWF  63
+0C95:  CALL   000
+....................  
+....................   // "Perform the phase calibration. This is needed after changing on vcsel period." 
+....................   // VL53L0X_perform_phase_calibration() begin 
+....................  
+....................   int8 sequence_config = readReg(SYSTEM_SEQUENCE_CONFIG); 
+0C96:  MOVLW  01
+0C97:  BSF    03.5
+0C98:  MOVWF  47
+0C99:  BCF    0A.3
+0C9A:  BCF    03.5
+0C9B:  CALL   12A
+0C9C:  BSF    0A.3
+0C9D:  MOVF   78,W
+0C9E:  MOVWF  62
+....................   writeReg(SYSTEM_SEQUENCE_CONFIG, 0x02); 
+0C9F:  MOVLW  01
+0CA0:  MOVWF  65
+0CA1:  MOVLW  02
+0CA2:  MOVWF  66
+0CA3:  BCF    0A.3
+0CA4:  CALL   150
+0CA5:  BSF    0A.3
+....................   performSingleRefCalibration(0x0); 
+0CA6:  CLRF   63
+0CA7:  BCF    0A.3
+0CA8:  CALL   751
+0CA9:  BSF    0A.3
+....................   writeReg(SYSTEM_SEQUENCE_CONFIG, sequence_config); 
+0CAA:  MOVLW  01
+0CAB:  MOVWF  65
+0CAC:  MOVF   62,W
+0CAD:  MOVWF  66
+0CAE:  BCF    0A.3
+0CAF:  CALL   150
+0CB0:  BSF    0A.3
+....................  
+....................   // VL53L0X_perform_phase_calibration() end 
+....................  
+....................   return true; 
+0CB1:  MOVLW  01
+0CB2:  MOVWF  78
+0CB3:  RETURN
+.................... } 
+....................  
+.................... // Get the VCSEL pulse period in PCLKs for the given period type. 
+.................... // based on VL53L0X_get_vcsel_pulse_period() 
+.................... int8 getVcselPulsePeriod(vcselPeriodType type) 
+.................... { 
+....................   if (type == VcselPeriodPreRange) 
+*
+0353:  BSF    03.5
+0354:  MOVF   46,F
+0355:  BTFSS  03.2
+0356:  GOTO   365
+....................   { 
+....................     return decodeVcselPeriod(readReg(PRE_RANGE_CONFIG_VCSEL_PERIOD)); 
+0357:  MOVLW  50
+0358:  MOVWF  47
+0359:  BCF    03.5
+035A:  CALL   12A
+035B:  MOVLW  01
+035C:  ADDWF  78,W
+035D:  MOVWF  77
+035E:  BCF    03.0
+035F:  RLF    77,F
+0360:  MOVF   77,W
+0361:  MOVWF  78
+0362:  GOTO   378
+....................   } 
+0363:  GOTO   378
+0364:  BSF    03.5
+....................   else if (type == VcselPeriodFinalRange) 
+0365:  DECFSZ 46,W
+0366:  GOTO   375
+....................   { 
+....................     return decodeVcselPeriod(readReg(FINAL_RANGE_CONFIG_VCSEL_PERIOD)); 
+0367:  MOVLW  70
+0368:  MOVWF  47
+0369:  BCF    03.5
+036A:  CALL   12A
+036B:  MOVLW  01
+036C:  ADDWF  78,W
+036D:  MOVWF  77
+036E:  BCF    03.0
+036F:  RLF    77,F
+0370:  MOVF   77,W
+0371:  MOVWF  78
+0372:  GOTO   378
+....................   } 
+0373:  GOTO   378
+0374:  BSF    03.5
+....................   else { return 255; } 
+0375:  MOVLW  FF
+0376:  MOVWF  78
+0377:  BCF    03.5
+0378:  RETURN
+.................... } 
+....................  
+.................... // Start continuous ranging measurements. If period_ms (optional) is 0 or not 
+.................... // given, continuous back-to-back mode is used (the sensor takes measurements as 
+.................... // often as possible); otherwise, continuous timed mode is used, with the given 
+.................... // inter-measurement period in milliseconds determining how often the sensor 
+.................... // takes a measurement. 
+.................... // based on VL53L0X_StartMeasurement() 
+.................... void startContinuous(int32 period_ms) 
+.................... { 
+....................   writeReg(0x80, 0x01); 
+....................   writeReg(0xFF, 0x01); 
+....................   writeReg(0x00, 0x00); 
+....................   writeReg(0x91, stop_variable); 
+....................   writeReg(0x00, 0x01); 
+....................   writeReg(0xFF, 0x00); 
+....................   writeReg(0x80, 0x00); 
+....................  
+....................   if (period_ms != 0) 
+....................   { 
+....................     // continuous timed mode 
+....................  
+....................     // VL53L0X_SetInterMeasurementPeriodMilliSeconds() begin 
+....................  
+....................     int16 osc_calibrate_val = readReg16Bit(OSC_CALIBRATE_VAL); 
+....................  
+....................     if (osc_calibrate_val != 0) 
+....................     { 
+....................       period_ms *= osc_calibrate_val; 
+....................     } 
+....................  
+....................     writeReg32Bit(SYSTEM_INTERMEASUREMENT_PERIOD, period_ms); 
+....................  
+....................     // VL53L0X_SetInterMeasurementPeriodMilliSeconds() end 
+....................  
+....................     writeReg(SYSRANGE_START, 0x04); // VL53L0X_REG_SYSRANGE_MODE_TIMED 
+....................   } 
+....................   else 
+....................   { 
+....................     // continuous back-to-back mode 
+....................     writeReg(SYSRANGE_START, 0x02); // VL53L0X_REG_SYSRANGE_MODE_BACKTOBACK 
+....................   } 
+.................... } 
+....................  
+.................... // Stop continuous measurements 
+.................... // based on VL53L0X_StopMeasurement() 
+.................... void stopContinuous(void) 
+.................... { 
+....................   writeReg(SYSRANGE_START, 0x01); // VL53L0X_REG_SYSRANGE_MODE_SINGLESHOT 
+....................  
+....................   writeReg(0xFF, 0x01); 
+....................   writeReg(0x00, 0x00); 
+....................   writeReg(0x91, 0x00); 
+....................   writeReg(0x00, 0x01); 
+....................   writeReg(0xFF, 0x00); 
+.................... } 
+....................  
+.................... // Returns a range reading in millimeters when continuous mode is active 
+.................... // (readRangeSingleMillimeters() also calls this function after starting a 
+.................... // single-shot range measurement) 
+.................... int16 readRangeContinuousMillimeters(void) 
+.................... { 
+....................   startTimeout(); 
+*
+0D11:  MOVF   3C,W
+0D12:  MOVWF  30
+0D13:  MOVF   3B,W
+0D14:  MOVWF  2F
+....................   while ((readReg(RESULT_INTERRUPT_STATUS) & 0x07) == 0) 
+0D15:  MOVLW  13
+0D16:  BSF    03.5
+0D17:  MOVWF  47
+0D18:  BCF    0A.3
+0D19:  BCF    03.5
+0D1A:  CALL   12A
+0D1B:  BSF    0A.3
+0D1C:  MOVF   78,W
+0D1D:  ANDLW  07
+0D1E:  BTFSS  03.2
+0D1F:  GOTO   53F
+....................   { 
+....................     if (checkTimeoutExpired()) 
+0D20:  MOVF   2C,F
+0D21:  BTFSS  03.2
+0D22:  GOTO   526
+0D23:  MOVF   2D,F
+0D24:  BTFSC  03.2
+0D25:  GOTO   53E
+0D26:  MOVF   2F,W
+0D27:  SUBWF  3B,W
+0D28:  MOVWF  48
+0D29:  MOVF   3C,W
+0D2A:  MOVWF  49
+0D2B:  MOVF   30,W
+0D2C:  BTFSS  03.0
+0D2D:  INCFSZ 30,W
+0D2E:  SUBWF  49,F
+0D2F:  MOVF   2D,W
+0D30:  SUBWF  49,W
+0D31:  BTFSS  03.0
+0D32:  GOTO   53E
+0D33:  BTFSS  03.2
+0D34:  GOTO   539
+0D35:  MOVF   48,W
+0D36:  SUBWF  2C,W
+0D37:  BTFSC  03.0
+0D38:  GOTO   53E
+....................     { 
+....................       did_timeout = true; 
+0D39:  BSF    2E.0
+....................       return 65535; 
+0D3A:  MOVLW  FF
+0D3B:  MOVWF  78
+0D3C:  MOVWF  79
+0D3D:  GOTO   555
+....................     } 
+0D3E:  GOTO   515
+....................   } 
+....................  
+....................   // assumptions: Linearity Corrective Gain is 1000 (default); 
+....................   // fractional ranging is not enabled 
+....................   int16 range = readReg16Bit(RESULT_RANGE_STATUS + 10); 
+0D3F:  MOVLW  1E
+0D40:  BSF    03.5
+0D41:  MOVWF  46
+0D42:  BCF    0A.3
+0D43:  BCF    03.5
+0D44:  CALL   48E
+0D45:  BSF    0A.3
+0D46:  MOVF   79,W
+0D47:  MOVWF  47
+0D48:  MOVF   78,W
+0D49:  MOVWF  46
+....................  
+....................   writeReg(SYSTEM_INTERRUPT_CLEAR, 0x01); 
+0D4A:  MOVLW  0B
+0D4B:  MOVWF  65
+0D4C:  MOVLW  01
+0D4D:  MOVWF  66
+0D4E:  BCF    0A.3
+0D4F:  CALL   150
+0D50:  BSF    0A.3
+....................  
+....................   return range; 
+0D51:  MOVF   46,W
+0D52:  MOVWF  78
+0D53:  MOVF   47,W
+0D54:  MOVWF  79
+.................... } 
+....................  
+.................... // Performs a single-shot range measurement and returns the reading in 
+.................... // millimeters 
+.................... // based on VL53L0X_PerformSingleRangingMeasurement() 
+.................... int16 readRangeSingleMillimeters(void) 
+.................... { 
+....................   writeReg(0x80, 0x01); 
+*
+0CB4:  MOVLW  80
+0CB5:  MOVWF  65
+0CB6:  MOVLW  01
+0CB7:  MOVWF  66
+0CB8:  BCF    0A.3
+0CB9:  CALL   150
+0CBA:  BSF    0A.3
+....................   writeReg(0xFF, 0x01); 
+0CBB:  MOVLW  FF
+0CBC:  MOVWF  65
+0CBD:  MOVLW  01
+0CBE:  MOVWF  66
+0CBF:  BCF    0A.3
+0CC0:  CALL   150
+0CC1:  BSF    0A.3
+....................   writeReg(0x00, 0x00); 
+0CC2:  CLRF   65
+0CC3:  CLRF   66
+0CC4:  BCF    0A.3
+0CC5:  CALL   150
+0CC6:  BSF    0A.3
+....................   writeReg(0x91, stop_variable); 
+0CC7:  MOVLW  91
+0CC8:  MOVWF  65
+0CC9:  MOVF   31,W
+0CCA:  MOVWF  66
+0CCB:  BCF    0A.3
+0CCC:  CALL   150
+0CCD:  BSF    0A.3
+....................   writeReg(0x00, 0x01); 
+0CCE:  CLRF   65
+0CCF:  MOVLW  01
+0CD0:  MOVWF  66
+0CD1:  BCF    0A.3
+0CD2:  CALL   150
+0CD3:  BSF    0A.3
+....................   writeReg(0xFF, 0x00); 
+0CD4:  MOVLW  FF
+0CD5:  MOVWF  65
+0CD6:  CLRF   66
+0CD7:  BCF    0A.3
+0CD8:  CALL   150
+0CD9:  BSF    0A.3
+....................   writeReg(0x80, 0x00); 
+0CDA:  MOVLW  80
+0CDB:  MOVWF  65
+0CDC:  CLRF   66
+0CDD:  BCF    0A.3
+0CDE:  CALL   150
+0CDF:  BSF    0A.3
+....................  
+....................   writeReg(SYSRANGE_START, 0x01); 
+0CE0:  CLRF   65
+0CE1:  MOVLW  01
+0CE2:  MOVWF  66
+0CE3:  BCF    0A.3
+0CE4:  CALL   150
+0CE5:  BSF    0A.3
+....................  
+....................   // "Wait until start bit has been cleared" 
+....................   startTimeout(); 
+0CE6:  MOVF   3C,W
+0CE7:  MOVWF  30
+0CE8:  MOVF   3B,W
+0CE9:  MOVWF  2F
+....................   while (readReg(SYSRANGE_START) & 0x01) 
+0CEA:  BSF    03.5
+0CEB:  CLRF   47
+0CEC:  BCF    0A.3
+0CED:  BCF    03.5
+0CEE:  CALL   12A
+0CEF:  BSF    0A.3
+0CF0:  BTFSS  78.0
+0CF1:  GOTO   511
+....................   { 
+....................     if (checkTimeoutExpired()) 
+0CF2:  MOVF   2C,F
+0CF3:  BTFSS  03.2
+0CF4:  GOTO   4F8
+0CF5:  MOVF   2D,F
+0CF6:  BTFSC  03.2
+0CF7:  GOTO   510
+0CF8:  MOVF   2F,W
+0CF9:  SUBWF  3B,W
+0CFA:  MOVWF  46
+0CFB:  MOVF   3C,W
+0CFC:  MOVWF  47
+0CFD:  MOVF   30,W
+0CFE:  BTFSS  03.0
+0CFF:  INCFSZ 30,W
+0D00:  SUBWF  47,F
+0D01:  MOVF   2D,W
+0D02:  SUBWF  47,W
+0D03:  BTFSS  03.0
+0D04:  GOTO   510
+0D05:  BTFSS  03.2
+0D06:  GOTO   50B
+0D07:  MOVF   46,W
+0D08:  SUBWF  2C,W
+0D09:  BTFSC  03.0
+0D0A:  GOTO   510
+....................     { 
+....................       did_timeout = true; 
+0D0B:  BSF    2E.0
+....................       return 65535; 
+0D0C:  MOVLW  FF
+0D0D:  MOVWF  78
+0D0E:  MOVWF  79
+0D0F:  GOTO   556
+....................     } 
+0D10:  GOTO   4EA
+....................   } 
+....................  
+....................   return readRangeContinuousMillimeters(); 
+*
+0D55:  MOVF   79,W
+0D56:  RETURN
+.................... } 
+....................  
+.................... // Did a timeout occur in one of the read functions since the last call to 
+.................... // timeoutOccurred()? 
+.................... boolean timeoutOccurred() 
+.................... { 
+....................   boolean tmp = did_timeout; 
+....................   did_timeout = false; 
+....................   return tmp; 
+.................... } 
+....................  
+.................... // Private Methods ///////////////////////////////////////////////////////////// 
+....................  
+.................... // Get reference SPAD (single photon avalanche diode) count and type 
+.................... // based on VL53L0X_get_info_from_device(), 
+.................... // but only gets reference SPAD count and type 
+.................... boolean getSpadInfo(int8 * count, boolean * type_is_aperture) 
+.................... { 
+....................   int8 tmp; 
+....................  
+....................   writeReg(0x80, 0x01); 
+*
+1086:  MOVLW  80
+1087:  MOVWF  65
+1088:  MOVLW  01
+1089:  MOVWF  66
+108A:  BCF    0A.4
+108B:  CALL   150
+108C:  BSF    0A.4
+....................   writeReg(0xFF, 0x01); 
+108D:  MOVLW  FF
+108E:  MOVWF  65
+108F:  MOVLW  01
+1090:  MOVWF  66
+1091:  BCF    0A.4
+1092:  CALL   150
+1093:  BSF    0A.4
+....................   writeReg(0x00, 0x00); 
+1094:  CLRF   65
+1095:  CLRF   66
+1096:  BCF    0A.4
+1097:  CALL   150
+1098:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x06); 
+1099:  MOVLW  FF
+109A:  MOVWF  65
+109B:  MOVLW  06
+109C:  MOVWF  66
+109D:  BCF    0A.4
+109E:  CALL   150
+109F:  BSF    0A.4
+....................   writeReg(0x83, readReg(0x83) | 0x04); 
+10A0:  MOVLW  83
+10A1:  BSF    03.5
+10A2:  MOVWF  47
+10A3:  BCF    0A.4
+10A4:  BCF    03.5
+10A5:  CALL   12A
+10A6:  BSF    0A.4
+10A7:  MOVF   78,W
+10A8:  IORLW  04
+10A9:  MOVWF  53
+10AA:  MOVLW  83
+10AB:  MOVWF  65
+10AC:  MOVF   53,W
+10AD:  MOVWF  66
+10AE:  BCF    0A.4
+10AF:  CALL   150
+10B0:  BSF    0A.4
+....................   writeReg(0xFF, 0x07); 
+10B1:  MOVLW  FF
+10B2:  MOVWF  65
+10B3:  MOVLW  07
+10B4:  MOVWF  66
+10B5:  BCF    0A.4
+10B6:  CALL   150
+10B7:  BSF    0A.4
+....................   writeReg(0x81, 0x01); 
+10B8:  MOVLW  81
+10B9:  MOVWF  65
+10BA:  MOVLW  01
+10BB:  MOVWF  66
+10BC:  BCF    0A.4
+10BD:  CALL   150
+10BE:  BSF    0A.4
+....................  
+....................   writeReg(0x80, 0x01); 
+10BF:  MOVLW  80
+10C0:  MOVWF  65
+10C1:  MOVLW  01
+10C2:  MOVWF  66
+10C3:  BCF    0A.4
+10C4:  CALL   150
+10C5:  BSF    0A.4
+....................  
+....................   writeReg(0x94, 0x6b); 
+10C6:  MOVLW  94
+10C7:  MOVWF  65
+10C8:  MOVLW  6B
+10C9:  MOVWF  66
+10CA:  BCF    0A.4
+10CB:  CALL   150
+10CC:  BSF    0A.4
+....................   writeReg(0x83, 0x00); 
+10CD:  MOVLW  83
+10CE:  MOVWF  65
+10CF:  CLRF   66
+10D0:  BCF    0A.4
+10D1:  CALL   150
+10D2:  BSF    0A.4
+....................   startTimeout(); 
+10D3:  MOVF   3C,W
+10D4:  MOVWF  30
+10D5:  MOVF   3B,W
+10D6:  MOVWF  2F
+....................   while (readReg(0x83) == 0x00) 
+10D7:  MOVLW  83
+10D8:  BSF    03.5
+10D9:  MOVWF  47
+10DA:  BCF    0A.4
+10DB:  BCF    03.5
+10DC:  CALL   12A
+10DD:  BSF    0A.4
+10DE:  MOVF   78,F
+10DF:  BTFSS  03.2
+10E0:  GOTO   0FE
+....................   { 
+....................     if (checkTimeoutExpired()) { return false; } 
+10E1:  MOVF   2C,F
+10E2:  BTFSS  03.2
+10E3:  GOTO   0E7
+10E4:  MOVF   2D,F
+10E5:  BTFSC  03.2
+10E6:  GOTO   0FD
+10E7:  MOVF   2F,W
+10E8:  SUBWF  3B,W
+10E9:  MOVWF  53
+10EA:  MOVF   3C,W
+10EB:  MOVWF  54
+10EC:  MOVF   30,W
+10ED:  BTFSS  03.0
+10EE:  INCFSZ 30,W
+10EF:  SUBWF  54,F
+10F0:  MOVF   2D,W
+10F1:  SUBWF  54,W
+10F2:  BTFSS  03.0
+10F3:  GOTO   0FD
+10F4:  BTFSS  03.2
+10F5:  GOTO   0FA
+10F6:  MOVF   53,W
+10F7:  SUBWF  2C,W
+10F8:  BTFSC  03.0
+10F9:  GOTO   0FD
+10FA:  MOVLW  00
+10FB:  MOVWF  78
+10FC:  GOTO   159
+10FD:  GOTO   0D7
+....................   } 
+....................   writeReg(0x83, 0x01); 
+10FE:  MOVLW  83
+10FF:  MOVWF  65
+1100:  MOVLW  01
+1101:  MOVWF  66
+1102:  BCF    0A.4
+1103:  CALL   150
+1104:  BSF    0A.4
+....................   tmp = readReg(0x92); 
+1105:  MOVLW  92
+1106:  BSF    03.5
+1107:  MOVWF  47
+1108:  BCF    0A.4
+1109:  BCF    03.5
+110A:  CALL   12A
+110B:  BSF    0A.4
+110C:  MOVF   78,W
+110D:  MOVWF  52
+....................  
+....................   *count = tmp & 0x7f; 
+110E:  MOVF   4E,W
+110F:  MOVWF  04
+1110:  BCF    03.7
+1111:  BTFSC  4F.0
+1112:  BSF    03.7
+1113:  MOVF   52,W
+1114:  ANDLW  7F
+1115:  MOVWF  00
+....................   *type_is_aperture = (tmp >> 7) & 0x01; 
+1116:  MOVF   50,W
+1117:  MOVWF  04
+1118:  BCF    03.7
+1119:  BTFSC  51.0
+111A:  BSF    03.7
+111B:  CLRF   77
+111C:  BTFSC  52.7
+111D:  BSF    77.0
+111E:  MOVF   77,W
+111F:  ANDLW  01
+1120:  MOVWF  00
+....................  
+....................   writeReg(0x81, 0x00); 
+1121:  MOVLW  81
+1122:  MOVWF  65
+1123:  CLRF   66
+1124:  BCF    0A.4
+1125:  CALL   150
+1126:  BSF    0A.4
+....................   writeReg(0xFF, 0x06); 
+1127:  MOVLW  FF
+1128:  MOVWF  65
+1129:  MOVLW  06
+112A:  MOVWF  66
+112B:  BCF    0A.4
+112C:  CALL   150
+112D:  BSF    0A.4
+....................   writeReg(0x83, readReg( 0x83  & ~0x04)); 
+112E:  MOVLW  83
+112F:  BSF    03.5
+1130:  MOVWF  47
+1131:  BCF    0A.4
+1132:  BCF    03.5
+1133:  CALL   12A
+1134:  BSF    0A.4
+1135:  MOVF   78,W
+1136:  MOVWF  53
+1137:  MOVLW  83
+1138:  MOVWF  65
+1139:  MOVF   78,W
+113A:  MOVWF  66
+113B:  BCF    0A.4
+113C:  CALL   150
+113D:  BSF    0A.4
+....................   writeReg(0xFF, 0x01); 
+113E:  MOVLW  FF
+113F:  MOVWF  65
+1140:  MOVLW  01
+1141:  MOVWF  66
+1142:  BCF    0A.4
+1143:  CALL   150
+1144:  BSF    0A.4
+....................   writeReg(0x00, 0x01); 
+1145:  CLRF   65
+1146:  MOVLW  01
+1147:  MOVWF  66
+1148:  BCF    0A.4
+1149:  CALL   150
+114A:  BSF    0A.4
+....................  
+....................   writeReg(0xFF, 0x00); 
+114B:  MOVLW  FF
+114C:  MOVWF  65
+114D:  CLRF   66
+114E:  BCF    0A.4
+114F:  CALL   150
+1150:  BSF    0A.4
+....................   writeReg(0x80, 0x00); 
+1151:  MOVLW  80
+1152:  MOVWF  65
+1153:  CLRF   66
+1154:  BCF    0A.4
+1155:  CALL   150
+1156:  BSF    0A.4
+....................  
+....................   return true; 
+1157:  MOVLW  01
+1158:  MOVWF  78
+.................... } 
+....................  
+.................... // Get sequence step enables 
+.................... // based on VL53L0X_GetSequenceStepEnables() 
+.................... void getSequenceStepEnables(SequenceStepEnables * enables) 
+*
+02B5:  MOVLW  01
+02B6:  BSF    03.5
+02B7:  MOVWF  47
+02B8:  BCF    03.5
+02B9:  CALL   12A
+02BA:  MOVF   78,W
+02BB:  BSF    03.5
+02BC:  MOVWF  42
+.................... { 
+....................   int8 sequence_config = readReg(SYSTEM_SEQUENCE_CONFIG); 
+....................  
+....................   enables->tcc          = (sequence_config >> 4) & 0x1; 
+02BD:  MOVF   41,W
+02BE:  MOVWF  7A
+02BF:  MOVF   40,W
+02C0:  MOVWF  43
+02C1:  MOVF   41,W
+02C2:  MOVWF  44
+02C3:  SWAPF  42,W
+02C4:  MOVWF  77
+02C5:  MOVLW  0F
+02C6:  ANDWF  77,F
+02C7:  MOVF   77,W
+02C8:  ANDLW  01
+02C9:  MOVWF  78
+02CA:  BTFSC  78.0
+02CB:  GOTO   2D3
+02CC:  MOVF   43,W
+02CD:  MOVWF  04
+02CE:  BCF    03.7
+02CF:  BTFSC  44.0
+02D0:  BSF    03.7
+02D1:  BCF    00.0
+02D2:  GOTO   2D9
+02D3:  MOVF   43,W
+02D4:  MOVWF  04
+02D5:  BCF    03.7
+02D6:  BTFSC  44.0
+02D7:  BSF    03.7
+02D8:  BSF    00.0
+....................   enables->dss          = (sequence_config >> 3) & 0x1; 
+02D9:  MOVF   40,W
+02DA:  MOVWF  78
+02DB:  MOVF   41,W
+02DC:  MOVWF  7A
+02DD:  MOVF   78,W
+02DE:  MOVWF  43
+02DF:  MOVF   41,W
+02E0:  MOVWF  44
+02E1:  RRF    42,W
+02E2:  MOVWF  77
+02E3:  RRF    77,F
+02E4:  RRF    77,F
+02E5:  MOVLW  1F
+02E6:  ANDWF  77,F
+02E7:  MOVF   77,W
+02E8:  ANDLW  01
+02E9:  MOVWF  78
+02EA:  BTFSC  78.0
+02EB:  GOTO   2F3
+02EC:  MOVF   43,W
+02ED:  MOVWF  04
+02EE:  BCF    03.7
+02EF:  BTFSC  44.0
+02F0:  BSF    03.7
+02F1:  BCF    00.2
+02F2:  GOTO   2F9
+02F3:  MOVF   43,W
+02F4:  MOVWF  04
+02F5:  BCF    03.7
+02F6:  BTFSC  44.0
+02F7:  BSF    03.7
+02F8:  BSF    00.2
+....................   enables->msrc         = (sequence_config >> 2) & 0x1; 
+02F9:  MOVF   41,W
+02FA:  MOVWF  7A
+02FB:  MOVF   40,W
+02FC:  MOVWF  43
+02FD:  MOVF   41,W
+02FE:  MOVWF  44
+02FF:  RRF    42,W
+0300:  MOVWF  77
+0301:  RRF    77,F
+0302:  MOVLW  3F
+0303:  ANDWF  77,F
+0304:  MOVF   77,W
+0305:  ANDLW  01
+0306:  MOVWF  78
+0307:  BTFSC  78.0
+0308:  GOTO   310
+0309:  MOVF   43,W
+030A:  MOVWF  04
+030B:  BCF    03.7
+030C:  BTFSC  44.0
+030D:  BSF    03.7
+030E:  BCF    00.1
+030F:  GOTO   316
+0310:  MOVF   43,W
+0311:  MOVWF  04
+0312:  BCF    03.7
+0313:  BTFSC  44.0
+0314:  BSF    03.7
+0315:  BSF    00.1
+....................   enables->pre_range    = (sequence_config >> 6) & 0x1; 
+0316:  MOVF   40,W
+0317:  MOVWF  78
+0318:  MOVF   41,W
+0319:  MOVWF  7A
+031A:  MOVF   78,W
+031B:  MOVWF  43
+031C:  MOVF   41,W
+031D:  MOVWF  44
+031E:  SWAPF  42,W
+031F:  MOVWF  77
+0320:  RRF    77,F
+0321:  RRF    77,F
+0322:  MOVLW  03
+0323:  ANDWF  77,F
+0324:  MOVF   77,W
+0325:  ANDLW  01
+0326:  MOVWF  78
+0327:  BTFSC  78.0
+0328:  GOTO   330
+0329:  MOVF   43,W
+032A:  MOVWF  04
+032B:  BCF    03.7
+032C:  BTFSC  44.0
+032D:  BSF    03.7
+032E:  BCF    00.3
+032F:  GOTO   336
+0330:  MOVF   43,W
+0331:  MOVWF  04
+0332:  BCF    03.7
+0333:  BTFSC  44.0
+0334:  BSF    03.7
+0335:  BSF    00.3
+....................   enables->final_range  = (sequence_config >> 7) & 0x1; 
+0336:  MOVF   41,W
+0337:  MOVWF  7A
+0338:  MOVF   40,W
+0339:  MOVWF  43
+033A:  MOVF   41,W
+033B:  MOVWF  44
+033C:  CLRF   77
+033D:  BTFSC  42.7
+033E:  BSF    77.0
+033F:  MOVF   77,W
+0340:  ANDLW  01
+0341:  MOVWF  78
+0342:  BTFSC  78.0
+0343:  GOTO   34B
+0344:  MOVF   43,W
+0345:  MOVWF  04
+0346:  BCF    03.7
+0347:  BTFSC  44.0
+0348:  BSF    03.7
+0349:  BCF    00.4
+034A:  GOTO   351
+034B:  MOVF   43,W
+034C:  MOVWF  04
+034D:  BCF    03.7
+034E:  BTFSC  44.0
+034F:  BSF    03.7
+0350:  BSF    00.4
+0351:  BCF    03.5
+0352:  RETURN
+.................... } 
+....................  
+.................... // Get sequence step timeouts 
+.................... // based on get_sequence_step_timeout(), 
+.................... // but gets all timeouts instead of just the requested one, and also stores 
+.................... // intermediate values 
+.................... void getSequenceStepTimeouts(SequenceStepEnables  * enables, SequenceStepTimeouts * timeouts) 
+.................... { 
+....................   timeouts->pre_range_vcsel_period_pclks = getVcselPulsePeriod(VcselPeriodPreRange); 
+*
+04DC:  BSF    03.5
+04DD:  MOVF   42,W
+04DE:  MOVWF  78
+04DF:  MOVF   43,W
+04E0:  MOVWF  7A
+04E1:  MOVF   42,W
+04E2:  MOVWF  44
+04E3:  MOVF   43,W
+04E4:  MOVWF  45
+04E5:  CLRF   46
+04E6:  BCF    03.5
+04E7:  CALL   353
+04E8:  BSF    03.5
+04E9:  MOVF   44,W
+04EA:  MOVWF  04
+04EB:  BCF    03.7
+04EC:  BTFSC  45.0
+04ED:  BSF    03.7
+04EE:  INCF   04,F
+04EF:  CLRF   00
+04F0:  DECF   04,F
+04F1:  MOVF   78,W
+04F2:  MOVWF  00
+....................  
+....................   timeouts->msrc_dss_tcc_mclks = readReg(MSRC_CONFIG_TIMEOUT_MACROP) + 1; 
+04F3:  MOVLW  04
+04F4:  ADDWF  42,W
+04F5:  MOVWF  78
+04F6:  MOVF   43,W
+04F7:  MOVWF  7A
+04F8:  BTFSC  03.0
+04F9:  INCF   7A,F
+04FA:  MOVF   78,W
+04FB:  MOVWF  44
+04FC:  MOVF   7A,W
+04FD:  MOVWF  45
+04FE:  MOVLW  46
+04FF:  MOVWF  47
+0500:  BCF    03.5
+0501:  CALL   12A
+0502:  MOVLW  01
+0503:  ADDWF  78,W
+0504:  BSF    03.5
+0505:  MOVWF  46
+0506:  MOVF   44,W
+0507:  MOVWF  04
+0508:  BCF    03.7
+0509:  BTFSC  45.0
+050A:  BSF    03.7
+050B:  INCF   04,F
+050C:  CLRF   00
+050D:  DECF   04,F
+050E:  MOVF   46,W
+050F:  MOVWF  00
+....................   timeouts->msrc_dss_tcc_us = 
+....................     timeoutMclksToMicroseconds(timeouts->msrc_dss_tcc_mclks, 
+....................                                timeouts->pre_range_vcsel_period_pclks); 
+0510:  MOVLW  0A
+0511:  ADDWF  42,W
+0512:  MOVWF  78
+0513:  MOVF   43,W
+0514:  MOVWF  7A
+0515:  BTFSC  03.0
+0516:  INCF   7A,F
+0517:  MOVF   78,W
+0518:  MOVWF  44
+0519:  MOVF   7A,W
+051A:  MOVWF  45
+051B:  MOVLW  04
+051C:  ADDWF  42,W
+051D:  MOVWF  04
+051E:  BCF    03.7
+051F:  BTFSC  43.0
+0520:  BSF    03.7
+0521:  INCF   04,F
+0522:  MOVF   00,W
+0523:  MOVWF  47
+0524:  DECF   04,F
+0525:  MOVF   00,W
+0526:  MOVWF  46
+0527:  MOVF   42,W
+0528:  MOVWF  04
+0529:  BCF    03.7
+052A:  BTFSC  43.0
+052B:  BSF    03.7
+052C:  INCF   04,F
+052D:  MOVF   00,W
+052E:  MOVWF  49
+052F:  DECF   04,F
+0530:  MOVF   00,W
+0531:  MOVWF  48
+0532:  MOVF   47,W
+0533:  MOVWF  4B
+0534:  MOVF   46,W
+0535:  MOVWF  4A
+0536:  MOVF   48,W
+0537:  MOVWF  4C
+0538:  BCF    03.5
+0539:  CALL   3F6
+053A:  BSF    03.5
+053B:  MOVF   44,W
+053C:  MOVWF  04
+053D:  BCF    03.7
+053E:  BTFSC  45.0
+053F:  BSF    03.7
+0540:  MOVF   77,W
+0541:  MOVWF  00
+0542:  INCF   04,F
+0543:  MOVF   78,W
+0544:  MOVWF  00
+0545:  INCF   04,F
+0546:  MOVF   79,W
+0547:  MOVWF  00
+0548:  INCF   04,F
+0549:  MOVF   7A,W
+054A:  MOVWF  00
+....................  
+....................   timeouts->pre_range_mclks = 
+....................     decodeTimeout(readReg16Bit(PRE_RANGE_CONFIG_TIMEOUT_MACROP_HI)); 
+054B:  MOVLW  06
+054C:  ADDWF  42,W
+054D:  MOVWF  78
+054E:  MOVF   43,W
+054F:  MOVWF  7A
+0550:  BTFSC  03.0
+0551:  INCF   7A,F
+0552:  MOVF   78,W
+0553:  MOVWF  44
+0554:  MOVF   7A,W
+0555:  MOVWF  45
+0556:  MOVLW  51
+0557:  MOVWF  46
+0558:  BCF    03.5
+0559:  CALL   48E
+055A:  MOVF   79,W
+055B:  BSF    03.5
+055C:  MOVWF  47
+055D:  MOVF   78,W
+055E:  MOVWF  46
+055F:  MOVF   47,W
+0560:  MOVWF  49
+0561:  MOVF   46,W
+0562:  MOVWF  48
+0563:  BCF    03.5
+0564:  CALL   4C0
+0565:  BSF    03.5
+0566:  MOVF   44,W
+0567:  MOVWF  04
+0568:  BCF    03.7
+0569:  BTFSC  45.0
+056A:  BSF    03.7
+056B:  INCF   04,F
+056C:  MOVF   79,W
+056D:  MOVWF  00
+056E:  DECF   04,F
+056F:  MOVF   78,W
+0570:  MOVWF  00
+....................   timeouts->pre_range_us = 
+....................     timeoutMclksToMicroseconds(timeouts->pre_range_mclks, 
+....................                                timeouts->pre_range_vcsel_period_pclks); 
+0571:  MOVLW  0E
+0572:  ADDWF  42,W
+0573:  MOVWF  78
+0574:  MOVF   43,W
+0575:  MOVWF  7A
+0576:  BTFSC  03.0
+0577:  INCF   7A,F
+0578:  MOVF   78,W
+0579:  MOVWF  44
+057A:  MOVF   7A,W
+057B:  MOVWF  45
+057C:  MOVLW  06
+057D:  ADDWF  42,W
+057E:  MOVWF  04
+057F:  BCF    03.7
+0580:  BTFSC  43.0
+0581:  BSF    03.7
+0582:  INCF   04,F
+0583:  MOVF   00,W
+0584:  MOVWF  47
+0585:  DECF   04,F
+0586:  MOVF   00,W
+0587:  MOVWF  46
+0588:  MOVF   42,W
+0589:  MOVWF  04
+058A:  BCF    03.7
+058B:  BTFSC  43.0
+058C:  BSF    03.7
+058D:  INCF   04,F
+058E:  MOVF   00,W
+058F:  MOVWF  49
+0590:  DECF   04,F
+0591:  MOVF   00,W
+0592:  MOVWF  48
+0593:  MOVF   47,W
+0594:  MOVWF  4B
+0595:  MOVF   46,W
+0596:  MOVWF  4A
+0597:  MOVF   48,W
+0598:  MOVWF  4C
+0599:  BCF    03.5
+059A:  CALL   3F6
+059B:  BSF    03.5
+059C:  MOVF   44,W
+059D:  MOVWF  04
+059E:  BCF    03.7
+059F:  BTFSC  45.0
+05A0:  BSF    03.7
+05A1:  MOVF   77,W
+05A2:  MOVWF  00
+05A3:  INCF   04,F
+05A4:  MOVF   78,W
+05A5:  MOVWF  00
+05A6:  INCF   04,F
+05A7:  MOVF   79,W
+05A8:  MOVWF  00
+05A9:  INCF   04,F
+05AA:  MOVF   7A,W
+05AB:  MOVWF  00
+....................  
+....................   timeouts->final_range_vcsel_period_pclks = getVcselPulsePeriod(VcselPeriodFinalRange); 
+05AC:  MOVLW  02
+05AD:  ADDWF  42,W
+05AE:  MOVWF  78
+05AF:  MOVF   43,W
+05B0:  MOVWF  7A
+05B1:  BTFSC  03.0
+05B2:  INCF   7A,F
+05B3:  MOVF   78,W
+05B4:  MOVWF  44
+05B5:  MOVF   7A,W
+05B6:  MOVWF  45
+05B7:  MOVLW  01
+05B8:  MOVWF  46
+05B9:  BCF    03.5
+05BA:  CALL   353
+05BB:  BSF    03.5
+05BC:  MOVF   44,W
+05BD:  MOVWF  04
+05BE:  BCF    03.7
+05BF:  BTFSC  45.0
+05C0:  BSF    03.7
+05C1:  INCF   04,F
+05C2:  CLRF   00
+05C3:  DECF   04,F
+05C4:  MOVF   78,W
+05C5:  MOVWF  00
+....................  
+....................   timeouts->final_range_mclks = 
+....................     decodeTimeout(readReg16Bit(FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI)); 
+05C6:  MOVLW  08
+05C7:  ADDWF  42,W
+05C8:  MOVWF  78
+05C9:  MOVF   43,W
+05CA:  MOVWF  7A
+05CB:  BTFSC  03.0
+05CC:  INCF   7A,F
+05CD:  MOVF   78,W
+05CE:  MOVWF  44
+05CF:  MOVF   7A,W
+05D0:  MOVWF  45
+05D1:  MOVLW  71
+05D2:  MOVWF  46
+05D3:  BCF    03.5
+05D4:  CALL   48E
+05D5:  MOVF   79,W
+05D6:  BSF    03.5
+05D7:  MOVWF  47
+05D8:  MOVF   78,W
+05D9:  MOVWF  46
+05DA:  MOVF   47,W
+05DB:  MOVWF  49
+05DC:  MOVF   46,W
+05DD:  MOVWF  48
+05DE:  BCF    03.5
+05DF:  CALL   4C0
+05E0:  BSF    03.5
+05E1:  MOVF   44,W
+05E2:  MOVWF  04
+05E3:  BCF    03.7
+05E4:  BTFSC  45.0
+05E5:  BSF    03.7
+05E6:  INCF   04,F
+05E7:  MOVF   79,W
+05E8:  MOVWF  00
+05E9:  DECF   04,F
+05EA:  MOVF   78,W
+05EB:  MOVWF  00
+....................  
+....................   if (enables->pre_range) 
+05EC:  MOVF   40,W
+05ED:  MOVWF  04
+05EE:  BCF    03.7
+05EF:  BTFSC  41.0
+05F0:  BSF    03.7
+05F1:  BTFSS  00.3
+05F2:  GOTO   62D
+....................   { 
+....................     timeouts->final_range_mclks -= timeouts->pre_range_mclks; 
+05F3:  MOVLW  08
+05F4:  ADDWF  42,W
+05F5:  MOVWF  78
+05F6:  MOVF   43,W
+05F7:  MOVWF  7A
+05F8:  BTFSC  03.0
+05F9:  INCF   7A,F
+05FA:  MOVF   78,W
+05FB:  MOVWF  44
+05FC:  MOVF   7A,W
+05FD:  MOVWF  45
+05FE:  MOVF   44,W
+05FF:  MOVWF  04
+0600:  BCF    03.7
+0601:  BTFSC  45.0
+0602:  BSF    03.7
+0603:  INCF   04,F
+0604:  MOVF   00,W
+0605:  MOVWF  47
+0606:  DECF   04,F
+0607:  MOVF   00,W
+0608:  MOVWF  46
+0609:  MOVLW  06
+060A:  ADDWF  42,W
+060B:  MOVWF  04
+060C:  BCF    03.7
+060D:  BTFSC  43.0
+060E:  BSF    03.7
+060F:  INCF   04,F
+0610:  MOVF   00,W
+0611:  MOVWF  7A
+0612:  DECF   04,F
+0613:  MOVF   00,W
+0614:  SUBWF  46,W
+0615:  MOVWF  77
+0616:  MOVF   7A,W
+0617:  BTFSS  03.0
+0618:  INCFSZ 7A,W
+0619:  GOTO   61C
+061A:  MOVF   47,W
+061B:  GOTO   61D
+061C:  SUBWF  47,W
+061D:  MOVWF  7A
+061E:  MOVF   77,W
+061F:  MOVWF  46
+0620:  MOVF   7A,W
+0621:  MOVWF  47
+0622:  MOVF   44,W
+0623:  MOVWF  04
+0624:  BCF    03.7
+0625:  BTFSC  45.0
+0626:  BSF    03.7
+0627:  INCF   04,F
+0628:  MOVF   47,W
+0629:  MOVWF  00
+062A:  DECF   04,F
+062B:  MOVF   46,W
+062C:  MOVWF  00
+....................   } 
+....................  
+....................   timeouts->final_range_us = 
+....................     timeoutMclksToMicroseconds(timeouts->final_range_mclks, 
+....................                                timeouts->final_range_vcsel_period_pclks); 
+062D:  MOVLW  12
+062E:  ADDWF  42,W
+062F:  MOVWF  78
+0630:  MOVF   43,W
+0631:  MOVWF  7A
+0632:  BTFSC  03.0
+0633:  INCF   7A,F
+0634:  MOVF   78,W
+0635:  MOVWF  44
+0636:  MOVF   7A,W
+0637:  MOVWF  45
+0638:  MOVLW  08
+0639:  ADDWF  42,W
+063A:  MOVWF  04
+063B:  BCF    03.7
+063C:  BTFSC  43.0
+063D:  BSF    03.7
+063E:  INCF   04,F
+063F:  MOVF   00,W
+0640:  MOVWF  47
+0641:  DECF   04,F
+0642:  MOVF   00,W
+0643:  MOVWF  46
+0644:  MOVLW  02
+0645:  ADDWF  42,W
+0646:  MOVWF  04
+0647:  BCF    03.7
+0648:  BTFSC  43.0
+0649:  BSF    03.7
+064A:  INCF   04,F
+064B:  MOVF   00,W
+064C:  MOVWF  49
+064D:  DECF   04,F
+064E:  MOVF   00,W
+064F:  MOVWF  48
+0650:  MOVF   47,W
+0651:  MOVWF  4B
+0652:  MOVF   46,W
+0653:  MOVWF  4A
+0654:  MOVF   48,W
+0655:  MOVWF  4C
+0656:  BCF    03.5
+0657:  CALL   3F6
+0658:  BSF    03.5
+0659:  MOVF   44,W
+065A:  MOVWF  04
+065B:  BCF    03.7
+065C:  BTFSC  45.0
+065D:  BSF    03.7
+065E:  MOVF   77,W
+065F:  MOVWF  00
+0660:  INCF   04,F
+0661:  MOVF   78,W
+0662:  MOVWF  00
+0663:  INCF   04,F
+0664:  MOVF   79,W
+0665:  MOVWF  00
+0666:  INCF   04,F
+0667:  MOVF   7A,W
+0668:  MOVWF  00
+0669:  BCF    03.5
+066A:  RETURN
+.................... } 
+....................  
+.................... // Decode sequence step timeout in MCLKs from register value 
+.................... // based on VL53L0X_decode_timeout() 
+.................... // Note: the original function returned a int32, but the return value is 
+.................... // always stored in a int16. 
+.................... int16 decodeTimeout(int16 reg_val) 
+.................... { 
+....................   // format: "(LSByte * 2^MSByte) + 1" 
+....................   return (int16)((reg_val & 0x00FF) << 
+....................          (int16)((reg_val & 0xFF00) >> 8)) + 1; 
+*
+04C0:  BSF    03.5
+04C1:  MOVF   48,W
+04C2:  MOVWF  4A
+04C3:  CLRF   4B
+04C4:  CLRF   4C
+04C5:  MOVF   49,W
+04C6:  MOVWF  4D
+04C7:  CLRF   7A
+04C8:  MOVWF  77
+04C9:  MOVF   77,F
+04CA:  BTFSC  03.2
+04CB:  GOTO   4D1
+04CC:  BCF    03.0
+04CD:  RLF    4A,F
+04CE:  RLF    4B,F
+04CF:  DECFSZ 77,F
+04D0:  GOTO   4CC
+04D1:  MOVLW  01
+04D2:  ADDWF  4A,W
+04D3:  MOVWF  78
+04D4:  MOVF   4B,W
+04D5:  MOVWF  7A
+04D6:  BTFSC  03.0
+04D7:  INCF   7A,F
+04D8:  MOVF   7A,W
+04D9:  MOVWF  79
+04DA:  BCF    03.5
+04DB:  RETURN
+.................... } 
+....................  
+.................... // Encode sequence step timeout register value from timeout in MCLKs 
+.................... // based on VL53L0X_encode_timeout() 
+.................... // Note: the original function took a int16, but the argument passed to it 
+.................... // is always a int16. 
+.................... int16 encodeTimeout(int16 timeout_mclks) 
+*
+0705:  BSF    03.5
+0706:  CLRF   45
+0707:  CLRF   44
+0708:  CLRF   43
+0709:  CLRF   42
+070A:  CLRF   47
+070B:  CLRF   46
+.................... { 
+....................   // format: "(LSByte * 2^MSByte) + 1" 
+....................  
+....................   int32 ls_byte = 0; 
+....................   int16 ms_byte = 0; 
+....................  
+....................   if (timeout_mclks > 0) 
+070C:  MOVF   40,F
+070D:  BTFSS  03.2
+070E:  GOTO   712
+070F:  MOVF   41,F
+0710:  BTFSC  03.2
+0711:  GOTO   74C
+....................   { 
+....................     ls_byte = timeout_mclks - 1; 
+0712:  MOVLW  01
+0713:  SUBWF  40,W
+0714:  MOVWF  42
+0715:  MOVF   41,W
+0716:  MOVWF  43
+0717:  MOVLW  00
+0718:  BTFSS  03.0
+0719:  MOVLW  01
+071A:  SUBWF  43,F
+071B:  CLRF   44
+071C:  CLRF   45
+....................  
+....................     while ((ls_byte & 0xFFFFFF00) > 0) 
+071D:  CLRF   48
+071E:  MOVF   43,W
+071F:  MOVWF  49
+0720:  MOVF   44,W
+0721:  MOVWF  4A
+0722:  MOVF   45,W
+0723:  MOVWF  4B
+0724:  MOVF   48,F
+0725:  BTFSS  03.2
+0726:  GOTO   730
+0727:  MOVF   49,F
+0728:  BTFSS  03.2
+0729:  GOTO   730
+072A:  MOVF   4A,F
+072B:  BTFSS  03.2
+072C:  GOTO   730
+072D:  MOVF   4B,F
+072E:  BTFSC  03.2
+072F:  GOTO   739
+....................     { 
+....................       ls_byte >>= 1; 
+0730:  BCF    03.0
+0731:  RRF    45,F
+0732:  RRF    44,F
+0733:  RRF    43,F
+0734:  RRF    42,F
+....................       ms_byte++; 
+0735:  INCF   46,F
+0736:  BTFSC  03.2
+0737:  INCF   47,F
+0738:  GOTO   71D
+....................     } 
+....................  
+....................     return (ms_byte << 8) | (ls_byte & 0xFF); 
+0739:  MOVF   46,W
+073A:  MOVWF  49
+073B:  CLRF   48
+073C:  MOVF   42,W
+073D:  MOVWF  77
+073E:  CLRF   78
+073F:  CLRF   79
+0740:  CLRF   7A
+0741:  MOVF   77,W
+0742:  IORWF  48,W
+0743:  MOVWF  77
+0744:  MOVF   78,W
+0745:  IORWF  49,W
+0746:  MOVWF  78
+0747:  MOVWF  79
+0748:  MOVF   77,W
+0749:  MOVWF  78
+074A:  GOTO   74F
+....................   } 
+074B:  GOTO   74F
+....................   else { return 0; } 
+074C:  MOVLW  00
+074D:  MOVWF  78
+074E:  MOVWF  79
+074F:  BCF    03.5
+0750:  RETURN
+.................... } 
+....................  
+.................... // Convert sequence step timeout from MCLKs to microseconds with given VCSEL period in PCLKs 
+.................... // based on VL53L0X_calc_timeout_us() 
+.................... int32 timeoutMclksToMicroseconds(int16 timeout_period_mclks, int8 vcsel_period_pclks) 
+*
+03F6:  BSF    03.5
+03F7:  CLRF   58
+03F8:  CLRF   57
+03F9:  MOVLW  09
+03FA:  MOVWF  56
+03FB:  CLRF   55
+03FC:  CLRF   5C
+03FD:  CLRF   5B
+03FE:  CLRF   5A
+03FF:  MOVF   4C,W
+0400:  MOVWF  59
+0401:  BCF    03.5
+0402:  CALL   379
+0403:  MOVF   7A,W
+0404:  BSF    03.5
+0405:  MOVWF  54
+0406:  MOVF   79,W
+0407:  MOVWF  53
+0408:  MOVF   78,W
+0409:  MOVWF  52
+040A:  MOVF   77,W
+040B:  MOVWF  51
+040C:  MOVF   54,W
+040D:  MOVWF  58
+040E:  MOVF   53,W
+040F:  MOVWF  57
+0410:  MOVF   52,W
+0411:  MOVWF  56
+0412:  MOVF   51,W
+0413:  MOVWF  55
+0414:  CLRF   5C
+0415:  CLRF   5B
+0416:  MOVLW  06
+0417:  MOVWF  5A
+0418:  MOVLW  77
+0419:  MOVWF  59
+041A:  BCF    03.5
+041B:  CALL   379
+041C:  MOVF   7A,W
+041D:  BSF    03.5
+041E:  MOVWF  54
+041F:  MOVF   79,W
+0420:  MOVWF  53
+0421:  MOVF   78,W
+0422:  MOVWF  52
+0423:  MOVF   77,W
+0424:  MOVWF  51
+0425:  MOVLW  F4
+0426:  ADDWF  51,F
+0427:  MOVLW  01
+0428:  BTFSC  03.0
+0429:  MOVLW  02
+042A:  ADDWF  52,F
+042B:  MOVLW  00
+042C:  BTFSC  03.0
+042D:  MOVLW  01
+042E:  ADDWF  53,F
+042F:  MOVLW  00
+0430:  BTFSC  03.0
+0431:  MOVLW  01
+0432:  ADDWF  54,F
+0433:  BCF    03.1
+0434:  MOVF   54,W
+0435:  MOVWF  58
+0436:  MOVF   53,W
+0437:  MOVWF  57
+0438:  MOVF   52,W
+0439:  MOVWF  56
+043A:  MOVF   51,W
+043B:  MOVWF  55
+043C:  CLRF   5C
+043D:  CLRF   5B
+043E:  MOVLW  03
+043F:  MOVWF  5A
+0440:  MOVLW  E8
+0441:  MOVWF  59
+0442:  BCF    03.5
+0443:  CALL   3A5
+0444:  MOVF   7A,W
+0445:  BSF    03.5
+0446:  MOVWF  50
+0447:  MOVF   79,W
+0448:  MOVWF  4F
+0449:  MOVF   78,W
+044A:  MOVWF  4E
+044B:  MOVF   77,W
+044C:  MOVWF  4D
+.................... { 
+....................   int32 macro_period_ns = calcMacroPeriod(vcsel_period_pclks); 
+....................  
+....................   return ((timeout_period_mclks * macro_period_ns) + (macro_period_ns / 2)) / 1000; 
+044D:  CLRF   58
+044E:  CLRF   57
+044F:  MOVF   4B,W
+0450:  MOVWF  56
+0451:  MOVF   4A,W
+0452:  MOVWF  55
+0453:  MOVF   50,W
+0454:  MOVWF  5C
+0455:  MOVF   4F,W
+0456:  MOVWF  5B
+0457:  MOVF   4E,W
+0458:  MOVWF  5A
+0459:  MOVF   4D,W
+045A:  MOVWF  59
+045B:  BCF    03.5
+045C:  CALL   379
+045D:  MOVF   7A,W
+045E:  BSF    03.5
+045F:  MOVWF  54
+0460:  MOVF   79,W
+0461:  MOVWF  53
+0462:  MOVF   78,W
+0463:  MOVWF  52
+0464:  MOVF   77,W
+0465:  MOVWF  51
+0466:  BCF    03.0
+0467:  RRF    50,W
+0468:  MOVWF  7A
+0469:  RRF    4F,W
+046A:  MOVWF  79
+046B:  RRF    4E,W
+046C:  MOVWF  78
+046D:  RRF    4D,W
+046E:  MOVWF  77
+046F:  ADDWF  51,F
+0470:  MOVF   78,W
+0471:  BTFSC  03.0
+0472:  INCFSZ 78,W
+0473:  ADDWF  52,F
+0474:  MOVF   79,W
+0475:  BTFSC  03.0
+0476:  INCFSZ 79,W
+0477:  ADDWF  53,F
+0478:  MOVF   7A,W
+0479:  BTFSC  03.0
+047A:  INCFSZ 7A,W
+047B:  ADDWF  54,F
+047C:  BCF    03.1
+047D:  MOVF   54,W
+047E:  MOVWF  58
+047F:  MOVF   53,W
+0480:  MOVWF  57
+0481:  MOVF   52,W
+0482:  MOVWF  56
+0483:  MOVF   51,W
+0484:  MOVWF  55
+0485:  CLRF   5C
+0486:  CLRF   5B
+0487:  MOVLW  03
+0488:  MOVWF  5A
+0489:  MOVLW  E8
+048A:  MOVWF  59
+048B:  BCF    03.5
+048C:  CALL   3A5
+048D:  RETURN
+.................... } 
+....................  
+.................... // Convert sequence step timeout from microseconds to MCLKs with given VCSEL period in PCLKs 
+.................... // based on VL53L0X_calc_timeout_mclks() 
+.................... int32 timeoutMicrosecondsToMclks(int32 timeout_period_us, int8 vcsel_period_pclks) 
+*
+066B:  BSF    03.5
+066C:  CLRF   58
+066D:  CLRF   57
+066E:  MOVLW  09
+066F:  MOVWF  56
+0670:  CLRF   55
+0671:  CLRF   5C
+0672:  CLRF   5B
+0673:  CLRF   5A
+0674:  MOVF   44,W
+0675:  MOVWF  59
+0676:  BCF    03.5
+0677:  CALL   379
+0678:  MOVF   7A,W
+0679:  BSF    03.5
+067A:  MOVWF  4C
+067B:  MOVF   79,W
+067C:  MOVWF  4B
+067D:  MOVF   78,W
+067E:  MOVWF  4A
+067F:  MOVF   77,W
+0680:  MOVWF  49
+0681:  MOVF   4C,W
+0682:  MOVWF  58
+0683:  MOVF   4B,W
+0684:  MOVWF  57
+0685:  MOVF   4A,W
+0686:  MOVWF  56
+0687:  MOVF   49,W
+0688:  MOVWF  55
+0689:  CLRF   5C
+068A:  CLRF   5B
+068B:  MOVLW  06
+068C:  MOVWF  5A
+068D:  MOVLW  77
+068E:  MOVWF  59
+068F:  BCF    03.5
+0690:  CALL   379
+0691:  MOVF   7A,W
+0692:  BSF    03.5
+0693:  MOVWF  4C
+0694:  MOVF   79,W
+0695:  MOVWF  4B
+0696:  MOVF   78,W
+0697:  MOVWF  4A
+0698:  MOVF   77,W
+0699:  MOVWF  49
+069A:  MOVLW  F4
+069B:  ADDWF  49,F
+069C:  MOVLW  01
+069D:  BTFSC  03.0
+069E:  MOVLW  02
+069F:  ADDWF  4A,F
+06A0:  MOVLW  00
+06A1:  BTFSC  03.0
+06A2:  MOVLW  01
+06A3:  ADDWF  4B,F
+06A4:  MOVLW  00
+06A5:  BTFSC  03.0
+06A6:  MOVLW  01
+06A7:  ADDWF  4C,F
+06A8:  BCF    03.1
+06A9:  MOVF   4C,W
+06AA:  MOVWF  58
+06AB:  MOVF   4B,W
+06AC:  MOVWF  57
+06AD:  MOVF   4A,W
+06AE:  MOVWF  56
+06AF:  MOVF   49,W
+06B0:  MOVWF  55
+06B1:  CLRF   5C
+06B2:  CLRF   5B
+06B3:  MOVLW  03
+06B4:  MOVWF  5A
+06B5:  MOVLW  E8
+06B6:  MOVWF  59
+06B7:  BCF    03.5
+06B8:  CALL   3A5
+06B9:  MOVF   7A,W
+06BA:  BSF    03.5
+06BB:  MOVWF  48
+06BC:  MOVF   79,W
+06BD:  MOVWF  47
+06BE:  MOVF   78,W
+06BF:  MOVWF  46
+06C0:  MOVF   77,W
+06C1:  MOVWF  45
+.................... { 
+....................   int32 macro_period_ns = calcMacroPeriod(vcsel_period_pclks); 
+....................  
+....................   return (((timeout_period_us * 1000) + (macro_period_ns / 2)) / macro_period_ns); 
+06C2:  MOVF   43,W
+06C3:  MOVWF  58
+06C4:  MOVF   42,W
+06C5:  MOVWF  57
+06C6:  MOVF   41,W
+06C7:  MOVWF  56
+06C8:  MOVF   40,W
+06C9:  MOVWF  55
+06CA:  CLRF   5C
+06CB:  CLRF   5B
+06CC:  MOVLW  03
+06CD:  MOVWF  5A
+06CE:  MOVLW  E8
+06CF:  MOVWF  59
+06D0:  BCF    03.5
+06D1:  CALL   379
+06D2:  MOVF   7A,W
+06D3:  BSF    03.5
+06D4:  MOVWF  4C
+06D5:  MOVF   79,W
+06D6:  MOVWF  4B
+06D7:  MOVF   78,W
+06D8:  MOVWF  4A
+06D9:  MOVF   77,W
+06DA:  MOVWF  49
+06DB:  BCF    03.0
+06DC:  RRF    48,W
+06DD:  MOVWF  7A
+06DE:  RRF    47,W
+06DF:  MOVWF  79
+06E0:  RRF    46,W
+06E1:  MOVWF  78
+06E2:  RRF    45,W
+06E3:  MOVWF  77
+06E4:  ADDWF  49,F
+06E5:  MOVF   78,W
+06E6:  BTFSC  03.0
+06E7:  INCFSZ 78,W
+06E8:  ADDWF  4A,F
+06E9:  MOVF   79,W
+06EA:  BTFSC  03.0
+06EB:  INCFSZ 79,W
+06EC:  ADDWF  4B,F
+06ED:  MOVF   7A,W
+06EE:  BTFSC  03.0
+06EF:  INCFSZ 7A,W
+06F0:  ADDWF  4C,F
+06F1:  BCF    03.1
+06F2:  MOVF   4C,W
+06F3:  MOVWF  58
+06F4:  MOVF   4B,W
+06F5:  MOVWF  57
+06F6:  MOVF   4A,W
+06F7:  MOVWF  56
+06F8:  MOVF   49,W
+06F9:  MOVWF  55
+06FA:  MOVF   48,W
+06FB:  MOVWF  5C
+06FC:  MOVF   47,W
+06FD:  MOVWF  5B
+06FE:  MOVF   46,W
+06FF:  MOVWF  5A
+0700:  MOVF   45,W
+0701:  MOVWF  59
+0702:  BCF    03.5
+0703:  CALL   3A5
+0704:  RETURN
+.................... } 
+....................  
+....................  
+.................... // based on VL53L0X_perform_single_ref_calibration() 
+.................... boolean performSingleRefCalibration(int8 vhv_init_byte) 
+.................... { 
+....................   writeReg(SYSRANGE_START, 0x01 | vhv_init_byte); // VL53L0X_REG_SYSRANGE_MODE_START_STOP 
+*
+0751:  MOVF   63,W
+0752:  IORLW  01
+0753:  MOVWF  64
+0754:  CLRF   65
+0755:  MOVF   64,W
+0756:  MOVWF  66
+0757:  CALL   150
+....................  
+....................   startTimeout(); 
+0758:  MOVF   3C,W
+0759:  MOVWF  30
+075A:  MOVF   3B,W
+075B:  MOVWF  2F
+....................   while ((readReg(RESULT_INTERRUPT_STATUS) & 0x07) == 0) 
+075C:  MOVLW  13
+075D:  BSF    03.5
+075E:  MOVWF  47
+075F:  BCF    03.5
+0760:  CALL   12A
+0761:  MOVF   78,W
+0762:  ANDLW  07
+0763:  BTFSS  03.2
+0764:  GOTO   782
+....................   { 
+....................     if (checkTimeoutExpired()) { return false; } 
+0765:  MOVF   2C,F
+0766:  BTFSS  03.2
+0767:  GOTO   76B
+0768:  MOVF   2D,F
+0769:  BTFSC  03.2
+076A:  GOTO   781
+076B:  MOVF   2F,W
+076C:  SUBWF  3B,W
+076D:  MOVWF  64
+076E:  MOVF   3C,W
+076F:  MOVWF  65
+0770:  MOVF   30,W
+0771:  BTFSS  03.0
+0772:  INCFSZ 30,W
+0773:  SUBWF  65,F
+0774:  MOVF   2D,W
+0775:  SUBWF  65,W
+0776:  BTFSS  03.0
+0777:  GOTO   781
+0778:  BTFSS  03.2
+0779:  GOTO   77E
+077A:  MOVF   64,W
+077B:  SUBWF  2C,W
+077C:  BTFSC  03.0
+077D:  GOTO   781
+077E:  MOVLW  00
+077F:  MOVWF  78
+0780:  GOTO   78C
+0781:  GOTO   75C
+....................   } 
+....................  
+....................   writeReg(SYSTEM_INTERRUPT_CLEAR, 0x01); 
+0782:  MOVLW  0B
+0783:  MOVWF  65
+0784:  MOVLW  01
+0785:  MOVWF  66
+0786:  CALL   150
+....................  
+....................   writeReg(SYSRANGE_START, 0x00); 
+0787:  CLRF   65
+0788:  CLRF   66
+0789:  CALL   150
+....................  
+....................   return true; 
+078A:  MOVLW  01
+078B:  MOVWF  78
+078C:  RETURN
+.................... } 
+....................  
+....................  
+.................... //!void main() { 
+.................... //!   delay_ms(1000); 
+.................... //!   init(); 
+.................... //! 
+.................... //!} 
+....................  
+....................  
+
+Configuration Fuses:
+   Word  1: 2FC4   INTRC_IO NOWDT PUT NOMCLR NOPROTECT NOCPD BROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

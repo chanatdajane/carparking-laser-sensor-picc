@@ -1,0 +1,92 @@
+
+ROM used:   5582/8192 (68%)
+            5770/8192 (70%) including unused fragments
+
+            2.4 Average locations per line
+            6.8 Average locations per statement
+
+RAM used:   40/368 (11%) at main() level
+            164/368 (45%) worst case
+
+Stack used: 7 worst case (6 in main + 1 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  231   122  15  carparking_picc.c
+  756     0   0  ..\..\..\..\Program Files (x86)\PICC\Devices\16F886.h
+  178   122  15  VL53L0X.h
+ 1160   571  70  VL53L0X.c
+----- -----
+ 2325   815 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+ Inline         1             @delay_ms1
+0     18   0    1     82  1.4  @I2C_WRITEU_1
+0     16   0    1    190  1.7  @I2C_READU_1
+0     82   1    2    243  4.1  timer1_isr
+2   1182  21    0    190  1.7  setup
+0      6   0    0   2089  5.3  @const767
+0     88   2    4             @PSTRINGC7_9600_62_63
+1    556  10    5   2089  5.3  loop
+0     21   0    3    368  4.9  @DIV88
+ Inline         6             @PRINTF_D_9600_62_63
+ Inline         9             @PRINTF_LU_9600_62_63
+2    169   3    2    382  4.0  MAIN
+0      7   0    0             @const788
+0     31   1    2             @ITOF
+2    323   6   16             @ADDFF
+0     31   1    4             @SFTOI
+ Inline        15   6222 12.6  init
+1    333   6    1    447  4.7  init2
+0     28   1    2    113  2.5  writeReg
+0     40   1    5    181  3.1  writeReg16Bit
+0     38   1    3    176  2.8  readReg
+0     50   1    5    233  3.8  readReg16Bit
+ Inline         5    190  5.0  writeMulti
+ Inline         6    308  5.5  readMulti
+0    195   3    6    147  4.5  setSignalRateLimit
+0     63   1   10             @FLT
+ Inline        13             @MULFF
+1    338   6   39   1437  9.3  setMeasurementTimingBudget
+ Inline        27    983  7.5  getMeasurementTimingBudget
+1    533  10   35   3331 10.6  setVcselPulsePeriod
+0     38   1    2    216  4.0  getVcselPulsePeriod
+0     44   1   13             @MUL3232
+ Inline         4    330  6.7  readRangeContinuousMillimeters
+1    163   3    2    535  5.7  readRangeSingleMillimeters
+ Inline         8   1269  8.4  getSpadInfo
+0    158   3    6    359  3.8  getSequenceStepEnables
+0    399   7   10    671  4.8  getSequenceStepTimeouts
+0     28   1    6    104  4.0  decodeTimeout
+0     76   1   12    309  7.2  encodeTimeout
+0     81   1   13             @DIV3232
+0    152   3   11    190  4.3  timeoutMclksToMicroseconds
+0    154   3   13    193  4.5  timeoutMicrosecondsToMclks
+0     60   1    3    345  6.5  performSingleRefCalibration
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               31
+    Statements              815
+    Comments                489
+    Volume (V)              39056
+    Difficulty (D)          162.4
+    Effort to implement (E) 6341397
+    Time to implement (T)   97 hours, 52 minutes
+    Est Delivered Bugs (B)  11
+    Cyclomatic Complexity   94
+    Maintainability (MI)    74
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00050    77  0  
+00051-007FF  1904  63  
+00800-00FFF  1923  125  
+01000-017FF  1674  374  
+01800-01FFF     0  2048  
+
+
+

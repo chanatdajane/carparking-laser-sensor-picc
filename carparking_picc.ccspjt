@@ -1,0 +1,23 @@
+[PROJECT]
+Target=carparking_picc.hex
+Processor_Text=PIC16F886
+CCSVersion=5.063
+Compiler=PCM
+[Target Data]
+FileList=carparking_picc.c
+[carparking_picc.c]
+Type=4
+[mru-list]
+1=carparking_picc.c
+[Units]
+Count=1
+1=carparking_picc (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=07-05-2017
+D1_L=1
+D1_L1=[15698]Project Closed.

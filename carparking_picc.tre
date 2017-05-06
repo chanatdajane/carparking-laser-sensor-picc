@@ -1,0 +1,494 @@
+ÀÄcarparking_picc
+   ÃÄMAIN  2/169  Ram=2
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄsetup  2/1182  Ram=0
+   ³  ³  ÃÄ@PSTRINGC7_9600_62_63  0/88  Ram=4
+   ³  ³  ÃÄinit  (Inline)  Ram=15
+   ³  ³  ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÀÄ@I2C_READU_1  0/16  Ram=1
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÀÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄsetSignalRateLimit  0/195  Ram=6
+   ³  ³  ³  ³  ÃÄ@FLT  0/63  Ram=10
+   ³  ³  ³  ³  ÃÄ@FLT  0/63  Ram=10
+   ³  ³  ³  ³  ÃÄ@MULFF  (Inline)  Ram=13
+   ³  ³  ³  ³  ÃÄ@SFTOI  0/31  Ram=4
+   ³  ³  ³  ³  ÀÄwriteReg16Bit  0/40  Ram=5
+   ³  ³  ³  ³     ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³     ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³     ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³     ÀÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄgetSpadInfo  (Inline)  Ram=8
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÀÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³     ÀÄ*
+   ³  ³  ³  ÃÄreadMulti  (Inline)  Ram=6
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_READU_1  0/16  Ram=1
+   ³  ³  ³  ³  ÀÄ@I2C_READU_1  0/16  Ram=1
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteMulti  (Inline)  Ram=5
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ³  ÀÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄinit2  1/333  Ram=1
+   ³  ³  ³     ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄgetMeasurementTimingBudget  (Inline)  Ram=27
+   ³  ³  ³     ³  ÃÄgetSequenceStepEnables  0/158  Ram=6
+   ³  ³  ³     ³  ³  ÀÄreadReg  0/38  Ram=3
+   ³  ³  ³     ³  ³     ÀÄ*
+   ³  ³  ³     ³  ÀÄgetSequenceStepTimeouts  0/399  Ram=10
+   ³  ³  ³     ³     ÃÄgetVcselPulsePeriod  0/38  Ram=2
+   ³  ³  ³     ³     ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³     ³     ³  ³  ÀÄ*
+   ³  ³  ³     ³     ³  ÀÄreadReg  0/38  Ram=3
+   ³  ³  ³     ³     ³     ÀÄ*
+   ³  ³  ³     ³     ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³     ³     ³  ÀÄ*
+   ³  ³  ³     ³     ÃÄtimeoutMclksToMicroseconds  0/152  Ram=11
+   ³  ³  ³     ³     ³  ÃÄ@MUL3232  0/44  Ram=13
+   ³  ³  ³     ³     ³  ÃÄ@MUL3232  0/44  Ram=13
+   ³  ³  ³     ³     ³  ÃÄ@DIV3232  0/81  Ram=13
+   ³  ³  ³     ³     ³  ÃÄ@MUL3232  0/44  Ram=13
+   ³  ³  ³     ³     ³  ÀÄ@DIV3232  0/81  Ram=13
+   ³  ³  ³     ³     ÃÄreadReg16Bit  0/50  Ram=5
+   ³  ³  ³     ³     ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³     ³     ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³     ³     ³  ÃÄ@I2C_WRITEU_1  0/18  Ram=1
+   ³  ³  ³     ³     ³  ÃÄ@I2C_READU_1  0/16  Ram=1
+   ³  ³  ³     ³     ³  ÀÄ@I2C_READU_1  0/16  Ram=1
+   ³  ³  ³     ³     ÃÄdecodeTimeout  0/28  Ram=6
+   ³  ³  ³     ³     ÃÄtimeoutMclksToMicroseconds  0/152  Ram=11
+   ³  ³  ³     ³     ³  ÀÄ*
+   ³  ³  ³     ³     ÃÄgetVcselPulsePeriod  0/38  Ram=2
+   ³  ³  ³     ³     ³  ÀÄ*
+   ³  ³  ³     ³     ÃÄreadReg16Bit  0/50  Ram=5
+   ³  ³  ³     ³     ³  ÀÄ*
+   ³  ³  ³     ³     ÃÄdecodeTimeout  0/28  Ram=6
+   ³  ³  ³     ³     ÀÄtimeoutMclksToMicroseconds  0/152  Ram=11
+   ³  ³  ³     ³        ÀÄ*
+   ³  ³  ³     ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄsetMeasurementTimingBudget  1/338  Ram=39
+   ³  ³  ³     ³  ÃÄgetSequenceStepEnables  0/158  Ram=6
+   ³  ³  ³     ³  ³  ÀÄ*
+   ³  ³  ³     ³  ÃÄgetSequenceStepTimeouts  0/399  Ram=10
+   ³  ³  ³     ³  ³  ÀÄ*
+   ³  ³  ³     ³  ÃÄtimeoutMicrosecondsToMclks  0/154  Ram=13
+   ³  ³  ³     ³  ³  ÃÄ@MUL3232  0/44  Ram=13
+   ³  ³  ³     ³  ³  ÃÄ@MUL3232  0/44  Ram=13
+   ³  ³  ³     ³  ³  ÃÄ@DIV3232  0/81  Ram=13
+   ³  ³  ³     ³  ³  ÃÄ@MUL3232  0/44  Ram=13
+   ³  ³  ³     ³  ³  ÀÄ@DIV3232  0/81  Ram=13
+   ³  ³  ³     ³  ÃÄencodeTimeout  0/76  Ram=12
+   ³  ³  ³     ³  ÀÄwriteReg16Bit  0/40  Ram=5
+   ³  ³  ³     ³     ÀÄ*
+   ³  ³  ³     ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄperformSingleRefCalibration  0/60  Ram=3
+   ³  ³  ³     ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ³  ³  ÀÄ*
+   ³  ³  ³     ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³     ³  ³  ÀÄ*
+   ³  ³  ³     ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ³  ³  ÀÄ*
+   ³  ³  ³     ³  ÀÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ³     ÀÄ*
+   ³  ³  ³     ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄperformSingleRefCalibration  0/60  Ram=3
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÀÄwriteReg  0/28  Ram=2
+   ³  ³  ³        ÀÄ*
+   ³  ³  ÃÄsetSignalRateLimit  0/195  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄsetVcselPulsePeriod  1/533  Ram=35
+   ³  ³  ³  ÃÄgetSequenceStepEnables  0/158  Ram=6
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄgetSequenceStepTimeouts  0/399  Ram=10
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄtimeoutMicrosecondsToMclks  0/154  Ram=13
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄencodeTimeout  0/76  Ram=12
+   ³  ³  ³  ÃÄwriteReg16Bit  0/40  Ram=5
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄtimeoutMicrosecondsToMclks  0/154  Ram=13
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄtimeoutMicrosecondsToMclks  0/154  Ram=13
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄencodeTimeout  0/76  Ram=12
+   ³  ³  ³  ÃÄwriteReg16Bit  0/40  Ram=5
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄsetMeasurementTimingBudget  1/338  Ram=39
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄperformSingleRefCalibration  0/60  Ram=3
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄwriteReg  0/28  Ram=2
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄsetVcselPulsePeriod  1/533  Ram=35
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄsetMeasurementTimingBudget  1/338  Ram=39
+   ³  ³     ÀÄ*
+   ³  ÃÄloop  1/556  Ram=5
+   ³  ³  ÃÄ@PRINTF_D_9600_62_63  (Inline)  Ram=6
+   ³  ³  ³  ÃÄ@DIV88  0/21  Ram=3
+   ³  ³  ³  ÀÄ@DIV88  0/21  Ram=3
+   ³  ³  ÃÄreadRangeSingleMillimeters  1/163  Ram=2
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄwriteReg  0/28  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄreadRangeContinuousMillimeters  (Inline)  Ram=4
+   ³  ³  ³     ÃÄreadReg  0/38  Ram=3
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄreadReg16Bit  0/50  Ram=5
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÀÄwriteReg  0/28  Ram=2
+   ³  ³  ³        ÀÄ*
+   ³  ³  ÃÄ@PRINTF_LU_9600_62_63  (Inline)  Ram=9
+   ³  ³  ÃÄreadRangeSingleMillimeters  1/163  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+   ³  ÃÄ@PSTRINGC7_9600_62_63  0/88  Ram=4
+   ³  ÃÄloop  1/556  Ram=5
+   ³  ³  ÀÄ*
+   ³  ÃÄ@ITOF  0/31  Ram=2
+   ³  ÃÄ@ADDFF  2/323  Ram=16
+   ³  ÀÄ@SFTOI  0/31  Ram=4
+   ÀÄtimer1_isr  0/82  Ram=2
